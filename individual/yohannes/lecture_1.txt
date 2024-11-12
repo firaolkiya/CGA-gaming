@@ -1,1 +1,32 @@
 
+                 Lesson 1: Programming for a Purpose
+The activity focuses on understanding interactive game and animation design through problem-solving processes, word searches, client-based design recommendations, and creative ideation. This helps in applying practical and theoretical knowledge to design choices, prototyping, and critical reflection.
+
+1. Word Search: Essential Terminology
+The word search includes terms like "Boolean," "Conditional," "Function," "Parameter," and "Variable," which are foundational for animation and game programming.
+Objective: Quickly identify these terms to reinforce familiarity with programming and design language.
+
+2. The Problem-Solving Process with Design:
+Define: Identify users, assess needs, and set objectives.
+Prepare: Research, brainstorm, and outline a testable solution.
+Try: Develop a prototype, often sketched or minimally interactive.
+Reflect: Gather feedback, present findings, and refine based on responses.
+
+3. Choosing the Right Interactive Design for Clients
+Template Recommendations: The activity involves selecting an appropriate design template for different clients based on their unique requirements. For instance:
+Maria, a teacher, requires an educational design for young children.
+Richard, an environmentalist, needs a game that teaches recycling.
+Layla wants an engaging, heartwarming communication tool for her grandchildren.
+Emma envisions an educational game featuring a shark to convey its harmless nature to humans.
+Levi aims to turn comic book stories into interactive digital tales.
+
+4. Creating a Custom Design
+The task encourages students to build a design for selected clients, such as:
+Tatiana, who wants interactive greeting cards with humorous puns.
+Daniel, who aims for a simple, easy-to-play game featuring his grandmother's butterfly-chasing corgi.
+
+5. Steps in Custom Design Creation
+Define: Frame the design objective based on user needs.
+Prepare: List necessary visuals, interactions, and thematic elements.
+Try: Develop a prototype or sketch, translating ideas into a preliminary design.
+Reflect: Evaluate the design's success in meeting user needs and consider potential improvements.
