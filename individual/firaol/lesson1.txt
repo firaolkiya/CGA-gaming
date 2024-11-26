@@ -1,0 +1,3 @@
+In this lesson, i learned how we can design animations and games for different users and purposes
+ - i got many animation and game templates of athat created by javascript
+ - those templates are attractive 

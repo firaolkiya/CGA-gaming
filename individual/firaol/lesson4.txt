@@ -1,0 +1,63 @@
+Lesson 4: Shapes and Parameters
+
+Rect
+When you first used the rect block, it always created a square with sides of length 50. It had two inputs that you could use to specify its x and y coordinates. rect also has two more optional parameters. These parameters are used to specify its width and height. You can use the arrows on the right hand side of the block to show or hide these optional parameters.
+
+rect(x,y,w,h)
+  x - decide horizontal starting position of the rectangle
+  y - decide vertical starting position of the rectangle
+  w - width of the recatngle
+  h - heights of the rectangle
+
+Ellipse
+Ellipse also has optional parameters for its width and height after the x and y parameters. You can show or hide these optional parameters with the arrow on the right hand side of the block, just like with the rect block.
+initially, the width and height of ellipse is 50
+   	  x - decide horizontal starting position of the ellipae
+	  y - decide vertical starting position of the ellipse
+	  w - width of the ellipse
+	  h - heights of the ellipse
+	  
+	fill("black");
+	rect(50, 50, 300, 300);
+
+	fill("white");
+	rect(60, 60, 250, 250);
+	fill("black");
+	rect(70, 70, 200, 200);
+	fill("white");
+	rect(80, 80, 150, 150);
+	fill("black");
+	rect(90, 90, 100, 100);
+	fill("white");
+	rect(100, 100, 50, 50);
+	
+//1) Make a black background behind the green circle.
+background("black")
+fill("green");
+ellipse(200,200,200,200);
+
+background() is used to change colors of the screen
+
+
+line(0,0,0,400);
+line(0,0,400,0);
+line(0,400,400,400);
+line(0, 0, 50, 400);
+line(0, 50, 100, 400);
+line(0, 100, 150, 400);
+line(0, 150, 200, 400);
+line(0, 200, 250, 400);
+line(0, 250, 300, 400);
+line(0, 300, 350, 400);
+line(0, 350, 400, 400);
+
+line(400, 50, 0, 0);
+line(400, 100, 50, 0);
+line(400, 150, 100, 0);
+line(400, 200, 150, 0);
+line(400, 250, 200, 0);
+line(400, 300, 250, 0);
+line(400, 350, 300, 0);
+line(400, 400, 350, 0);
+line(400, 400,   400, 0);
+//2) Finish the code so it matches the picture
