@@ -1,0 +1,53 @@
+i learned how to draw basic shapes by using javascript
+here some part of what i got:
+There are lots of different options for drawing in Game Lab. 
+
+Rect
+The rect block will plot a square at the x and y coordinates it is given. The x and y coordinates tell it where the top left corner of the square goes in the display area.
+
+Ellipse
+The ellipse block will plot a circle at the x and y coordinates it is given. The x and y coordinates tell it where the center of the circle goes in the display area.
+
+Coordinates in Game Lab
+In order to plot things on the screen in Game Lab, you will need to use x and y coordinates. The x coordinate tells how far something is from the left side of the display area. The y coordinate tells how far something is from the top of the display area.
+
+Fill
+The fill block changes the color that Game Lab uses to color in the shapes you draw. Once you use the fill block, all the new shapes you draw will be filled in with that color, until you use the fill block to change the color again.
+
+example: this code snapshot shows as how can create car image by using those premitives structures
+
+
+		fill("blue");
+		rect(200, 200);
+		rect(250, 200);
+		fill("green");
+		rect(150, 250);
+		rect(200, 250);
+		rect(250, 250);
+		rect(300, 250);
+		fill("red");
+		ellipse(200, 300);
+		ellipse(300, 300);
+as we can see from this code snapshoot before drawing any type of shape on the screen we have to adjust 
+at color our shape will have by using fill properties
+
+and also there is function called nfill() in order to decide that there will not fill color for the shapes
+
+  example:
+  
+       //2) Use the noFill() block to finish the code so it matches the picture.
+	noFill()
+	ellipse(200, 200);
+	ellipse(200, 225);
+	ellipse(178, 212);
+	ellipse(222, 212);
+	ellipse(178, 237);
+	ellipse(222, 237);
+	ellipse(200, 250);
+	ellipse(200, 150);
+	ellipse(200, 175);
+	ellipse(178, 162);
+	ellipse(222, 162);
+	ellipse(178, 187);
+	ellipse(222, 187);
+	ellipse(200, 200);
