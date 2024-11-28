@@ -1,0 +1,8 @@
+
+    Lesson 4 : Shapes and Parameters
+
+Main idea : How can we use parameters to give the computer more specific instructions
+
+# slowly advancing the experiance on the Game Lab
+# Positioning shapes and Configuring (manipulating) the parameters
+# Changing different colors
