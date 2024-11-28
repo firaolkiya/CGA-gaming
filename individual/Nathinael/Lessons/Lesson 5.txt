@@ -1,0 +1,8 @@
+
+        Lesson 5 Variables
+
+Main idea : How can we use variables to store information in our programs
+
+# Using variables as we would on the Programming laguages to store data
+# The syntax of declaring and assigning a Variable
+# Using variables to store the x and y size.
