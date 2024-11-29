@@ -1,0 +1,43 @@
+Lesson 7: Mini-Project - Robot Faces
+Review  Shape Block: Review how to use the shape() block to draw additional shapes that you can use on your robot face.
+
+example:
+fill("red");
+shape(200, 200, 0, 400, 400, 400);
+fill("blue");
+shape(200, 200, 0, 0, 400, 0);
+//2) Finish the code so it matches the picture
+fill("green");
+shape(200, 200, 0, 0, 0, 400);
+fill("yellow");
+shape(200, 200, 400, 0, 400, 400);
+
+*********Create Robot Face************
+
+by Using  5 different shape blocks, 5 variables with random numbers to create a robot face with unique and creative features.
+// Random variables for the robot's features
+var faceWidth = randomNumber(150, 250);
+var faceHeight = randomNumber(150, 250);
+var eyeSize = randomNumber(20, 50);
+var mouthWidth = randomNumber(50, 150);
+var antennaHeight = randomNumber(50, 100);
+// Background
+background("lightgray");
+// Robot face
+fill("brown");
+rect(200 - faceWidth / 2, 200 - faceHeight / 2, faceWidth, faceHeight); // Face
+// Eyes
+fill("black");
+ellipse(200 - faceWidth / 4, 200 - faceHeight / 4, eyeSize, eyeSize); // Left eye
+ellipse(200 + faceWidth / 4, 200 - faceHeight / 4, eyeSize, eyeSize); // Right eye
+// Mouth
+fill("red");
+rect(200 - mouthWidth / 2, 200 + faceHeight / 6, mouthWidth, 20); // Mouth
+// Antenna
+stroke("gray");
+strokeWeight(5);
+line(200, 200 - faceHeight / 2, 200, 200 - faceHeight / 2 - antennaHeight); // Antenna stick
+noStroke();
+fill("blue");
+ellipse(200, 200 - faceHeight / 2 - antennaHeight, 20, 20); // Antenna ball
+
