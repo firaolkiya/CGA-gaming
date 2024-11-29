@@ -1,0 +1,127 @@
+Lesson 6: Random Numbers
+In this  Lesson , the focus is on using random numbers to create dynamic, unpredictable elements in programs, which are especially useful in games and animations. 
+Random numbers allow us to introduce variety, making each run of a program different from the last.
+
+******** Skill building ********
+
+background("tomato");
+//1) Change the code so the ellipse can appear anywhere horizontally on the screen
+fill("orange");
+ellipse(randomNumber(0,400), 380, 50, 50);
+//2) Make the ellipse appear at random y coordinates
+fill("orange");
+ellipse(randomNumber(0, 400), randomNumber(0, 400), 50, 50);
+//3) Make the eyes appear at random sizes
+var eyeSize = randomNumber(10, 50); 
+noStroke();
+background("green");
+// Face
+fill("yellow");
+ellipse(200,200,200,200);
+fill("white");
+// Eyes
+fill("black");
+ellipse(160,170,eyeSize,eyeSize);
+ellipse(240,170,eyeSize,eyeSize);
+// Mouth
+rect(160,240,80,20);
+var petalSize;
+background("green");
+
+//4) Update the first flower's petals to be a random size
+petalSize = randomNumber(20,50);
+// petals
+fill("purple");
+ellipse(75,100,petalSize,petalSize);
+ellipse(125,100,petalSize,petalSize);
+ellipse(100,75,petalSize,petalSize);
+ellipse(100,125,petalSize,petalSize);
+// center
+fill("yellow");
+ellipse(100,100, 50, 50);
+
+//5) Update the second flower's petals to be a random size
+petalSize = randomNumber(50,70);
+// petals
+fill("purple");
+ellipse(275,300,petalSize,petalSize);
+ellipse(325,300,petalSize,petalSize);
+ellipse(300,275,petalSize,petalSize);
+ellipse(300,325,petalSize,petalSize);
+// center
+fill("yellow");
+ellipse(300,300, 50, 50);
+
+***********practice*******
+
+# activities C: Modify the scene
+
+background("lightblue");
+// 1) Randomize the x position of the sun
+var sunX = randomNumber(0, 400); // Random x position for the sun
+fill("yellow");
+ellipse(sunX, 50, 80, 80); // Sun with random x position
+// 2) Randomize the x position of the mountains
+fill("brown");
+regularPolygon(randomNumber(0, 400), 300, 3, 200); // Mountain 1
+regularPolygon(randomNumber(0, 400), 300, 3, 200); // Mountain 2
+regularPolygon(randomNumber(0, 400), 300, 3, 250); // Mountain 3
+regularPolygon(randomNumber(0, 400), 300, 3, 250); // Mountain 4
+regularPolygon(randomNumber(0, 400), 300, 3, 250); // Mountain 5
+// Grass
+fill("lightgreen");
+rect(0, 300, 400, 100);
+
+****************Assessment***************
+
+//1) Add at least three new different colored circles to your rainbow snake.
+//2) Use randomNumber to make the rest of the snake's body move up and down like the first three.
+background("skyBlue");
+fill("red");
+ellipse(100, randomNumber(190,210), 50, 50);
+fill("orange");
+ellipse(140, randomNumber(190,210), 50, 50);
+fill("yellow");
+ellipse(180, randomNumber(190,210), 50, 50);
+fill("green");
+ellipse(220, randomNumber(190,210), 50, 50);
+fill("black");
+ellipse(260, randomNumber(190,210), 50, 50);
+fill("blue");
+ellipse(300, randomNumber(190,210), 50, 50);
+
+*************Challenges**************
+
+Activities A: Random RGB
+function setup() {
+  createCanvas(400, 400);
+  noLoop(); // Prevents the canvas from continuously updating
+  // 1) Update the background to be a random color
+  background(randomNumber(0, 255), randomNumber(0, 255), randomNumber(0, 255));
+  // 2) Update each arc of the rainbow to a random color
+  drawRainbow();
+  // 3) Update the ground to a random color
+  fill(randomNumber(0, 255), randomNumber(0, 255), randomNumber(0, 255)); // Random color for the ground
+  rect(0, 200, 400, 200);
+}
+function drawRainbow() {
+  // Random colors for each arc of the rainbow
+  fill(randomNumber(0, 255), randomNumber(0, 255), randomNumber(0, 255)); // Random color for the outer arc
+  ellipse(200, 200, 400, 400);
+  fill(randomNumber(0, 255), randomNumber(0, 255), randomNumber(0, 255)); // Random color for the second arc
+  ellipse(200, 200, 340, 340);
+  fill(randomNumber(0, 255), randomNumber(0, 255), randomNumber(0, 255)); // Random color for the third arc
+  ellipse(200, 200, 280, 280);
+  fill(randomNumber(0, 255), randomNumber(0, 255), randomNumber(0, 255)); // Random color for the fourth arc
+  ellipse(200, 200, 220, 220);
+  fill(randomNumber(0, 255), randomNumber(0, 255), randomNumber(0, 255)); // Random color for the fifth arc
+  ellipse(200, 200, 160, 160);
+  fill(randomNumber(0, 255), randomNumber(0, 255), randomNumber(0, 255)); // Random color for the sixth arc
+  ellipse(200, 200, 100, 100);
+  fill(randomNumber(0, 255), randomNumber(0, 255), randomNumber(0, 255)); // Random color for the inner arc
+  ellipse(200, 200, 40, 40);
+
+
+
+
+
