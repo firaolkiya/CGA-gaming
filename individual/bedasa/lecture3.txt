@@ -1,0 +1,72 @@
+Lesson 3: Drawing in Game Lab
+In this lesson, i explore the challenges of communicating clear instructions using a Game Lab tool to draw shapes on the Game Lab's grid!
+I understand The Game Lab tool provides various commands and options for drawing shapes on its grid. 
+       # list of the commonly used tools and methods:
+1. Basic Shapes
+    rect(x, y): Draws a rectangle with the specified position and dimensions.
+    ellipse(x, y): Draws an ellipse (oval or circle) centered at (x, y).
+2. Styling Shapes
+    fill(color): Sets the fill color for shapes.
+    background(): sets the color of the canvas or screen in Game Lab.
+    strokeWeight(weight): Sets the thickness of the outline.
+3. Grid Control
+    The Grid Toggle allows you to turn on or off a visible grid for easier alignment of shapes.
+4. Coordinates System
+    (x, y): Represents the horizontal (x) and vertical (y) positions on the grid. The top-left corner is (0, 0), with values increasing as you move right or down.
+
+
+*****answer for skill building problem********
+    
+//1) Change the numbers inside the block, then try running the program again.
+//2) Try to place the rectangle near the bottom right of the screen.
+           rect(300,360);
+// 3) Place two rectangles exactly in the corners of the screen
+            rect(350,350);
+            rect(0,0);
+// 4) Change the color from blue to yellow.
+            fill("yellow");
+            rect(100,100);
+            rect(250, 100);
+// 5) Add a new square to the image
+           rect(100, 250);
+//6) Change the red rectangle's color to green.
+//8) Change the order of the code so the green rectangle appears on top.
+          fill("blue");
+          rect(200, 200);
+          fill("green");
+          rect(175,175);
+//9) Add a new ellipse of a different color.
+          fill("orange");
+          ellipse(250,250);
+          fill("red");
+          ellipse(100,100);
+ ********answer for practice problem******
+       Debugging: Fix the stoplight
+//2) Rearrange the code so the colors are correct.
+rect(175,100);
+rect(175,150);
+rect(175,200);
+fill("black");
+ellipse(200,125);
+fill("red");
+ellipse(200,175);
+fill("green");
+ellipse(200,225);
+fill("black");
+****** answer for assessment problem****
+//) Change the code so it makes the picture in the instructions
+
+      rect(150, 150);
+      fill("orange");
+      ellipse(150,150);
+      ellipse(200,150);
+      ellipse(150,200);
+      ellipse(200,200);
+      fill("purple");
+********answer for challenges*********
+//) Use the strokeWeight() block to finish the code so it matches the picture.
+fill("ivory");
+rect(160, 180);
+point(170, 190);
+point(185, 205);
+point(200, 220);
