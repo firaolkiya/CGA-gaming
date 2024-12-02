@@ -1,0 +1,32 @@
+Lesson 11: Mini-Project - Captioned Scenes
+In this lesson, i apply my knowledge of sprite creation, background design, and text manipulation to create a unique and creative scene of your choice. 
+You will use the problem-solving process to plan and program the scene, incorporating captions that add context or tell a story.
+This project encourages creativity and allows you to combine various elements like backgrounds, sprites, shapes, and text in an engaging way.
+It's an opportunity to practice design, coding, and artistic skills while developing a personalized scene that reflects your ideas and imagination.
+
+****************** My Practice ****************
+
+function draw() {
+  // Set the background color
+  background("lightblue");
+  // Add shapes for the background
+  fill("green");
+  rect(0, 350, 400, 50); // Grass (rectangle at the bottom)
+  fill("yellow");
+  ellipse(50, 50, 80, 80); // Sun (circle in the top-left corner)
+  fill("white");
+  ellipse(200, 100, 60, 40); // Cloud 1 (oval)
+  ellipse(230, 100, 70, 50); // Cloud 2 (oval)
+  fill("brown");
+  rect(300, 300, 30, 50); // Tree trunk
+  fill("green");
+  ellipse(315, 280, 70, 70); // Tree foliage
+  // Add text
+  fill("blue"); // Set text color
+  textSize(30); // Set text size
+  text("Welcome to Nature's Haven!", 40, 40); // First line of text
+  fill("red"); // Change text color
+  textSize(20); // Change text size
+  text("Relax and enjoy the view.", 100, 80); // Second line of text
+}
+
