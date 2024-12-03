@@ -1,0 +1,72 @@
+                   Using Sprites 
+
+
+Key Concepts
+What is a Sprite?
+
+A sprite is a graphic object that can move around the screen, interact with other sprites, and have animations or properties.
+Sprites help manage different pieces of information (like position, animation, or visibility) in a program.
+Why Use Sprites?
+
+To organize and control complex programs with multiple objects.
+To create interactive and visually interesting programs, such as games and animations.
+Key Blocks for Sprites
+createSprite(x, y)
+
+Creates a new sprite at the specified x and y position.
+Example:
+javascript
+
+var fruit = createSprite(200, 100);
+setAnimation(sprite, "animationName")
+
+Sets the animation or image for a sprite.
+Example:
+javascript
+
+fruit.setAnimation("apple");
+drawSprites()
+
+Draws all the sprites on the screen.
+Must be placed inside the draw() function to continuously display sprites.
+Example:
+javascript
+
+drawSprites();
+Example 1: Predicting Sprite Behavior
+javascript
+
+var fruit = createSprite(100, 150);
+fruit.setAnimation("apple");
+
+var vegetable = createSprite(300, 150);
+vegetable.setAnimation("carrot");
+
+drawSprites();
+Prediction:
+
+Two sprites will appear on the screen:
+An apple sprite at position (100, 150).
+A carrot sprite at position (300, 150).
+Questions to Consider:
+
+What happens if we change drawSprites() to appear at the top of the code?
+The screen might not display any updates since drawSprites() should follow the sprite setup.
+What happens if we use the same position for both sprites?
+The sprites will overlap.
+Example 2: Stacking Sprites Vertically
+Task: Adjust positions to stack sprites vertically.
+
+javascript
+
+var fruit = createSprite(200, 100);
+fruit.setAnimation("apple");
+
+var vegetable = createSprite(200, 200);
+vegetable.setAnimation("carrot");
+
+drawSprites();
+Result:
+
+The apple sprite will appear at (200, 100).
+The carrot sprite will appear directly below it at (200, 200).
