@@ -1,0 +1,7 @@
+In Lesson 4, I learned about shapes and parameters in Game Lab, focusing on how to customize rectangles and ellipses beyond their default settings. The rect block,
+which initially creates a square with sides of length 50, has two required inputs for x and y coordinates to define the position of the square's top-left corner. 
+However, it also includes two optional parameters for width and height, which can be revealed or hidden using the arrow on the right-hand side of the block. 
+This flexibility allows for precise control over the size and dimensions of rectangles.
+Similarly, the ellipse block has optional width and height parameters in addition to its required x and y inputs, which specify the center of the ellipse. 
+These optional parameters can also be toggled using the arrow on the block, making it easy to create circles or ellipses with customized dimensions. 
+This lesson enhanced my understanding of using parameters to create shapes with more versatility and control.

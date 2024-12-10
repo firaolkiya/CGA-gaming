@@ -1,0 +1,57 @@
+                                 Using Random Numbers
+
+
+Key Concepts
+Random Numbers:
+
+The randomNumber(min, max) function generates a random number between min and max (inclusive).
+Using random numbers adds unpredictability to your program, making it behave differently each time it is run.
+Why Use Random Numbers?
+
+To create dynamic behaviors and visuals.
+To make games, animations, or designs less predictable and more engaging.
+Using randomNumber() in Graphics:
+
+When used in drawing functions (e.g., ellipse(), rect()), it can randomize positions, sizes, or even colors of shapes.
+Example 1: Moving Ellipse
+Task: Make an ellipse appear anywhere horizontally on the screen.
+
+javascript
+
+background("tomato");
+fill("orange");
+
+// Randomize the horizontal position of the ellipse
+ellipse(randomNumber(0, 400), 200, 50, 50);
+The ellipse’s x-coordinate is random between 0 and 400.
+Every time the program runs, the ellipse appears in a new horizontal position.
+Example 2: Rainbow Snake
+Task: Create a snake that wiggles and changes its size dynamically.
+
+javascript
+
+background("skyBlue");
+
+// Red circle (head)
+fill("red");
+ellipse(100, randomNumber(190, 210), randomNumber(40, 60), randomNumber(40, 60));
+
+// Orange circle (body segment 1)
+fill("orange");
+ellipse(140, randomNumber(190, 210), randomNumber(40, 60), randomNumber(40, 60));
+
+// Yellow circle (body segment 2)
+fill("yellow");
+ellipse(180, randomNumber(190, 210), randomNumber(40, 60), randomNumber(40, 60));
+
+// Green circle (body segment 3)
+fill("green");
+ellipse(220, randomNumber(190, 210), randomNumber(40, 60), randomNumber(40, 60));
+
+// Blue circle (tail)
+fill("blue");
+ellipse(260, randomNumber(190, 210), randomNumber(40, 60), randomNumber(40, 60));
+Random Vertical Position:
+Each circle’s y-coordinate is randomized within a range (190 to 210) to create a wiggling effect.
+Random Size:
+The width and height of each circle are randomized (e.g., between 40 and 60) to make the snake segments vary in size.

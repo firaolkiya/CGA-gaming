@@ -1,1 +1,33 @@
+Lesson 2 - Plotting Shapes
+Key Concepts
+Understanding the Game Lab Grid:
 
+The grid is a coordinate system where you can draw shapes.
+The origin (0,0) is located at the top-left corner of the screen.
+The x-axis increases as you move right, and the y-axis increases as you move down.
+Drawing Shapes:
+
+Shapes are drawn using specific commands in Game Lab.
+Common commands include:
+rect(x, y, width, height) for rectangles.
+ellipse(x, y, width, height) for circles and ovals.
+line(x1, y1, x2, y2) for straight lines.
+point(x, y) for single points.
+Parameters:
+
+Each shape command takes parameters that specify its position, size, and sometimes appearance (e.g., color).
+Example:
+rect(50, 100, 200, 150) draws a rectangle starting at (50, 100) with a width of 200 and a height of 150.
+Order of Drawing:
+
+Shapes are drawn in the order of the commands. Later commands can overlap earlier ones.
+Steps to Plot a Shape:
+Choose the type of shape you want to draw.
+Determine the x and y coordinates for its starting position.
+Decide the dimensions (width and height) or other parameters required.
+Write the command in the Game Lab using the appropriate syntax.
+Challenges in Communicating Instructions:
+Clear communication is essential for accurately plotting shapes:
+Ensure all parameters (x, y, width, height) are specified.
+Describe the shapes in the correct order for layering.
+Use a common reference point (e.g., the origin of the grid).

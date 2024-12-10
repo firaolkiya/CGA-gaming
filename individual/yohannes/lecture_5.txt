@@ -1,1 +1,79 @@
 
+Lesson 5 - Variables
+Key Concepts
+What is a Variable?
+
+A variable is a label for a piece of information that can be stored and used in a program.
+Variables allow you to save values like numbers, text, or even shapes' positions and reuse or change them as needed.
+Why Use Variables?
+
+Reusability: You can use the same variable in multiple places.
+Flexibility: Changing the value of a variable updates all the places it’s used.
+Simplified Code: Makes the code easier to read, understand, and debug.
+How to Declare Variables:
+
+Declare and Assign:
+javascript
+Copy code
+var x = 100; // Declares a variable 'x' and assigns it the value 100
+Declare Only:
+javascript
+Copy code
+var x; // Declares a variable 'x' without assigning a value
+You can assign a value to it later:
+javascript
+Copy code
+x = 50;
+Using Variables:
+
+Variables can be used as parameters in commands.
+Example:
+javascript
+Copy code
+var centerX = 200;
+var centerY = 150;
+var radius = 50;
+ellipse(centerX, centerY, radius * 2, radius * 2);
+Levels Overview
+Prediction (Level 1):
+
+Predict what a program will do when variables are used.
+Predict (Level 2):
+
+Observe how changing a variable affects the output.
+Skill Building (Levels 3-5):
+
+Learn to declare variables, assign values, and use them in drawing shapes.
+Practice (Level 6):
+
+Apply variables to draw more complex patterns or create interactive designs.
+Assessment (Level 7):
+
+Demonstrate your understanding by completing a task with variable use.
+Challenges (Level 8):
+
+Explore creative ways to use variables, such as for animations or dynamic designs.
+Practical Example
+Draw a dynamic face where the eyes and mouth positions can be adjusted using variables:
+
+javascript
+Copy code
+// Variables for face position and size
+var faceX = 200;
+var faceY = 200;
+var faceSize = 150;
+
+// Variables for eye positions
+var eyeOffsetX = 40;
+var eyeOffsetY = 30;
+var eyeSize = 20;
+
+// Draw face
+ellipse(faceX, faceY, faceSize, faceSize);
+
+// Draw eyes
+ellipse(faceX - eyeOffsetX, faceY - eyeOffsetY, eyeSize, eyeSize); // Left eye
+ellipse(faceX + eyeOffsetX, faceY - eyeOffsetY, eyeSize, eyeSize); // Right eye
+
+// Draw mouth
+rect(faceX - 30, faceY + 20, 60, 10);

@@ -16,5 +16,5 @@ Key Concepts to Explore:
         Learn how to use the "Run" button and grid to visualize your designs.
 
     # Challenges You May Encounter:
-        Translating visual ideas into step-by-step commands.
+
         Understanding how the tool interprets your instructions, including sequence and syntax.

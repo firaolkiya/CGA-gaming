@@ -1,1 +1,79 @@
 
+Lesson 4 - Shapes and Parameters
+Key Concepts
+Using Parameters:
+
+Parameters are inputs you provide to a command to specify how it should behave.
+In drawing shapes, parameters define characteristics like position, size, and color.
+Parameters allow customization, enabling precise control over what is drawn on the screen.
+Commands Introduced:
+
+background(color)
+
+Sets the background color of the canvas.
+Example: background("lightblue"); creates a light blue background.
+ellipse(x, y, w, h)
+
+Draws a circle or oval.
+Parameters:
+x, y: The coordinates of the center.
+w, h: The width and height.
+Example: ellipse(200, 150, 100, 50); draws an oval at (200, 150) with a width of 100 and height of 50.
+rect(x, y, w, h)
+
+Draws a rectangle.
+Parameters:
+x, y: The coordinates of the top-left corner.
+w, h: The width and height.
+Example: rect(100, 100, 200, 100); draws a rectangle starting at (100, 100) with a width of 200 and height of 100.
+Benefits of Parameters:
+
+Flexibility: Change a shape's position, size, or color easily by modifying parameters.
+Reusability: Use the same command with different parameters to create diverse shapes.
+Levels Overview
+Predict (Level 1):
+
+Analyze code and predict what will appear on the screen before running it.
+Skill Building (Levels 2-6):
+
+Practice using parameters to control shape properties like size, position, and color.
+Practice (Level 7):
+
+Combine commands and parameters to draw more complex visuals.
+Assessment (Level 8):
+
+Test your understanding by solving a task that involves using parameters effectively.
+Challenges (Level 9):
+
+Push creativity by creating designs that require thoughtful use of parameters.
+Practical Example
+To draw a scene with a sun, ground, and a house:
+
+javascript
+Copy code
+// Background
+background("skyblue");
+
+// Ground
+fill("green");
+rect(0, 300, 400, 100);
+
+// Sun
+fill("yellow");
+ellipse(350, 50, 80, 80);
+
+// House
+fill("red");
+rect(100, 200, 150, 100);
+
+// Roof
+fill("brown");
+triangle(100, 200, 250, 200, 175, 150);
+Key Points When Using Parameters:
+Ensure x and y coordinates align with your design layout.
+Adjust width and height carefully for proportionate shapes.
+Experiment with colors for visual appeal.
+Learning Reflection
+Parameters are powerful tools for customization and precision in drawing.
+They allow you to create dynamic and complex visuals with just a few commands.
+Debugging and understanding the effect of each parameter is crucial for mastering shape manipulation.

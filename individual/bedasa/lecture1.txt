@@ -1,18 +1,17 @@
-Lesson 1: Programming for a Purpose
-Here’s a generalized  my idea based on the provided questions and context:
-Assessing Prior Knowledge:
+Interactive Animations & Games Rapid Survey!
+**Here’s a generalized idea based on the provided questions and context:
+->Assessing Prior Knowledge:
 
-    Understand the audience’s familiarity with computer science and interactive animations/games. 
-    This helps in tailoring lessons and projects to their experience levels.
+    Understand the audience’s familiarity with computer science and interactive animations/games. This helps in tailoring lessons and projects to their experience levels.
 
-Engagement with Computer Science:
+->Engagement with Computer Science:
 
     Gauge how much users enjoy computer science to adjust the teaching approach, emphasizing fun and real-world applications for those less enthusiastic.
 
-Self-Efficacy in Learning:
+->Self-Efficacy in Learning:
 
     Use their confidence in learning computer science to determine how much support or independent learning opportunities to provide.
 
-Future Interest:
+->Future Interest:
 
     Leverage their interest in taking more computer science classes by offering pathways, additional resources, or examples of career opportunities.
