@@ -1,0 +1,7 @@
+
+        Lesson 3 : Drawing in Game Lab
+
+Main idea : How can we communicate to a computer how to draw shapes on the screen
+
+# Getting used to the Game Lab and positioning some shapes
+# Debugging and correcting the code in given in the Game Lab

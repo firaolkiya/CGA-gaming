@@ -1,0 +1,63 @@
+                     Sprite Properties
+
+
+Key Concepts
+Sprite Properties:
+
+Sprites have properties like x, y, width, height, rotation, and more. These properties define their appearance and behavior on the screen.
+Example properties:
+Position: sprite.x, sprite.y
+Size: sprite.width, sprite.height
+Rotation: sprite.rotation
+Predicting Sprite Behavior:
+
+Analyze the code to predict where sprites will appear or how they will look.
+Understand the order of operations and how properties like position and animation affect the sprite.
+Example 1: Predicting Bee Sprite Location
+javascript
+var bee = createSprite(200, 200);
+bee.setAnimation("bee");
+drawSprites();
+Question: Where will the bee appear?
+
+Answer: A. A bee sprite in the middle of the screen
+The createSprite(200, 200) positions the bee at (200, 200), the center of a 400x400 canvas.
+"What If..." Questions:
+
+What happens if you change drawSprites() to appear before setAnimation()?
+The sprite will still appear, but it might not display the correct animation.
+What if the sprite's x or y values are negative?
+The sprite might not appear on the canvas.
+Example 2: Kite with Custom Animation
+javascript
+// Create kite sprite and set animation
+var kite = createSprite(300, 50);
+kite.setAnimation("kite");
+
+// Draw background
+background("skyblue");
+
+// Draw grass
+fill("green");
+noStroke();
+rect(0, 300, 400, 100);
+
+// Draw string
+stroke("black");
+strokeWeight(5);
+line(150, 300, 300, 50);
+
+// Draw sprite
+drawSprites();
+Explanation:
+
+Custom Animation:
+
+The kite sprite is created at (300, 50) with the animation "kite".
+To upload and use your own animation:
+Use the Animation tab to upload an image and rename it (e.g., "kite").
+Use setAnimation("kite") to apply the animation.
+Background and Details:
+
+The sky is drawn using background("skyblue").
+Grass and the kite's string are added using shapes and lines.

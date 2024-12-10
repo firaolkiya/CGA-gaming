@@ -1,0 +1,12 @@
+    
+        Lesson 1 : Programming for a pourpose
+
+Main idea :  How can we design animations and games based on the needs of a user
+
+=> Activites and Lessons covered in the resource
+
+# 1 Word search : it was mainly searching for important wordes like Conditional, Boolean, Function, Parameter, and Variable. 
+# 2 Animation and Game design template : a template for designing
+# 3 Animation and Game design for users : designing a animations and game designs based on the user requirements
+# 4 Problem Solving and Design : how to approch problems in the design process and basically the basics of design.
+# 5 The Problem solving process
