@@ -17,3 +17,55 @@ function draw(){
   fill("orange");
   ellipse(randomNumber(0,400), randomNumber(0,400));
 }
+
+
+
+var pencil = createSprite(100,200);
+pencil.setAnimation("pencil");
+
+var brush = createSprite(300,200);
+brush.setAnimation("brush");
+
+function draw(){
+  background("white");
+  pencil.x = randomNumber(100,110);
+  //2) Edit the code in this program to make the second sprite shake like the first one.
+  brush.x = randomNumber(300,310);
+  drawSprites();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
