@@ -1,0 +1,100 @@
+Lesson 9: Sprite Properties
+In this lesson, I  explore how to use sprite properties to modify their appearance and behavior in your programs. 
+Sprite properties like scale, rotation, alpha, and visibility allow you to create dynamic and visually engaging effects.
+By adjusting these properties, you can resize sprites, rotate them, change their transparency, and control their visibility.
+Understanding these properties helps in making your animations and interactions more interactive and creative. 
+Experimenting with sprite properties is a key step in mastering game and animation development.
+
+**************** Skill Building***************
+
+//1) Run the program to see where the sprites appear.
+var palette = createSprite();
+palette.setAnimation("paint_palette");
+var brush = createSprite();
+brush.setAnimation("paint_brush");
+palette.x = 100;
+palette.y = 300;
+//2) Change the location of the paint brush to touch the paint palette.
+brush.x= 100;
+brush.y = 300;
+drawSprites();
+//3) Run the program to see how what is different about the first two notes.
+//4) Use the same blocks on the last two notes to make them look different, too.
+background("skyblue");
+var drums = createSprite(200,250);
+drums.setAnimation("drum_set");
+var note1 = createSprite(50,50);
+note1.setAnimation("eighth_note");
+note1.scale = 0.2;
+note1.rotation = 20;
+var note2 = createSprite(150,50);
+note2.setAnimation("eighth_note");
+note2.scale = 0.5;
+note2.rotation = -30;
+var note3 = createSprite(250,50);
+note3.setAnimation("eighth_note");
+var note4 = createSprite(350,50);
+note4.setAnimation("eighth_note");
+drawSprites();
+
+***************** Practice *************************
+
+activities B: Rotation Property
+/1) Make all of the cars look like they are traveling correctly down the roads
+background("darkseagreen");
+shape(150,0,250,0,250,130,400,-20,400,-15,400,121,250,271,250,400,150,400,150,250,0,250,0,150,150,150);
+stroke("yellow");
+line(200, 0, 200, 150);
+line(0, 200, 150, 200);
+line(200, 286, 200, 400);
+line(250, 200, 400, 55);
+var carTop = createSprite(225, 75);
+carTop.setAnimation("car_green");
+carTop.scale = 0.4;
+var carLeft = createSprite(100, 225);
+carLeft.setAnimation("car_red");
+carLeft.rotation = 90;
+carLeft.scale = 0.4;
+var carBottom = createSprite(175, 350);
+carBottom.setAnimation("car_blue");
+carBottom.rotation = 180;
+carBottom.scale = 0.4;
+var carRight = createSprite(300, 185);
+carRight.setAnimation("car_yellow");
+carRight.rotation = 45;
+carRight.scale = 0.4;
+drawSprites();
+
+************************ Assessment **********************
+
+//1) Run the program to see how big the food is.
+//2) Use sprite properties to scale all of the food sprites down so they fit on the plate.
+background("burlywood");
+fill("white");
+ellipse(200,200, 350);
+var fries = createSprite(250,140);
+fries.scale = 0.6;
+fries.setAnimation("fries");
+var burger = createSprite(110,200);
+burger.scale = 0.6;
+burger.setAnimation("burger");
+var dessert = createSprite(240,270);
+dessert.scale = 0.6;
+dessert.setAnimation("watermelon");
+drawSprites();
+
+********************** Challenges ************************
+
+activities C: New Block: Alpha
+//1) Using either the sprite already created for you or with any other sprites of your choosing, 
+//play around with the transparency and 
+//see how it works and how it changes on different sprites!
+var house = createSprite(200, 200);
+house.setAnimation("front_of_house_1");
+var ghost = createSprite(200, 200);
+ghost.setAnimation("ghost_1");
+ghost.scale = 2;
+// Setting alpha for transparency
+house.alpha = 0.7; // The house is 70% visible (partially transparent)
+ghost.alpha = 0.5; // The ghost is 50% visible (more transparent)
+drawSprites();
