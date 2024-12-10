@@ -1,0 +1,8 @@
+The Draw Loop
+
+
+To create animations, you'll need a way to keep drawing frame after frame. In Game Lab, this is done using the draw function. The way programs run in Game Lab is
+
+Run every piece of code outside draw
+Keep running the code inside draw over and over again, 30 times a second
+Each time the code inside draw runs is like a new page in a flipbook. By making small changes to what's drawn each time, you can use Game Lab to create animations.
