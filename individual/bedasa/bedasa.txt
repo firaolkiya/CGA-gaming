@@ -1,0 +1,7 @@
+  Department:Software Engineering 
+  COURSE:Computer Gaming and Animation
+             NAME:BEDASA MEGERSA
+             ID: UGR/25480/14
+                  SECTION:1
+                  GROUP:1
+

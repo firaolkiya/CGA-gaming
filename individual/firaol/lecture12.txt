@@ -1,0 +1,71 @@
+To create animations, you'll need a way to keep drawing frame after frame. In Game Lab, this is done using the draw function. The way programs run in Game Lab is
+
+draw function always call it self
+
+fill("SeaGreen");
+
+function draw(){
+  ellipse(randomNumber(0,400), randomNumber(0,400));
+}
+
+noStroke();
+
+function draw(){
+  fill("green");
+  ellipse(randomNumber(0,400), randomNumber(0,400));
+  
+  fill("orange");
+  ellipse(randomNumber(0,400), randomNumber(0,400));
+}
+
+
+
+var pencil = createSprite(100,200);
+pencil.setAnimation("pencil");
+
+var brush = createSprite(300,200);
+brush.setAnimation("brush");
+
+function draw(){
+  background("white");
+  pencil.x = randomNumber(100,110);
+  //2) Edit the code in this program to make the second sprite shake like the first one.
+  brush.x = randomNumber(300,310);
+  drawSprites();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,60 @@
+Lesson 12: The Draw Loop with Random Numbers
+In this lesson, i learn how to use the draw loop in combination with random numbers to create simple animations. 
+The draw loop is a function that runs continuously, allowing your program to update the scene multiple times per second. 
+This makes it ideal for creating animations, as it keeps refreshing and redrawing the content on the screen.
+
+****************** Skill Building ********************
+
+//1) Add code to this program so that your drawing has orange circles being drawn, too.
+noStroke();
+function draw(){
+  fill("green");
+  ellipse(randomNumber(0,400), randomNumber(0,400));
+  fill("yellow");
+  ellipse(randomNumber(0,400), randomNumber(0,400));
+}
+var sprite = createSprite(100, 200);
+sprite.setAnimation("greenAlien");
+function draw() {
+  background("orange"); // Sets the background color to orange on each frame
+  sprite.rotation = randomNumber(-10, 10); // Random rotation between -10 and 10 degrees
+  drawSprites(); // Draws the sprite on the canvas
+}
+var pencil = createSprite(100, 200);
+pencil.setAnimation("pencil");
+var brush = createSprite(300, 200);
+brush.setAnimation("brush");
+function draw() {
+  background("white");
+  // Pencil shakes horizontally
+  pencil.x = randomNumber(100, 110);
+  // Make the brush shake similarly
+  brush.x = randomNumber(290, 310); // Shake brush between 290 and 310
+  drawSprites();
+}
+
+****************** Practice ******************
+
+Activities C: Updating Rotation
+// Setting Frame Rate
+World.frameRate = 10;
+// Creating Alien Sprites
+var greenAlien = createSprite(100, 200);
+greenAlien.setAnimation("greenAlien");
+var pinkAlien = createSprite(300, 200);
+pinkAlien.setAnimation("pinkAlien");
+// Setting Up Drawing
+noStroke();
+fill("white");
+function draw() {
+  background("black");
+  ellipse(randomNumber(0, 400), randomNumber(0, 400), 5, 5); // Draw random dots
+  // Green alien shakes by randomizing its rotation
+  greenAlien.rotation = randomNumber(-5, 5);
+  // Make the pink alien shake like the green alien by randomizing its rotation
+  pinkAlien.rotation = randomNumber(-5, 5);
+  drawSprites();
+}
+
+
+
