@@ -1,0 +1,70 @@
+lecture 6
+the first topics in this lesson about using random number
+in javascript 
+ x  = randomNumber(start,end)
+ ellipse(randomNumber(200,400),200,50,50)
+
+- this code makes the ellipse appears anywhere in screen
+ background("tomato");
+
+//1) Make the ellipse appear at random y coordinates
+fill("orange");
+ellipse(randomNumber(0,400), randomNumber(0,400), 50, 50);
+
+//1) Make the eyes appear at random sizes
+var eyeSize = randomNumber(10,30);
+
+noStroke();
+background("green");
+
+// Face
+fill("yellow");
+ellipse(200,200,200,200);
+
+// Eyes
+fill("black");
+ellipse(160,170,eyeSize,eyeSize);
+ellipse(240,170,eyeSize,eyeSize);
+
+// Mouth
+fill("white");
+rect(160,240,80,20);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

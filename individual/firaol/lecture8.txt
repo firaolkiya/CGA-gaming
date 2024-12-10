@@ -1,0 +1,61 @@
+in this lecture we seeing how to use sprites
+sprites are just like one object that created from one or more primitaves shapes
+
+var fruit = createSprite(100, 200);
+//1) Update the fruit animation
+fruit.setAnimation("apple");
+fruit.setAnimation("broccoli");
+fruit.setAnimation("corn");
+
+var vegetable = createSprite(300, 200);
+//2) Update the vegetable animation
+vegetable.setAnimation("carrot");
+
+drawSprites();
+
+// 1) Go to the animation tab and add at least two animations to your project.
+
+
+// Create character sprite and set animation and location
+var character = createSprite(225, 300);
+var character2 = createSprite(75, 175);
+character.setAnimation("building_01_1")
+character2.setAnimation("beachhouse_03_1")
+
+// sprite.setAnimation("animation_1");Draw background
+background("black");
+
+// Draw planets
+noStroke();
+fill("DarkGrey");
+ellipse(50, 300);
+fill("LightCoral");
+ellipse(150, 100);
+fill("Thistle");
+ellipse(250, 50);
+fill("Aquamarine");
+ellipse(300, 200);
+
+//Draw stars
+fill("white");
+ellipse(randomNumber(10, 390), randomNumber(10, 390), 5, 5);
+ellipse(randomNumber(10, 390), randomNumber(10, 390), 5, 5);
+ellipse(randomNumber(10, 390), randomNumber(10, 390), 5, 5);
+ellipse(randomNumber(10, 390), randomNumber(10, 390), 5, 5);
+ellipse(randomNumber(10, 390), randomNumber(10, 390), 5, 5);
+ellipse(randomNumber(10, 390), randomNumber(10, 390), 5, 5);
+ellipse(randomNumber(10, 390), randomNumber(10, 390), 5, 5);
+ellipse(randomNumber(10, 390), randomNumber(10, 390), 5, 5);
+ellipse(randomNumber(10, 390), randomNumber(10, 390), 5, 5);
+ellipse(randomNumber(10, 390), randomNumber(10, 390), 5, 5);
+
+// Draw sprite
+drawSprites();
+
+// 2)In the code tab, create at least two sprites in two different places on the screen.
+background("sky_blue");
+// 3) Assign each sprite a different animation.
+// 4) Draw your sprites to the screen.
+var sprite = createSprite(200, 200);
+sprite.setAnimation("animalhead_bear_1");
+drawSprites();

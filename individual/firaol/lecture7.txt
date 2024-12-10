@@ -1,0 +1,30 @@
+
+head_width = 100;
+head_height = 120;
+hand_color = rgb(randomNumber(0,255),randomNumber(0,255),randomNumber(0,255))
+eye_size = randomNumber(10,30)
+fill(rgb(randomNumber(200,255),randomNumber(200,255),randomNumber(200,255)));
+ellipse(200,100,head_width,head_height);
+
+
+fill(hand_color);
+
+
+rect(150,162,100,200);
+
+// draw eye
+fill(rgb(0, 0, 0))
+
+ellipse(170,100,eye_size,eye_size);
+ellipse(220,100,eye_size,eye_size);
+
+noFill();
+stroke(hand_color);
+// draw hand
+strokeWeight(10);
+arc(250,250,50,150,-90,90);
+
+arc(150,250,50,150,0,-90);
+
+
+
