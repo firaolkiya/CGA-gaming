@@ -1,1 +1,136 @@
+Lesson 16: Keyboard Input
+In this lesson, i learn about the keyDown() block, which enables your program to respond to keyboard input from users.
+By detecting when specific keys are pressed, you can create interactive features like controlling movement, triggering actions, or navigating through a program. 
+This adds an engaging layer of interactivity to your projects.
+
+*********Skill Building*************
+
+--------------problem2-------------
+This program uses the keyDown() block to detect whether a specific keys are being pressed down.
+//1) Run the code and try pressing the "p" and "h" keys.
+var sprite = createSprite(200, 200);
+sprite.setAnimation("giraffe");
+function draw() {
+  background("white");
+  //2) Look inside the first two conditional statements to see how the code works.
+  if(keyDown("h")) {
+     sprite.setAnimation("hippo");
+  }
+  if(keyDown("p")) {
+     sprite.setAnimation("pig");
+  }
+  if(keyDown("r")) {
+      //3) Add code to change the sprite to a different animal when the "r" key is pressed.
+      sprite.setAnimation("rabbit");
+  }
+  drawSprites();
+}
+-----------------problem3--------------
+You can change your sprite's position based on key presses in the same way you changed its animations.
+var bug = createSprite(200, 200);
+bug.setAnimation("ladybug");
+function draw() {
+  //Draw Background
+  background("white");
+  //1) Add a conditional statement to check if the right arrow key has been pressed down.
+   if (keyDown("right")) {
+     //2) Add code to move the sprite right if the right arrow is down.
+    // Move the sprite right by increasing its x position
+    bug.x = bug.x + 3;
+  }
+  //Draw Animations
+  drawSprites();
+}
+--------------------problem4-----------------
+Let's make the gears spin only if the space key is being held down.
+var blueGear = createSprite(100, 220);
+blueGear.setAnimation("blue_gear");
+var greenGear = createSprite(183, 298);
+greenGear.setAnimation("green_gear");
+var redGear = createSprite(185, 145);
+redGear.setAnimation("red_gear");
+function draw() {
+  background("white");
+  //1) Add code that will check if the space key is being pressed down.
+  //2) Adjust the program so that the gears only rotate when the space key is pressed down.
+if(keyDown("space")){
+  blueGear.rotation = blueGear.rotation - 1;
+  greenGear.rotation = greenGear.rotation + 1;
+  redGear.rotation = redGear.rotation + 1;
+}
+
+  drawSprites();
+}
+
+***************Practice**************
+This turtle program breaks every time it tries to move to the left.
+var turtle = createSprite(200,200);
+turtle.setAnimation("turtle");
+turtle.scale = 0.5;
+function draw() {
+  background("navy");
+  if (keyDown("up")) {
+    turtle.y = turtle.y - 3;
+  }
+  if (keyDown("down")) {
+    turtle.y = turtle.y + 3;
+  }
+  if (keyDown("left")) {
+    turtle.x = turtle.x - 3;
+  }
+  if (keyDown("right")) {
+    turtle.x = turtle.x + 3;
+  }
+  drawSprites();
+}
+
+**********Assessment****************
+
+You can use if () statements with the keyDown() to make a simple game that moves a sprite around the screen.
+var backdrop = createSprite(200, 200);
+backdrop.setAnimation("rainbow");
+var flyer = createSprite(200, 200);
+flyer.setAnimation("wing_bot");
+function draw() {
+  background("white");
+  // Move the sprite left when the left arrow is pressed
+  if (keyDown("left")) {
+    flyer.x = flyer.x - 3;
+  }
+  // Move the sprite right when the right arrow is pressed
+  if (keyDown("right")) {
+    flyer.x = flyer.x + 3;
+  }
+  // Move the sprite up when the up arrow is pressed
+  if (keyDown("up")) {
+    flyer.y = flyer.y - 3;
+  }
+  // Move the sprite down when the down arrow is pressed
+  if (keyDown("down")) {
+    flyer.y = flyer.y + 3;
+  }
+  drawSprites();
+}
+***************Challenges**************
+
+Activities A : KeyWentDown:click Counter
+var clicks = 0;
+var spacePressed = false; // Track whether the space key is currently pressed
+function draw() {
+  // Check if the space key is pressed and wasn't pressed before
+  if (keyDown("space") && !spacePressed) {
+    clicks = clicks + 1;
+    spacePressed = true; // Update state to indicate the space key is pressed
+  }
+  // Reset the spacePressed state when the space key is released
+  if (!keyDown("space")) {
+    spacePressed = false;
+  }
+  background("white");
+  textSize(50);
+  text(clicks, 165, 175, 70, 50);
+}
+
+
+
 
