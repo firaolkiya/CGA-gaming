@@ -1,0 +1,86 @@
+Lesson 13: Sprite Movement
+This lesson explores using the counter pattern to control sprite movement in different directions, including vertical, horizontal, and diagonal movement. The goal is to animate sprites smoothly by incrementing or decrementing their x and y properties in the draw loop.
+
+Part 1: Jet Moving Up and Plane Moving Right
+Objective:
+Make the jet move upward and the plane move to the right using the counter pattern.
+
+Code:
+javascript
+var jet = createSprite(350, 350);
+jet.setAnimation("jet");
+
+var plane = createSprite(50, 200);
+plane.setAnimation("plane");
+
+function draw() {
+  background("skyblue");
+  
+  // Jet moves up
+  jet.y = jet.y - 3; // Subtract from y to move up
+  
+  // Plane moves right
+  plane.x = plane.x + 3; // Add to x to move right
+  
+  drawSprites();
+}
+Part 2: Fly Moving Left
+Objective:
+Make the fly move to the left using the counter pattern.
+
+Code:
+javascript
+var fly = createSprite(350, 200);
+fly.setAnimation("fly");
+
+function draw() {
+  background("skyblue");
+  
+  // Fly moves left
+  fly.x = fly.x - 2; // Subtract from x to move left
+  
+  drawSprites();
+}
+Part 3: Mouse Moving Diagonally
+Objective:
+Make the mouse move diagonally by updating both its x and y properties in the draw loop.
+
+Steps:
+
+Observe how the mouse.y property makes the mouse move downward.
+Add a line to increment the mouse.x property to move it diagonally.
+Use watchers to monitor changes in mouse.x and mouse.y.
+(Challenge) Rotate the mouse to face the direction it's moving.
+Code:
+javascript
+var mouse = createSprite(50, 50);
+mouse.setAnimation("mouse");
+mouse.scale = 0.5;
+
+function draw() {
+  background("lightgreen");
+  
+  // Mouse moves down
+  mouse.y = mouse.y + 2; 
+  
+  // Mouse moves diagonally
+  mouse.x = mouse.x + 2; // Add to x to move diagonally
+  
+  // Challenge: Rotate the mouse to face its movement direction
+  mouse.rotation = 45; // Angle for diagonal movement
+  
+  drawSprites();
+}
+Key Concepts:
+Counter Pattern:
+Adding or subtracting small values from a sprite’s x or y property repeatedly over time creates smooth movement.
+
+Add to x for rightward movement.
+Subtract from x for leftward movement.
+Add to y for downward movement.
+Subtract from y for upward movement.
+Diagonal Movement:
+Adjust both x and y properties simultaneously to create diagonal motion.
+
+Rotation Property:
+The rotation property adjusts the sprite's orientation to face a specific angle, enhancing visual realism.

@@ -1,0 +1,57 @@
+
+Lesson 11: Sprite Scenes
+Overview
+This lesson combines everything you've learned so far to create a complete scene using sprites. You’ll design a background, add animated sprites,
+and use sprite properties to customize your characters and objects. By the end, you’ll have a fun, interactive scene!
+
+Key Concepts
+Background Creation
+
+Use the background() command to set a base color or texture.
+Add simple shapes like rectangles or ellipses to enrich your scene.
+Sprites and Animations
+
+Create sprites using the createSprite() command.
+Assign animations to sprites with setAnimation() from the Animation Tab.
+Customize sprite properties like scale, rotation, or tint to give them unique appearances.
+Scene Composition
+
+Combine backgrounds, shapes, and sprites to form a cohesive scene.
+Layer elements appropriately to ensure everything appears in the correct order.
+Introduced Code
+Creating and customizing sprites:
+javascript
+var sprite = createSprite(x, y);
+sprite.setAnimation("animation_name");
+sprite.property = value;
+drawSprites();
+Common sprite properties:
+scale to resize the sprite.
+rotation to rotate the sprite.
+tint to add color effects.
+Example Code
+Here’s a sample scene demonstrating background, sprites, and properties:
+
+javascript
+// Create the background
+background("skyblue");
+fill("green");
+rect(0, 300, 400, 100); // Grass
+
+// Create tree island sprite
+var backgr = createSprite(200, 200);
+backgr.setAnimation("tree_island_1");
+
+// Create and customize a chameleon sprite
+var chameleon = createSprite(100, 300);
+chameleon.setAnimation("chameleon_1");
+chameleon.scale = 0.5;
+
+// Create and customize a bird sprite
+var bird = createSprite(300, 100);
+bird.setAnimation("bird_flying_1");
+bird.scale = 0.7;
+bird.rotation = 30;
+
+// Draw all sprites
+drawSprites();
