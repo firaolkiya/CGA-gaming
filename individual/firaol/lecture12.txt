@@ -1,19 +1,19 @@
+To create animations, you'll need a way to keep drawing frame after frame. In Game Lab, this is done using the draw function. The way programs run in Game Lab is
 
-Create Your Scene - Sprites
-With your background in place, it's time to add your sprites.
+draw function always call it self
 
-Do This
-Add or draw at least 2 sprite animations in the Animation Tab.
-Create at least 2 sprites and assign each one an animation.
-Set the value for any sprite properties you'd like to use.
-Try to use at least 1 sprite property (such as rotation, scale, tint or any others in the Toolbox) with each sprite.
-Draw all of your sprites to the screen.
+fill("SeaGreen");
 
-background("blue")
+function draw(){
+  ellipse(randomNumber(0,400), randomNumber(0,400));
+}
 
-var sprite = createSprite(200, 100);
-var sprite2 = createSprite(200, 300);
-sprite.setAnimation("cny_03_1")
-sprite2.setAnimation("cny_10_1")
-drawSprites();
+noStroke();
 
+function draw(){
+  fill("green");
+  ellipse(randomNumber(0,400), randomNumber(0,400));
+  
+  fill("orange");
+  ellipse(randomNumber(0,400), randomNumber(0,400));
+}
