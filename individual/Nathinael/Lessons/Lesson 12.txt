@@ -1,0 +1,10 @@
+
+        Lesson 12 : The Draw Loop
+
+Main idea :  How can we animate our images in Game Lab.
+
+# I saw how i can animate any drowing with in Game Lab
+# a function is used to perform this function.
+# the syntax is function draw () { actions }.
+# and we can control the speed or the animation with the world.frameRate().
+# in general its a loop function that enables us to animate objects.

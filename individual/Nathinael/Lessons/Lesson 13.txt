@@ -1,0 +1,10 @@
+
+        Lesson 13 : Sprite Movement
+
+Main idea :  How can we control sprite movement in Game Lab.
+
+# its more of how we can control the direction , speed , rotation and scale of an object 
+  with in the draw function
+# making objects to move on a specific direction
+# Making the animation of the objects and makes it more smooth.
+# so it controls and makes animation smooth and look more apealing.

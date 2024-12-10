@@ -1,0 +1,8 @@
+
+        Lesson 9 : Sprite Properties
+
+Main idea :How can we use sprite properties to change their appearance on the screen.
+
+# Saw sprite properties such as 
+# sprite.x and sprite.y to change the x andy position of the image,
+# sprite.scale and sprite.rotation to control the scale and the rotation of the image.

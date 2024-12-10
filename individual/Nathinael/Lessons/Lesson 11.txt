@@ -1,0 +1,8 @@
+
+        Lesson 11 : Mini-Project - Captioned Scenes
+
+Main idea : How can we use Game Lab to express our creativity.
+
+# It was intended to evaluate and put to test what have been covered so far.
+# And i could say am still getting used to the Game lab.
+# Just Built a simple back ground with some characters and other properties.
