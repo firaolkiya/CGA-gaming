@@ -1,1 +1,155 @@
 
+In this lesson, I  build on my  knowledge of if statements by exploring if-else statements. 
+Also I learn how to capture mouse input (e.g., clicks or movements) and use it in your conditional statements. 
+Key concepts:
+    If-Else Statements: Used to execute different code blocks based on conditions.
+    Mouse Input: Capturing mouse events like clicks (click) and movements (mousemove) using JavaScript event listeners.
+    Conditional Decisions: Using mouse coordinates in if-else statements to perform actions based on where the user clicks or moves the mouse.
+
+****************Skill Building *****************\
+
+-------------problem2--------------
+
+var blueGear = createSprite(100, 220);
+blueGear.setAnimation("blue_gear");
+var greenGear = createSprite(183, 298);
+greenGear.setAnimation("green_gear");
+var redGear = createSprite(185, 145);
+redGear.setAnimation("red_gear");
+function draw() {
+  background("white");
+  
+  if (keyDown("space")) {
+    // Gears spin in one direction when space is pressed
+    blueGear.rotation = blueGear.rotation - 8;
+    greenGear.rotation = greenGear.rotation + 8;
+    redGear.rotation = redGear.rotation + 8;
+  } else {
+    // Gears spin in the opposite direction when space is not pressed
+    blueGear.rotation = blueGear.rotation + 8;
+    greenGear.rotation = greenGear.rotation - 8;
+    redGear.rotation = redGear.rotation - 8;
+  }
+  drawSprites();
+}
+-----------------problem3------------------
+var blueGear = createSprite(100, 220);
+blueGear.setAnimation("blue_gear");
+var greenGear = createSprite(183, 298);
+greenGear.setAnimation("green_gear");
+var redGear = createSprite(185, 145);
+redGear.setAnimation("red_gear");
+function draw() {
+  background("white");
+  if (mouseDown("leftButton")) {
+    // Gears spin in one direction when the left mouse button is pressed
+    blueGear.rotation = blueGear.rotation - 1;
+    greenGear.rotation = greenGear.rotation + 1;
+    redGear.rotation = redGear.rotation + 1;
+  } else {
+    // Gears spin in the opposite direction when the left mouse button is not pressed
+    blueGear.rotation = blueGear.rotation + 1;
+    greenGear.rotation = greenGear.rotation - 1;
+    redGear.rotation = redGear.rotation - 1;
+  }
+  drawSprites();
+}
+----------------problem4-------------------
+var balloon = createSprite(200, 50);
+balloon.setAnimation("balloon");
+balloon.scale = 0.1;
+function draw() {
+  background("white");
+  // Check if the mouse is being pressed
+  if (mouseDown()) {
+    // Move the balloon up the screen
+    balloon.y = balloon.y - 2; // Move upward faster
+  } else {
+    // Move the balloon down the screen
+    balloon.y = balloon.y + 1; // Move downward slower
+  }
+  drawSprites();
+}
+--------------------problem5-----------------------
+var blender = createSprite(100, 300);
+blender.setAnimation("blender");
+var mixer = createSprite(300, 300);
+mixer.setAnimation("mixer");
+function draw() {
+  background("lightyellow");
+  fill("burlywood");
+  rect(0, 350, 400, 50);
+  if (World.mouseX < 200) {
+    // Shake the blender when the mouse is on the left side of the screen
+    blender.x = randomNumber(95, 105);
+    blender.y = randomNumber(295, 305);
+  } else {
+    // Shake the mixer when the mouse is on the right side of the screen
+    mixer.x = randomNumber(295, 305);
+    mixer.y = randomNumber(295, 305);
+  }
+  drawSprites();
+}
+
+****************Practice**********************
+
+Activities A:Ready Bug Walk
+var outside = createSprite(200, 200);
+outside.setAnimation("pine_trees");
+var bug = createSprite(350, 350);
+bug.setAnimation("ladybug");
+function draw() {
+  background("lightblue");
+  // Check if the mouse is near the bottom of the screen
+  if (World.mouseY > 300) {
+    // Move the bug to the left
+    bug.x = bug.x - 2;
+  }
+  drawSprites();
+}
+
+**************Assessment*****************
+
+var backdrop = createSprite(200, 200);
+backdrop.setAnimation("sky");
+var creature = createSprite(200, 250);
+creature.setAnimation("creature");
+creature.scale = 0.2;
+function draw() {
+  background("white");
+  // 1) Make the creature shake only when the mouse is pressed
+  if (mouseDown()) {
+    creature.rotation = randomNumber(-5, 5);
+  } else {
+    creature.rotation = 0; // Reset rotation when not shaking
+  }
+  // 2) Show the directions only when the user is NOT pressing the mouse
+  if (!mouseDown()) {
+    fill("black");
+    textSize(20);
+    text("Press the mouse to shake the creature.", 20, 50, 360, 100);
+  }
+  drawSprites();
+}
+
+***************Challenges *************
+
+Activities E: Changing emoji
+// Create a sprite and set its initial animation
+var emoji = createSprite(200, 200);
+emoji.setAnimation("emoji_08_1");
+// Function to handle drawing and behavior
+function draw() {
+  background("lightblue");
+  // Check if the mouse is pressed
+  if (mouseDown()) {
+    emoji.setAnimation("emoji_19_1"); // Change to a laughing face when the mouse is pressed
+  } else {
+    emoji.setAnimation("emoji_08_1"); // Change back to a happy face when the mouse is not pressed
+  }
+  drawSprites();
+}
+
+
+
+
