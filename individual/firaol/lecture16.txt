@@ -1,0 +1,68 @@
+input controll
+
+basic input type
+  -keyDown
+  -keyPressed
+  -keyReleased
+  
+the following are label
+ "space"- space 
+ "LEft_ARROW" - left arrow
+  
+ if(keyDown('space'){
+ 
+ }
+ 
+ //1) Run the code and try pressing the "p" and "h" keys.
+var sprite = createSprite(200, 200);
+sprite.setAnimation("giraffe");
+
+function draw() {
+  background("white");
+
+  //2) Look inside the first two conditional statements to see how the code works.
+  if(keyDown("h")) {
+     sprite.setAnimation("hippo");
+  }
+
+  if(keyDown("p")) {
+     sprite.setAnimation("pig");
+  }
+
+  if(keyDown("r")) {
+      //3) Add code to change the sprite to a different animal when the "r" key is pressed.
+
+  }
+
+  drawSprites();
+}
+
+
+var bug = createSprite(200, 200);
+bug.setAnimation("ladybug");
+var bagX=200;
+
+function draw() {
+  //Draw Background
+  background("white");
+  //1) Add a conditional statement to check if the right arrow key has been pressed down.
+  //2) Add code to move the sprite right if the right arrow is down.
+  
+  if(keyDown("LEFT_ARROW")){
+    bagX = bagX-5;
+    if (bagX==0){
+      bagX=400;
+    }
+
+  }
+  bug.x=bagX;
+
+  //Draw Animations
+  drawSprites();
+}
+
+
+ 
+
+
+
