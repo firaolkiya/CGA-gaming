@@ -18,4 +18,5 @@ Key Concepts to Explore:
     # Challenges You May Encounter:
 
         Understanding how the tool interprets your instructions, including sequence and syntax.
-erstanding how the tool interprets your instructions, including sequence and syntax.
+
+understanding how the tool interprets your instructions, including sequence and syntax.

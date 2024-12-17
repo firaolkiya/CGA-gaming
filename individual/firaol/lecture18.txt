@@ -1,0 +1,79 @@
+  
+  var turtle = createSprite(200,200);
+  turtle.setAnimation("turtle");
+  turtle.scale = 0.5;
+function draw() {
+ 
+  background("skyblue");
+  if (keyDown("up")) {
+    turtle.y = turtle.y - 3;
+    turtle.rotation=180;
+  }
+  if (keyDown("down")) {
+    turtle.y = turtle.y + 3;
+    turtle.rotation=0;
+  }
+  if (keyDown("right")) {
+    turtle.x = turtle.x + 3;
+    turtle.rotation=-70;
+  }
+  if (keyDown("left")) {
+    turtle.x = turtle.x - 3;
+    turtle.rotation=70;
+  }
+  drawSprites();
+}
+
+var backgr = createSprite(200, 200);
+var player = createSprite(200,350);
+player.setAnimation("monkey")
+player.scale=0.3;
+
+var ballXIncr=23;
+var ballYIncr=30;
+var score=0;
+var ball = createSprite(200,50);
+ball.setAnimation("ball")
+ball.scale=0.1;
+
+function draw() {
+   textSize(50);
+   
+  fill("white");
+  rect(200,200,100,100);
+  
+  backgr.setAnimation("backg");
+   
+  if(ball.x<0 || ball.x>400){
+    ballXIncr *=-1;
+  }
+  
+  if(abs(ball.x-player.x)+abs(ball.y-player.y)<100){
+    score+=1;
+    ballYIncr*=-1;
+    ball.y-=50;
+  }
+   if(ball.y<0 || ball.y>300){
+      ballYIncr *=-1;
+    
+    
+  }
+  
+  
+  ball.x+=ballXIncr;
+  ball.y+=ballYIncr;
+  
+  if(keyDown("left") && player.x>0){
+    player.x-=5;
+  }
+  
+  if(keyDown("right")&& player.x<400){
+    player.x+=5;
+  }
+  
+  
+  
+
+  
+  drawSprites();
+}
