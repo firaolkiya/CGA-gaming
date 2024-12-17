@@ -1,0 +1,10 @@
+
+        Lesson 8 : Sprites
+
+Main idea : How can we use sprites to help us keep track of lots of information in our programs.
+
+# Introduced to sprites
+# there are biult in images in the game lab and used them with the use of sprites.
+# First declare a var to initialize the sprite 
+# then get the name of the animations
+# finally display on the screen block
