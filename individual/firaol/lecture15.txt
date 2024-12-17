@@ -1,124 +1,50 @@
-background("blue");
+Conditional checking in javascript
 
-var sprite1 = createSprite(100, 200);
-sprite1.setAnimation("animalhead_bear_1");
-var sprite2 = createSprite(300, 200);
-sprite2.setAnimation("animalhead_frog_1");
+conditional statement in javascript the same as in c++
 
-var scale1=0.1;
-var scale2 = 0.1;
-var f1=0.1;
-var f2=0.1;
-function draw(){
-  sprite1.scale=scale1;
-  sprite2.scale=scale2;
-  
-
-  scale1+=f1;
-  scale2+=f2;
-  
-  if(scale1>=0.5 || scale1<0.1){
-    f1*=-1;
-  }
-  if(scale2>=0.5 || scale2<0.1){
-    f2*=-1;
-  }
-  drawSprites();
-
+if(condition){
+  body
 }
 
+var finishLine = createSprite(40, 200);
+finishLine.setAnimation("finish_line");
 
-background("blue");
+var raceCar = createSprite(400, 200);
+raceCar.setAnimation("race_car");
 
-textSize(25);
-fill("red")
-text("this is my amimation", 100, 50);
-
-var sprite1 = createSprite(100, 200);
-sprite1.setAnimation("animalhead_bear_1");
-var sprite2 = createSprite(300, 200);
-sprite2.setAnimation("animalhead_frog_1");
-
-var scale1=0.1;
-var scale2 = 0.1;
-var f1=0.1;
-var f2=0.1;
-function draw(){
-  sprite1.scale=scale1;
-  sprite2.scale=scale2;
+function draw() {
+  // Draw Background
+  background("white");
   
-
-  scale1+=f1;
-  scale2+=f2;
-  
-  if(scale1>=0.5 || scale1<0.1){
-    f1*=-1;
+  // Update values
+  raceCar.x = raceCar.x - 2;
+  if (raceCar.x < finishLine.x) {
+    text("THE ORANGE CAR IS THE WINNER!",100,100);
   }
-  if(scale2>=0.5 || scale2<0.1){
-    f2*=-1;
-  }
+  // Draw Animations
   drawSprites();
-
 }
 
+var scene = createSprite(200, 200);
+scene.setAnimation("background");
 
-background("blue");
+var spaceship = createSprite(200, 200);
+spaceship.setAnimation("spaceship");
 
-textSize(25);
-fill("red")
-text("this is my amimation", 100, 50);
+var alien = createSprite(300, 350);
+alien.setAnimation("alien_standing");
 
-var sprite1 = createSprite(100, 200);
-sprite1.setAnimation("animalhead_bear_1");
-var sprite2 = createSprite(300, 200);
-sprite2.setAnimation("animalhead_frog_1");
-
-var scale1=0.1;
-var scale2 = 0.1;
-var f1=0.1;
-var f2=0.1;
-var sp1X=100;
-var sp2X=300;
-var sp1A=0;
-var sp2A=0;
-var dir=1;
-
-function draw(){
-  sprite1.scale=scale1;
-  sprite2.scale=scale2;
-  sprite1.rotation = sp1A;
-  sprite2.rotation = sp2A;
+function draw() {
+  spaceship.y = spaceship.y - 3;
   
-  sprite1.x = sp1X;
-  sprite2.x = sp2X;
+  //1) Add a conditional that detects when the spaceship is in the sky.
+  //2) Set the sprite's animation to be a dancing alien.
   
-  sp1A+=2;
-  sp2A+=2;
-  sp1X+=dir;
-  sp2X+=dir;
-  
-  if(sp1X>200 ||sp2X<100){
-    dir*=-1;
+  if(spaceship.y<200){
+    
+    alien.setAnimation("alien_dance");
   }
   
-
-  scale1+=f1;
-  scale2+=f2;
-  
-  if(scale1>=0.5 || scale1<0.1){
-    f1*=-1;
-  }
-  if(scale2>=0.5 || scale2<0.1){
-    f2*=-1;
-  }
   drawSprites();
-
 }
-
-
-
-
-
-
-
 
