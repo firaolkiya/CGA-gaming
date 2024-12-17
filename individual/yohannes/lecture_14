@@ -1,0 +1,90 @@
+Lesson 14: Animated Scenes
+This lesson focuses on creating an animated scene using background design, sprites, and movement. By combining counter patterns and random movements, you can bring dynamic and interactive elements to your scene.
+
+Part 1: Background Creation
+Create a visually interesting background using colors and shapes.
+
+Code:
+javascript
+function draw() {
+  background("lightblue"); // Fill the background with a solid color
+
+  // Add shapes to the background
+  fill("green");
+  rect(0, 350, 400, 50); // Ground
+  fill("yellow");
+  ellipse(350, 50, 80, 80); // Sun
+}
+Part 2: Add Sprites
+Add animated sprites and customize their properties.
+
+Code:
+javascript
+var bird = createSprite(100, 100);
+bird.setAnimation("bird");
+bird.scale = 0.5; // Adjust size
+
+var balloon = createSprite(300, 200);
+balloon.setAnimation("balloon");
+balloon.scale = 0.7;
+balloon.rotation = 15; // Add rotation
+
+function draw() {
+  background("lightblue");
+  
+  // Background shapes
+  fill("green");
+  rect(0, 350, 400, 50);
+  fill("yellow");
+  ellipse(350, 50, 80, 80);
+  
+  drawSprites(); // Draw the sprites
+}
+Part 3: Add Movement
+Use counter patterns and random movements to animate the sprites.
+
+Code:
+javascript
+var bird = createSprite(100, 100);
+bird.setAnimation("bird");
+bird.scale = 0.5;
+
+var balloon = createSprite(300, 200);
+balloon.setAnimation("balloon");
+balloon.scale = 0.7;
+balloon.rotation = 15;
+
+function draw() {
+  background("lightblue");
+
+  // Background shapes
+  fill("green");
+  rect(0, 350, 400, 50);
+  fill("yellow");
+  ellipse(350, 50, 80, 80);
+
+  // Bird movement (counter pattern)
+  bird.y = bird.y - 2; // Move up
+  if (bird.y < 0) {
+    bird.y = 400; // Reset position if it moves off-screen
+  }
+
+  // Balloon movement (random movement)
+  balloon.x = randomNumber(280, 320); // Random horizontal motion
+  balloon.y = balloon.y - 1; // Slow upward movement
+
+  drawSprites(); // Draw the sprites
+}
+Key Concepts:
+Random Movement:
+Use the randomNumber() function to create unpredictable motion. For example:
+
+javascript
+sprite.x = randomNumber(50, 350);
+Counter Pattern Movement:
+Add or subtract a value to a sprite’s position repeatedly for smooth, linear motion. For example:
+
+javascript
+sprite.y = sprite.y - 3; // Moves upward
+Sprite Properties:
+Customize properties like scale, rotation, and tint to add variety to your scene.

@@ -1,0 +1,57 @@
+Lesson 18: Project - Interactive Card
+For your interactive greeting card project, I can create a card that includes an animated character or object, 
+interactive elements (such as buttons or key presses), and visual effects.
+
+*************** My Project*********************
+
+// Initialize sprite
+var bird;
+function setup() {
+  createCanvas(400, 400);
+  // Create and set up the bird sprite
+  bird = createSprite(50, 200, 40, 40);
+  bird.setAnimation("bluebird_1");
+  bird.scale = 0.5;
+}
+function draw() {
+  // Draw the sky
+  background(135, 206, 250);
+  // Display a message on the card
+  textSize(10);
+  fill(0); // Black color for text
+  textAlign(CENTER);
+  text("Welcome to the Bird Adventure!", width / 2, 50); // Adjust position
+   fill(0); // Black text
+  textSize(20);
+  textAlign(CENTER);
+  text("Happy Holidays!", 100, 100,width / 2, 50); // Display text at (120, 50)
+  // Draw mountains
+  fill(100, 100, 100);
+  triangle(100, 300, 200, 150, 300, 300);
+  triangle(200, 300, 300, 200, 400, 300);
+  // Animate bird
+  bird.position.x += 2;
+  // Interaction 1: Reset bird when it goes out of bounds
+  if (bird.position.x > width + 50) {
+    bird.position.x = -50; // Reset position
+  }
+  // Interaction 2: Move bird up or down with arrow keys
+  if (keyDown("UP_ARROW")) {
+    bird.position.y -= 2; // Move bird up
+  } else if (keyDown("DOWN_ARROW")) {
+    bird.position.y += 2; // Move bird down
+  }
+  // Interaction 3: Change bird color when near a mountain
+  if (bird.position.x > 100 && bird.position.x < 300) {
+    bird.tint = color(255, 0, 0); // Red tint
+  } else {
+    bird.tint = color(255); // Reset tint
+  }
+  // Interaction 4 (Challenge): Complex condition
+  if (keyDown("SPACE") && bird.position.y < 200) {
+    bird.position.y += 5; // Make the bird "bounce" downwards if space is pressed and it's above mid-height
+  }
+  // Draw all sprites
+  drawSprites();
+}
+

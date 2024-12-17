@@ -1,0 +1,41 @@
+Lesson 15: Conditional Statements
+1. Predicting Console Outputs
+javascript
+var sprite1 = createSprite(100, 200);
+var sprite2 = createSprite(300, 200);
+
+console.log(sprite1.y == sprite2.y); // true (Both `y` values are 200)
+console.log(sprite1.x > sprite2.x);  // false (`sprite1.x` = 100, `sprite2.x` = 300)
+console.log(sprite1.x < sprite2.y);  // true (`sprite1.x` = 100, `sprite2.y` = 200)
+
+2. Booleans: Checking If the Race Car Crosses the Finish Line
+Updated Code:
+javascript
+var finishLine = createSprite(40, 200);
+finishLine.setAnimation("finish_line");
+
+var raceCar = createSprite(400, 200);
+raceCar.setAnimation("race_car");
+
+function draw() {
+  // Draw Background
+  background("white");
+  
+  // Counter pattern to move car
+  raceCar.x = raceCar.x - 2;
+  
+  // Display text
+  fill("black");
+  strokeWeight(5);
+  textSize(25);
+  text("The race car has crossed the finish line:", 100, 20, 300, 60);
+  fill("blue");
+  // Adding boolean condition to the text
+  text(raceCar.x < finishLine.x, 100, 100);
+  
+  // Draw Animations
+  drawSprites();
+}
+Explanation:
+The text block now dynamically displays true or false based on whether the race car's x coordinate is less than the finish line's x coordinate.
+The boolean changes from false to true as the car crosses the finish line.

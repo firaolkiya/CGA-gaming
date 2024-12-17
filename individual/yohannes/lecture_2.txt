@@ -1,3 +1,4 @@
+
 Lesson 2 - Plotting Shapes
 Key Concepts
 Understanding the Game Lab Grid:
