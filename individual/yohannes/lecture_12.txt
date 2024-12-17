@@ -1,0 +1,64 @@
+Lesson 12: Using the Draw Loop
+Overview
+In this lesson, you'll learn how to use the draw loop to create dynamic and interactive animations. 
+The draw loop is a key feature of Game Lab that continuously executes the code inside it, making it perfect for animations and games.
+
+Key Concepts
+The Draw Loop
+
+Code inside the draw() function runs repeatedly, creating dynamic and interactive visuals.
+Use the draw loop to generate random patterns, animate sprites, or change their properties over time.
+Randomization
+
+The randomNumber(min, max) function generates random values, allowing you to create varied and unpredictable behaviors.
+Animating Sprites
+
+By updating sprite properties like x, y, scale, or rotation inside the draw loop, you can make them move, rotate, or change size dynamically.
+Frame Rate
+
+The World.frameRate property controls how many times per second the draw loop runs, allowing you to slow down or speed up animations.
+Code Example 1: Drawing Random Circles
+This program generates random green and orange circles on the screen.
+
+javascript
+noStroke();
+
+function draw() {
+  // Draw green circles
+  fill("green");
+  ellipse(randomNumber(0, 400), randomNumber(0, 400), 20, 20);
+
+  // Draw orange circles
+  fill("orange");
+  ellipse(randomNumber(0, 400), randomNumber(0, 400), 20, 20);
+}
+Code Example 2: Animating a Sprite
+This program makes a sprite move and rotate randomly.
+
+javascript
+World.frameRate = 10; // Control the speed of the draw loop
+
+var sprite = createSprite(100, 200);
+sprite.setAnimation("greenAlien");
+
+function draw() {
+  background("orange"); // Set the background color
+
+  // Change the sprite's position randomly
+  sprite.x = randomNumber(200, 220);
+
+  // Rotate the sprite randomly
+  sprite.rotation = randomNumber(-10, 10);
+
+  drawSprites(); // Draw the sprite
+}
+Discussion Points
+Why Use the Draw Loop?
+
+Code inside the draw loop updates continuously, making animations or patterns appear dynamic.
+Code outside the draw loop initializes the setup, like creating sprites or setting static properties.
+Experimentation Ideas:
+
+Change the range in randomNumber() to see how it affects movement or placement.
+Modify the World.frameRate to control the speed of the animation.
+Add more sprites or elements to make the animation more complex.

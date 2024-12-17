@@ -1,0 +1,7 @@
+
+        Lesson 7 : Mini Project Robot face
+
+Main idea :To review contents covered and make a Robot face
+
+# Reviewed the contents covered earlier
+# Built a Robot Face and also used the randomNumber block.

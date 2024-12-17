@@ -1,0 +1,8 @@
+
+        Lesson 6 : Random Numbers
+
+Main idea : How can we make our programs behave differently each time they are run.
+
+# Using the randomNumber method to generate numbers randomlly
+# randomNumber() we pass two parameters for the range the random numbers to be generated.
+# Used in variables to Produce different shapes, size and position.
