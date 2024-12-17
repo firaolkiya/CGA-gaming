@@ -1,0 +1,7 @@
+
+        Lesson 2 : Plotting Shapes
+
+Main idea : How can we clearly communicate how to draw something on a screen
+
+# in this section i saw first sight of the game lab and what each things does , the grids on which the sapes are to be plotted on.
+# The x and y coordinates and positions

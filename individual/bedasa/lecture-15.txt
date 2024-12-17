@@ -1,0 +1,180 @@
+Lesson 15: Conditionals
+Conditionals are a fundamental concept in programming that enable programs to make decisions based on specific conditions. 
+By using booleans (true/false values), we can write code that executes different actions depending on whether a condition is met. 
+This is achieved using if-else statements, switch cases, or similar constructs. 
+For example, you can check if a number is positive or negative, validate user inputs, or control the flow of a program. 
+Mastering conditionals is essential for creating dynamic and interactive applications.
+
+*****************Skill Building*********************
+
+----------------problem3-------------------
+The program draws a race car and a finish line. 
+var finishLine = createSprite(40, 200);
+finishLine.setAnimation("finish_line");
+var raceCar = createSprite(400, 200);
+raceCar.setAnimation("race_car");
+function draw() {
+  // Draw Background
+  background("white");
+  // Counter pattern to make car move across the screen
+  raceCar.x = raceCar.x - 2;
+  //Program text
+  fill("black");
+  strokeWeight(5);
+  textSize(25);
+  text("The race car has crossed the finish line:", 100, 20, 300, 60);
+  fill("blue");
+  //1) Add blocks to the text command to print the boolean to the screen
+  text("text", 100, 100);
+  // Print the boolean to the screen
+  text(raceCar.x < finishLine.x, 200, 200);
+  // Draw Animations
+  drawSprites();
+}
+---------------problem4---------------
+var finishLine = createSprite(40, 200);
+finishLine.setAnimation("finish_line");
+var raceCar = createSprite(400, 200);
+raceCar.setAnimation("race_car");
+function draw() {
+  // Draw Background
+  background("white");
+  // Update values
+  raceCar.x = raceCar.x - 2;
+  if (raceCar.x < finishLine.x) {
+    text("THE ORANGE CAR IS THE WINNER!",100,100);
+  }
+  // Draw Animations
+  drawSprites();
+}
+------------------problem5----------------
+Now that we know how to use if () statements, you can do more than just check if the apple has reached a scale of 2. You turn it into a pear once it happens.
+var fruit = createSprite(200, 200);
+fruit.setAnimation("apple");
+fruit.scale = 0.1;
+function draw() {
+  // Draw Background
+  background("white");
+  // Update Values
+  fruit.scale = fruit.scale + 0.01;
+  //1) Add a conditional to the draw loop.
+  //2) Add code to the conditional statement that asks if the scale of the fruit greater than 2
+   if(fruit.scale > 2){
+     //3) Add code inside the conditional to change the fruit to a pear.
+    fruit.setAnimation("pear");
+  }
+  // Draw Animations
+  drawSprites();
+}
+--------------------problem6----------------
+Use a conditional to make the alien dance when the spaceship reaches the top of the screen.
+var scene = createSprite(200, 200);
+scene.setAnimation("background");
+var spaceship = createSprite(200, 200);
+spaceship.setAnimation("spaceship");
+var alien = createSprite(300, 350);
+alien.setAnimation("alien_standing");
+function draw() {
+  spaceship.y = spaceship.y - 3;
+  // Add a conditional to detect when the spaceship is in the sky
+  if (spaceship.y < 100) {
+    // Set the alien's animation to "alien_dancing"
+    alien.setAnimation("alien_dance");
+  }
+  drawSprites();
+}
+
+***********Assessment**************
+
+Activities C: Alien Celebration
+Use an if () statement to make the dinosaur turn into a pterodactyl when it reaches the sky.
+var backdrop = createSprite(200,200);
+backdrop.setAnimation("sci_fi");
+var dinosaur = createSprite(200, 350);
+dinosaur.scale = 0.9;
+dinosaur.setAnimation("tyrannosaurus");
+function draw() {
+  //move the dinosaur up
+  dinosaur.y = dinosaur.y - 5;
+  //2) Add a conditional that detects when the dinosaur is in the sky.
+  if(dinosaur.y < 100){
+    //3) Set the sprite's animation to a pterodactyl when it reaches the sky.
+    dinosaur.setAnimation("pterodactyl");
+  }
+  //draw everything
+  drawSprites();
+}
+
+**************Challenges*******************
+
+Activities E: Never-Ending Fish Scene-3
+Let's finish making our never-ending underwater scene!
+var orangeFish = createSprite(400, randomNumber(200, 400));
+orangeFish.setAnimation("orange_fish");
+orangeFish.scale = 0.25;
+orangeFish.rotation = 15;
+var blueFish = createSprite(0, randomNumber(0, 200));
+blueFish.setAnimation("blue_fish");
+blueFish.scale = 0.25;
+var greenFish = createSprite(400, randomNumber(100, 300));
+greenFish.setAnimation("green_fish");
+greenFish.scale = 0.25;
+var shark = createSprite(-150, randomNumber(290, 400));
+shark.setAnimation("shark");
+shark.scale = 0.75;
+var starfish = createSprite(randomNumber(10, 390), 0);
+starfish.setAnimation("starfish");
+starfish.scale = 0.10;
+// Variable used with counter pattern for the ellipse y locations
+var bubbles = 400;
+function draw() {
+  // Draw Background
+  background("navy");
+  // Draw and animate bubbles
+  noFill();
+  stroke("white");
+  strokeWeight(3);
+  ellipse(65, bubbles, 25);
+  ellipse(225, bubbles + 25, 25);
+  ellipse(350, bubbles + 100, 25);
+  bubbles = bubbles - 2;
+  // Animate sea creatures using the counter pattern
+  starfish.y = starfish.y + 2; // Make the starfish fall down
+  orangeFish.x = orangeFish.x - 2; // Move orange fish to the left
+  blueFish.x = blueFish.x + 2;    // Move blue fish to the right
+  greenFish.x = greenFish.x - 2;  // Move green fish to the left
+  shark.x = shark.x + 3;          // Move shark to the right
+  // Add conditionals to wrap the sea creatures back to where they started
+  // Reset starfish to the top when it falls off the bottom of the screen
+  if (starfish.y > 400) {
+    starfish.y = 0; // Reset y position to top
+    starfish.x = randomNumber(10, 390); // Randomize x position
+  }
+  // Reset orange fish when it moves off the left of the screen
+  if (orangeFish.x < -50) {
+    orangeFish.x = 450; // Reset to the right of the screen
+    orangeFish.y = randomNumber(200, 400); // Randomize y position
+  }
+  // Reset blue fish when it moves off the right of the screen
+  if (blueFish.x > 450) {
+    blueFish.x = -50; // Reset to the left of the screen
+    blueFish.y = randomNumber(0, 200); // Randomize y position
+  }
+  // Reset green fish when it moves off the left of the screen
+  if (greenFish.x < -50) {
+    greenFish.x = 450; // Reset to the right of the screen
+    greenFish.y = randomNumber(100, 300); // Randomize y position
+  }
+  // Reset shark when it moves off the right of the screen
+  if (shark.x > 450) {
+    shark.x = -150; // Reset to the left of the screen
+    shark.y = randomNumber(290, 400); // Randomize y position
+  }
+  // Reset bubbles when they move off the top of the screen
+  if (bubbles < 0) {
+    bubbles = 400; // Reset bubbles to original value
+  }
+  // Draw Animations
+  drawSprites();
+}
+

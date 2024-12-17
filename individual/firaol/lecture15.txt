@@ -1,0 +1,50 @@
+Conditional checking in javascript
+
+conditional statement in javascript the same as in c++
+
+if(condition){
+  body
+}
+
+var finishLine = createSprite(40, 200);
+finishLine.setAnimation("finish_line");
+
+var raceCar = createSprite(400, 200);
+raceCar.setAnimation("race_car");
+
+function draw() {
+  // Draw Background
+  background("white");
+  
+  // Update values
+  raceCar.x = raceCar.x - 2;
+  if (raceCar.x < finishLine.x) {
+    text("THE ORANGE CAR IS THE WINNER!",100,100);
+  }
+  // Draw Animations
+  drawSprites();
+}
+
+var scene = createSprite(200, 200);
+scene.setAnimation("background");
+
+var spaceship = createSprite(200, 200);
+spaceship.setAnimation("spaceship");
+
+var alien = createSprite(300, 350);
+alien.setAnimation("alien_standing");
+
+function draw() {
+  spaceship.y = spaceship.y - 3;
+  
+  //1) Add a conditional that detects when the spaceship is in the sky.
+  //2) Set the sprite's animation to be a dancing alien.
+  
+  if(spaceship.y<200){
+    
+    alien.setAnimation("alien_dance");
+  }
+  
+  drawSprites();
+}
+

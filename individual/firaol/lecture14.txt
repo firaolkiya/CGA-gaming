@@ -1,0 +1,124 @@
+background("blue");
+
+var sprite1 = createSprite(100, 200);
+sprite1.setAnimation("animalhead_bear_1");
+var sprite2 = createSprite(300, 200);
+sprite2.setAnimation("animalhead_frog_1");
+
+var scale1=0.1;
+var scale2 = 0.1;
+var f1=0.1;
+var f2=0.1;
+function draw(){
+  sprite1.scale=scale1;
+  sprite2.scale=scale2;
+  
+
+  scale1+=f1;
+  scale2+=f2;
+  
+  if(scale1>=0.5 || scale1<0.1){
+    f1*=-1;
+  }
+  if(scale2>=0.5 || scale2<0.1){
+    f2*=-1;
+  }
+  drawSprites();
+
+}
+
+
+background("blue");
+
+textSize(25);
+fill("red")
+text("this is my amimation", 100, 50);
+
+var sprite1 = createSprite(100, 200);
+sprite1.setAnimation("animalhead_bear_1");
+var sprite2 = createSprite(300, 200);
+sprite2.setAnimation("animalhead_frog_1");
+
+var scale1=0.1;
+var scale2 = 0.1;
+var f1=0.1;
+var f2=0.1;
+function draw(){
+  sprite1.scale=scale1;
+  sprite2.scale=scale2;
+  
+
+  scale1+=f1;
+  scale2+=f2;
+  
+  if(scale1>=0.5 || scale1<0.1){
+    f1*=-1;
+  }
+  if(scale2>=0.5 || scale2<0.1){
+    f2*=-1;
+  }
+  drawSprites();
+
+}
+
+
+background("blue");
+
+textSize(25);
+fill("red")
+text("this is my amimation", 100, 50);
+
+var sprite1 = createSprite(100, 200);
+sprite1.setAnimation("animalhead_bear_1");
+var sprite2 = createSprite(300, 200);
+sprite2.setAnimation("animalhead_frog_1");
+
+var scale1=0.1;
+var scale2 = 0.1;
+var f1=0.1;
+var f2=0.1;
+var sp1X=100;
+var sp2X=300;
+var sp1A=0;
+var sp2A=0;
+var dir=1;
+
+function draw(){
+  sprite1.scale=scale1;
+  sprite2.scale=scale2;
+  sprite1.rotation = sp1A;
+  sprite2.rotation = sp2A;
+  
+  sprite1.x = sp1X;
+  sprite2.x = sp2X;
+  
+  sp1A+=2;
+  sp2A+=2;
+  sp1X+=dir;
+  sp2X+=dir;
+  
+  if(sp1X>200 ||sp2X<100){
+    dir*=-1;
+  }
+  
+
+  scale1+=f1;
+  scale2+=f2;
+  
+  if(scale1>=0.5 || scale1<0.1){
+    f1*=-1;
+  }
+  if(scale2>=0.5 || scale2<0.1){
+    f2*=-1;
+  }
+  drawSprites();
+
+}
+
+
+
+
+
+
+
+

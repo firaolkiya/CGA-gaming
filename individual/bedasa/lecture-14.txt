@@ -1,0 +1,32 @@
+Lesson 14: Mini-Project - Animation
+In this lesson, I apply all the concepts learned so far to design and create our first animated scene. 
+This involves integrating sprite movement, the counter pattern, and other animation techniques to bring a custom design to life. 
+The project encourages creativity and problem-solving, as we plan, code, and refine an engaging and dynamic animated scene.
+
+***********************My Project************
+// Create sprites
+var sun = createSprite(50, 50); // Sun sprite
+sun.setAnimation("sun_animation"); // Assign animation from Animation Tab
+sun.scale = 1.5; // Scale the sun sprite for a larger effect
+
+var boat = createSprite(200, 250); // Boat sprite on the ocean
+boat.setAnimation("boat_animation"); // Assign animation from Animation Tab
+boat.rotation = -10; // Rotate the boat slightly to make it dynamic
+
+var fish = createSprite(300, 300); // Fish sprite in the water
+fish.setAnimation("fish_animation"); // Assign animation from Animation Tab
+fish.tint = "blue"; // Tint the fish sprite for a cool effect
+
+function draw() {
+  // Background
+  background("lightblue");
+
+  // Ocean
+  fill("blue");
+  noStroke();
+  rect(0, 200, 400, 200); // Ocean rectangle
+
+  // Draw all sprites
+  drawSprites();
+}
+

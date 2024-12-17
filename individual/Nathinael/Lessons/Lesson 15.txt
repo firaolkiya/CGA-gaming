@@ -1,0 +1,9 @@
+
+        Lesson 15 : Conditionals
+
+Main idea :  How can programs react to changes as they are running
+
+# introduction to conditionals
+# the syntax of conditionals and how it works 
+# Used the if condition to check if a a certain condition is meet to perform a function.
+# Example : changing animation when a certain size is reached....
