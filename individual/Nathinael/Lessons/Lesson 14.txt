@@ -1,0 +1,7 @@
+
+        Lesson 14 : Mini Project - animation
+
+Main idea :  How can we combine different programming patterns to make a complete animation.
+
+# its just a project to evaluate what has been learned do far about animation
+# Displaying Shapes text and sprites and animating them.

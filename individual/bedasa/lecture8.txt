@@ -1,1 +1,114 @@
+Lesson 8: Sprites
+Sprites are graphical objects that represent images or characters in a program. 
+Sprites not only display visuals but also allow you to store and manage additional information such as position, size, speed, or behavior.
+
+********Skill Building *****************
+
+//1)Step 1: Create a new sprite
+var sprite1 = createSprite(200, 200, 50, 50); // Creates a sprite at (200, 200) with width 50 and height 50
+//2) Step 2: Draw the sprite on the screen
+drawSprites(); // Displays all the sprites on the canvas
+//3)rearrange the code already present to make sure that both sprites show up like the picture on the right.
+var leftSprite = createSprite(100, 200);
+drawSprites();
+var rightSprite = createSprite(300, 200);
+drawSprites();
+//5) Step 1: Create the fruit sprite and set its animation
+var fruit = createSprite(200, 100); // Position updated for vertical stacking
+fruit.setAnimation("apple"); // Set the fruit sprite to an "apple" animation
+//6) Step 2: Create the vegetable sprite and set its animation
+var vegetable = createSprite(200, 300); // Position updated for vertical stacking
+vegetable.setAnimation("carrot"); // Set the vegetable sprite to a "carrot" animation
+//7) Step 3: Draw the sprites on the screen
+drawSprites();
+//8) Step 1: Create a sprite variable called student
+var student = createSprite(200, 200); // Creates the sprite at position (200, 200)
+//9) Step 2: Set the animation for the student sprite
+student.setAnimation("student"); // Use the exact animation name from the Animation Tab
+//10) Step 3: Draw the sprite on the screen
+drawSprites(); // Displays the sprite on the canvas
+//11) This program draws four sprites to the screen, and one of them has an animation from the Animation Tab!
+var topLeftSprite = createSprite(100, 100);
+var topRightSprite = createSprite(300, 100);
+var bottomLeftSprite = createSprite(100, 300);
+var bottomRightSprite = createSprite(300,300);
+bottomRightSprite.setAnimation("alien");
+bottomLeftSprite.setAnimation("bunny");
+topRightSprite.setAnimation("flyBot");
+topLeftSprite.setAnimation("planeRed1");
+drawSprites();
+
+//12) This program draws three sprites to the screen, but it's not working yet. 
+The wrong sprite is in front, and one sprite's animation isn't showing up.
+// Create and set up the drink sprite
+var drink = createSprite(100, 200);
+drink.setAnimation("soda");
+// Create and set up the dessert sprite
+var dessert = createSprite(300, 200);
+dessert.setAnimation("ice_cream");
+// Create and set up the message sprite
+var message = createSprite(200, 200);
+message.setAnimation("textGetReady");
+// Draw sprites on the screen in the correct order
+drawSprites();
+
+*********** practice************
+
+Activities C: Sprites Animation Error
+var sprite1 = createSprite(200, 200);
+var sprite2 = createSprite(300, 350);
+var sprite3 = createSprite(130, 325);
+var sprite4 = createSprite(75, 325);
+var sprite5 = createSprite(350, 50);
+var sprite6 = createSprite(200, 325);
+sprite1.setAnimation("tyrannosaurus");
+sprite2.setAnimation("ladybug");
+sprite3.setAnimation("grass2");
+sprite4.setAnimation("grass1");
+sprite5.setAnimation("Sun");
+sprite6.setAnimation("grass4");
+drawSprites();
+
+********** Assessment *********
+
+// Decide for yourself what you want your sprites to look like.
+// 1) Create the crab body sprite
+var crab = createSprite(200, 200); // Position the crab at (200, 200)
+crab.setAnimation("crab"); // Set the animation to the crab body
+// 2) Create the fork sprite for the left claw
+var fork = createSprite(150, 180); // Position the fork at the left claw
+fork.setAnimation("fork"); // Set the animation to the fork
+// 3) Create the knife sprite for the right claw
+var knife = createSprite(250, 180); // Position the knife at the right claw
+knife.setAnimation("knife"); // Set the animation to the knife
+// 4) Draw all sprites on the screen
+drawSprites();
+
+****** Challenges *************
+
+Activities A: Uploading Images
+// Set up canvas
+createCanvas(400, 400);
+// Create kite sprite and set properties
+var kite = createSprite(300, 50);
+kite.shapeColor = "red"; // Kite is red
+// Draw background
+background("skyblue");
+// Draw grass
+fill("green");
+noStroke();
+rect(0, 300, 400, 100);
+// Draw string
+stroke("black");
+strokeWeight(5);
+line(150, 300, kite.position.x, kite.position.y); // Connect the string to kite
+// Animate the kite
+kite.velocityX = random(-2, 2);
+kite.velocityY = random(-1, 1);
+// Draw
+daw sprite
+drawSprites();
+
+
+
 

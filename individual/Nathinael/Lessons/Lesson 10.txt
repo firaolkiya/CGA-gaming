@@ -1,0 +1,8 @@
+
+        Lesson 10 : Text
+
+Main idea : How can we use text to improve our scenes and animations.
+
+# How to use text in game lab text().
+# it recives parameters the text, and position.
+# Also has properties like textSize and also can be filled with color and other properties.
