@@ -1,0 +1,8 @@
+
+        Lesson 17 : Project - Interactive Card
+
+Main idea : What skills and practices are important when creating an interactive program
+
+# how to implement the lessons covered so far to make an interactive program.
+# specifically the ones learned on Lesson 16 and 17 to make it more user input interactive.
+# testing what has been covered so far..
