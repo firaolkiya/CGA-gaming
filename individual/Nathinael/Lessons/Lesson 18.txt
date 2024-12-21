@@ -6,3 +6,64 @@ Main idea : What skills and practices are important when creating an interactive
 # how to implement the lessons covered so far to make an interactive program.
 # specifically the ones learned on Lesson 16 and 17 to make it more user input interactive.
 # testing what has been covered so far..
+
+
+        PROJECT CODE FROM GAME LAB
+        
+
+// Create the sprites
+var sprite = createSprite(50, 330);
+sprite.setAnimation("face_carrot_1");
+sprite.scale = 0.2;
+
+var sprite1 = createSprite(100, 330);
+sprite1.setAnimation("face_carrot_1");
+sprite1.scale = 0.2;
+
+var sprite2 = createSprite(150, 330);
+sprite2.setAnimation("face_carrot_1");
+sprite2.scale = 0.2;
+
+var sprite3 = createSprite(300, 330);
+sprite3.setAnimation("bowl_1");
+
+// Instructions and title
+
+
+function draw() {
+  background("lightblue");
+
+  fill("brown");
+  rect(0, 350, 400, 50);
+
+  textSize(30);
+  text("Thanks a BUNCH", 80, 70);
+
+  fill("black");
+  textSize(16);
+  text("Pick all flowers by clicking them", 90, 100);
+  // Check if each flower is clicked
+  
+  if (mousePressedOver(sprite)) {
+    sprite.visible = false;
+    sprite.x = sprite3.x - 20; // Move to the bowl
+    sprite.y = sprite3.y - 20;
+    sprite.visible = true;
+  }
+ 
+  if (mousePressedOver(sprite1)) {
+    sprite1.visible = false;
+    sprite1.x = sprite3.x;
+    sprite1.y = sprite3.y - 20;
+    sprite1.visible = true;
+  }
+ 
+  if (mousePressedOver(sprite2)) {
+    sprite2.visible = false;
+    sprite2.x = sprite3.x + 20; // Move to the bowl
+    sprite2.y = sprite3.y - 20;
+    sprite2.visible = true;
+  }
+ 
+  drawSprites();
+}

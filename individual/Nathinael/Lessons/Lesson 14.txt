@@ -5,3 +5,25 @@ Main idea :  How can we combine different programming patterns to make a complet
 
 # its just a project to evaluate what has been learned do far about animation
 # Displaying Shapes text and sprites and animating them.
+
+    PROJECT CODE FROM GAME LAB
+
+fill("yellow");
+ellipse(350, 30, 200, 200);
+fill("green");
+ellipse(100, 150, 100, 100);
+fill("purple");
+ellipse(300, 360, 100, 100);
+var sprite = createSprite(100, 200);
+sprite.setAnimation("baby_robot_1");
+sprite.scale = 0.4;
+var sprite2 = createSprite(300, 400);
+sprite2.setAnimation("baby_robot_1");
+sprite2.scale = 0.4;
+text("pluto", 300, 480);
+function draw() {
+  background("blue");
+  sprite.rotation = randomNumber(-5, 5);
+  sprite2.y = sprite.y - 1;
+  drawSprites();
+}

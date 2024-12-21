@@ -7,3 +7,29 @@ Main idea : How can our programs react to user input
 # Example : when the up, down, right, left buttons are clicked for the code to 
   do somethimg in return.
 # the different ways to react to users input.
+
+     
+     CODE FROM GAME LAB
+
+var blueGear = createSprite(100, 220);
+blueGear.setAnimation("blue_gear");
+
+var greenGear = createSprite(183, 298);
+greenGear.setAnimation("green_gear");
+
+var redGear = createSprite(185, 145);
+redGear.setAnimation("red_gear");
+
+function draw() {
+  background("white");
+  if (keyDown("space")) {
+    blueGear.rotation = blueGear.rotation - 1;
+    greenGear.rotation = greenGear.rotation + 1;
+    redGear.rotation = redGear.rotation + 1;
+  }
+
+  // 1 Add code that will check if the space key is being pressed down.
+  // 2 Adjust the program so that the gears only rotate when the space key is pressed down.
+
+  drawSprites();
+}

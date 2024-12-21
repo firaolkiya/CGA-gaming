@@ -6,3 +6,54 @@ Main idea : How can we make our programs behave differently each time they are r
 # Using the randomNumber method to generate numbers randomlly
 # randomNumber() we pass two parameters for the range the random numbers to be generated.
 # Used in variables to Produce different shapes, size and position.
+
+
+        THIS ARE SOME OF THE CODES FFROM THE GAME LAB
+
+  // 1 Make the eyes appear at random sizes
+
+var eyeSize = randomNumber(20, 50);
+
+noStroke();
+background("green");
+
+// Face
+fill("yellow");
+ellipse(200,200,200,200);
+
+// Eyes
+fill("black");
+ellipse(160,170,eyeSize,eyeSize);
+ellipse(240,170,eyeSize,eyeSize);
+
+// Mouth
+fill("white");
+rect(160,240,80,20);
+
+var petalSize;
+background("green");
+
+  // 2 Update the first flower's petals to be a random size
+
+petalSize = randomNumber(10, 30);
+// petals
+fill("purple");
+ellipse(75,100,petalSize,petalSize);
+ellipse(125,100,petalSize,petalSize);
+ellipse(100,75,petalSize,petalSize);
+ellipse(100,125,petalSize,petalSize);
+// center
+fill("yellow");
+ellipse(100,100, 50, 50);
+
+// Update the second flower's petals to be a random size
+petalSize = randomNumber(10, 30);
+// petals
+fill("purple");
+ellipse(275,300,petalSize,petalSize);
+ellipse(325,300,petalSize,petalSize);
+ellipse(300,275,petalSize,petalSize);
+ellipse(300,325,petalSize,petalSize);
+// center
+fill("yellow");
+ellipse(300,300, 50, 50);

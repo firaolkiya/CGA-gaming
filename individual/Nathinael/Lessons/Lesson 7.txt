@@ -5,3 +5,20 @@ Main idea :To review contents covered and make a Robot face
 
 # Reviewed the contents covered earlier
 # Built a Robot Face and also used the randomNumber block.
+
+    PROJECT CODE FFROM THE GAME LAB
+
+fill("white");
+rect(150, 150, 100, 120);
+var pos = randomNumber(180, 190);
+var x = randomNumber(15, 40);
+fill("black");
+ellipse(180, pos, x);
+fill("black");
+ellipse(220, pos, x);
+var y = randomNumber(20, 30);
+fill("yellow");
+ellipse(200, 220, y);
+var u = randomNumber(60, 70);
+fill("red");
+rect(170, 240, u, 20);

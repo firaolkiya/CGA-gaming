@@ -8,3 +8,22 @@ Main idea :  How can we animate our images in Game Lab.
 # the syntax is function draw () { actions }.
 # and we can control the speed or the animation with the world.frameRate().
 # in general its a loop function that enables us to animate objects.
+
+
+        CODE FROM GAME LAB
+
+  // Run the program to see how it works.
+
+var pencil = createSprite(100,200);
+pencil.setAnimation("pencil");
+
+var brush = createSprite(300,200);
+brush.setAnimation("brush");
+
+function draw(){
+  background("white");
+  pencil.x = randomNumber(100,110);
+  // 2 Edit the code in this program to make the second sprite shake like the first one.
+  brush.x = randomNumber(290, 300);
+  drawSprites();
+}
