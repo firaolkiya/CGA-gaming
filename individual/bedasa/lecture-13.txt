@@ -1,0 +1,106 @@
+Lesson 13: Sprite Movement
+In this lesson, we explore controlling sprite movement using the counter pattern.
+The counter pattern involves incrementing or decrementing a variable (such as position) to create smooth, continuous movement for sprites.
+This technique allows for dynamic control of sprite behavior, enabling movement across different directions, such as up, down, left, and right. 
+It is fundamental in game development and interactive animations, providing the basis for user-controlled and automated sprite actions.
+
+****************skill Building****************
+
+-----------problem2--------------
+var jet = createSprite(350, 350);
+jet.setAnimation("jet");
+var plane = createSprite(50, 200);
+plane.setAnimation("plane");
+function draw() {
+  background("skyblue");
+  //1) Read the code that makes the jet go up the screen
+  jet.y = jet.y - 3;
+  //2) Add code that makes the plane move to the right
+  plane.x = plane.x+3;
+  drawSprites();
+}
+---------problem3---------
+var fly = createSprite(350, 200);
+fly.setAnimation("fly");
+function draw() {
+  background("skyblue");
+  // 3) Use the counter pattern to make the sprite move to the left.
+  fly.x = fly.x - 2; // Decrease the x position of the sprite by 2 on each frame
+  drawSprites();
+}
+--------------problem4-----------
+// Read the code that makes the mouse go down.
+// Run the program and look at the watchers to see what is happening 
+var mouse = createSprite(50, 50);
+mouse.setAnimation("mouse");
+mouse.scale = 1;
+function draw() {
+  background("lightgreen");
+  mouse.y = mouse.y + 2;
+  //4) Add one more line of code to make the mouse move diagonally.
+   mouse.x = mouse.x + 2;
+  drawSprites();
+}
+
+*****************Practice******************
+
+Activities C:Rotation Direction
+var blueGear = createSprite(100, 220);
+blueGear.setAnimation("blue_gear");
+var greenGear = createSprite(183, 298);
+greenGear.setAnimation("green_gear");
+var redGear = createSprite(185, 145);
+redGear.setAnimation("red_gear");
+function draw() {
+  background("white");
+  // 1) Make the gears rotate so they look like they are working as one system
+  blueGear.rotation = blueGear.rotation -2; // Rotate clockwise
+  greenGear.rotation = greenGear.rotation +2; // Rotate antclockwise
+  redGear.rotation = redGear.rotation +2; // Rotate antclockwise
+  drawSprites();
+}
+
+*******************Assessment***************
+
+Using the counter pattern, make all three of the fish move left across the screen as they do in the image to the right. 
+The blue fish should move the fastest, and the green fish should move the slowest.
+var orangeFish = createSprite(400, randomNumber(0, 100));
+orangeFish.setAnimation("orange_fish");
+var blueFish = createSprite(250, randomNumber(0, 200));
+blueFish.setAnimation("blue_fish");
+var greenFish = createSprite(300, randomNumber(200, 300));
+greenFish.setAnimation("green_fish");
+function draw() {
+  // Draw Background
+  background("navy");
+  // Update Values
+  orangeFish.x = orangeFish.x - 2;
+  //1) Use the counter pattern to make the blue fish move across the screen faster than the other fish
+  blueFish.x = blueFish.x -4; // Blue fish moves faster (speed 4)
+  //2) Use the counter pattern to make the green fish move across the screen slower than the other fish.
+  greenFish.x = greenFish.x -1; // Green fish moves slower (speed 1)
+  // Draw Animations
+  drawSprites();
+}
+
+******************Challenges ****************************
+
+var orangeFish = createSprite(400, randomNumber(0, 100));
+orangeFish.setAnimation("orange_fish");
+var blueFish = createSprite(250, randomNumber(0, 200));
+blueFish.setAnimation("blue_fish");
+var greenFish = createSprite(300, randomNumber(200, 300));
+greenFish.setAnimation("green_fish");
+function draw() {
+  // Draw Background
+  background("navy");
+  // Update Values
+  orangeFish.x = orangeFish.x - 2; // Orange fish moves at normal speed
+  blueFish.x = blueFish.x - 4; // Blue fish moves faster
+  greenFish.x = greenFish.x - 1; // Green fish moves slower
+  // Draw Animations
+  drawSprites();
+}
+
+
+
