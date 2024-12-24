@@ -1,1 +1,119 @@
 
+Lecture 17: Mouse Input
+In this lesson,  how to use mouse input to control sprite behavior in your program. You worked with mouseDown(), mouseX, and other conditional checks to interact with elements based on mouse actions. Here's a breakdown of the key tasks and examples from the lecture:
+
+1. Reverse the Gears (Using Keyboard Input)
+The goal was to make the gears spin in the opposite direction when the space bar is not pressed. The solution involves using an if / else statement to check for the space bar key press.
+
+Code Example:
+var blueGear = createSprite(100, 220);
+blueGear.setAnimation("blue_gear");
+
+var greenGear = createSprite(183, 298);
+greenGear.setAnimation("green_gear");
+
+var redGear = createSprite(185, 145);
+redGear.setAnimation("red_gear");
+
+function draw() {
+  background("white");
+  
+  if (keyDown("space")) {
+    // Spin gears when space bar is pressed
+    blueGear.rotation = blueGear.rotation - 1;
+    greenGear.rotation = greenGear.rotation + 1;
+    redGear.rotation = redGear.rotation + 1;
+  } else {
+    // Spin gears in the opposite direction when space bar is not pressed
+    blueGear.rotation = blueGear.rotation + 1;
+    greenGear.rotation = greenGear.rotation - 1;
+    redGear.rotation = redGear.rotation - 1;
+  }
+  
+  drawSprites();
+}
+2. Control the Gears Using Mouse Input
+The same gears are now controlled by whether the user clicks the mouse or not. The gears spin in different directions when the mouse is down or up.
+
+Code Example:
+
+var blueGear = createSprite(100, 220);
+blueGear.setAnimation("blue_gear");
+
+var greenGear = createSprite(183, 298);
+greenGear.setAnimation("green_gear");
+
+var redGear = createSprite(185, 145);
+redGear.setAnimation("red_gear");
+
+function draw() {
+  background("white");
+  
+  if (mouseDown("leftButton")) {
+    // Spin gears when the left mouse button is pressed
+    blueGear.rotation = blueGear.rotation - 1;
+    greenGear.rotation = greenGear.rotation + 1;
+    redGear.rotation = redGear.rotation + 1;
+  } else {
+    // Spin gears in the opposite direction when the mouse button is not pressed
+    blueGear.rotation = blueGear.rotation + 1;
+    greenGear.rotation = greenGear.rotation - 1;
+    redGear.rotation = redGear.rotation - 1;
+  }
+  
+  drawSprites();
+}
+3. Move the Balloon Based on Mouse Input
+The goal here was to move a balloon up or down depending on whether the mouse is being pressed or not. When the mouse is pressed, the balloon should go up; when it's not pressed, the balloon should move down.
+
+Code Example:
+var balloon = createSprite(200, 50);
+balloon.setAnimation("balloon");
+balloon.scale = 0.1;
+
+function draw() {
+  background("white");
+
+  // Check if the left mouse button is pressed
+  if (mouseDown("leftButton")) {
+    // Move balloon up when mouse is pressed
+    balloon.y = balloon.y - 1;
+  } else {
+    // Move balloon down when mouse is not pressed
+    balloon.y = balloon.y + 1;
+  }
+
+  drawSprites();
+}
+4. Shake Objects Based on Mouse Position
+In this example, the program shakes a blender or a mixer sprite depending on where the mouse is located on the screen. If the mouse is on the left side, the blender shakes; if it's on the right side, the mixer shakes.
+
+Code Example:
+var blender = createSprite(100, 300);
+blender.setAnimation("blender");
+var mixer = createSprite(300, 300);
+mixer.setAnimation("mixer");
+
+function draw() {
+  background("lightyellow");
+  fill("burlywood");
+  rect(0, 350, 400, 50);
+
+  // Shake blender or mixer depending on mouse position
+  if (World.mouseX < 200) {
+    // Shake blender on the left side of the screen
+    blender.x = randomNumber(95, 105);
+    blender.y = randomNumber(295, 305);
+  } else {
+    // Shake mixer on the right side of the screen
+    mixer.x = randomNumber(295, 305);
+    mixer.y = randomNumber(295, 305);
+  }
+
+  drawSprites();
+}
+Key Concepts Covered:
+mouseDown(): This function checks if a mouse button (like the left button) is pressed. It returns true if the mouse is down, and false otherwise.
+World.mouseX: This tracks the X-coordinate of the mouse position in the world. It's useful for detecting the mouse's location relative to your scene and making decisions based on that.
+Using if / else Statements: You learned to use if / else blocks to switch between different actions based on mouse input (such as moving or shaking objects).
+randomNumber(): This function generates random numbers within a specified range, which can be used for creating effects like shaking.
