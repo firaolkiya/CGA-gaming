@@ -1,0 +1,78 @@
+
+      coin catcher game
+
+var coin = createSprite(200, 10);
+coin.setAnimation("coin_gold_1");
+setCoin();  // Call the setCoin function to initialize the coin's properties
+
+var bunny = createSprite(200, 350);
+bunny.setAnimation("bunny1_ready_1");
+
+var score = 0;
+
+function draw() {
+  // Change background based on score
+  if (score >= 10) {
+    drawFunBackground();  // Fun background when score is 10 or more
+  } else {
+    drawNormalBackground();  // Normal background
+  }
+
+  // Bunny movement
+  if (keyDown("left")) {
+    bunny.x = bunny.x - 2;  // Move left
+  }
+
+  if (keyDown("right")) {
+    bunny.x = bunny.x + 2;  // Move right
+  }
+
+  // Check if the bunny is touching the coin
+  if (bunny.isTouching(coin)) {
+    score++;  // Increase score
+    setCoin();  // Reset the coin position
+  }
+
+  // If the coin reaches the bottom, reset it
+  if (coin.y > 400) {
+    setCoin();  // Reset the coin
+  }
+
+  // Display the score
+  textSize(20);
+  text("Score: " + score, 10, 10, 100, 100);
+
+  drawSprites();
+}
+
+function setCoin() {
+  coin.velocityY = random(3, 5);  // Randomize the coin's falling speed
+  coin.y = 10;  // Reset coin's position to the top
+  coin.x = random(50, 350);  // Randomize the coin's horizontal position
+}
+
+// Normal background function
+function drawNormalBackground() {
+  background("white");  // Normal background color
+  fill("green");
+  rect(0, 380, 400, 20);  // Ground
+  
+  fill("yellow");
+  ellipse(350, 50, 20, 20);  // Sun
+}
+
+// Fun background function (for when score reaches 10)
+function drawFunBackground() {
+  background("pink");  // Fun background color
+  
+  // Fun elements (let's add some confetti-like shapes)
+  for (var i = 0; i < 10; i++) {
+    fill(random(255), random(255), random(255));  // Random color
+    ellipse(random(0, 400), random(0, 400), 20, 20);  // Random confetti
+  }
+  
+  // Fun text to celebrate
+  textSize(30);
+  fill("purple");
+  text("You Did It!", 130, 200);
+}
