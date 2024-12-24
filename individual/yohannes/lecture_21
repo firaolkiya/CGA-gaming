@@ -1,1 +1,166 @@
 .
+Lecture 21: Mini Project - Side Scroller
+In this lesson, i'am building a side-scrolling game where a player interacts with a target and an obstacle while navigating through the screen. Here's a step-by-step breakdown of how to set up your game and make it functional:
+
+1. Draw Your Background
+The first part of the project involves creating the background for your game. You can make this background as simple or as elaborate as you like. Here's an example of how to add basic background elements:
+
+Code Example:
+
+// GAME SETUP
+// Create the sprites
+var player = createSprite(50, 250);
+player.setAnimation("little_robot_1");
+player.scale = 0.5;
+
+var obscale = createSprite(200, 285);  
+obscale.setAnimation("ore_iron_1");
+obscale.scale = 1.2;
+
+var target = createSprite(200, 50);
+target.setAnimation("pizza_slice_1");
+target.scale = 0.3;
+
+// Create the variables
+var score = 0;
+var health = 100;
+
+function draw() {
+  // BACKGROUND
+  background("white"); // Background color
+  noStroke();
+  
+  // Draw a red ellipse (e.g., sun)
+  fill("red");
+  ellipse(50, 50, 50, 50);
+  
+  // Draw a yellow ellipse (cloud)
+  fill("yellow");
+  ellipse(150, 40, 60, 60);
+  
+  // Draw the blue ground
+  fill("blue");
+  rect(0, 300, 400, 50);
+
+  // Rest of your game code...
+}
+This code draws a basic sky, a sun, a cloud, and the ground. Feel free to modify the background elements as needed!
+
+2. Create Your Sprites
+You need to create three main sprites: a player (like a frog or robot), a target (like a fly or pizza slice), and an obstacle (like a mushroom or ore). Each sprite should have its own animation and should be placed at specific coordinates on the screen. Additionally, the target and obstacle should move across the screen.
+
+Code Example:
+// GAME SETUP
+// Create the sprites
+var player = createSprite(50, 250);
+player.setAnimation("little_robot_1");
+player.scale = 0.5;
+
+var obscale = createSprite(200, 285);  
+obscale.setAnimation("ore_iron_1");
+obscale.scale = 1.2;
+
+var target = createSprite(200, 50);
+target.setAnimation("pizza_slice_1");
+target.scale = 0.3;
+
+// Set velocity for the obstacle and target
+target.velocityX = -3;
+obscale.velocityX = -3;
+
+// Create the variables
+var score = 0;
+var health = 100;
+
+function draw() {
+  // Game drawing logic...
+}
+In the setup, we set the target and obstacle sprites to move left across the screen by assigning them a velocity of -3 on the x-axis. You can adjust the speed as needed.
+
+3. Jumping Mechanism
+The jumping behavior is essential for player interaction. You need to check for the up arrow key press to make the player jump. The jump should have two phases: going up when the key is pressed, and falling back down when the player reaches the peak.
+
+Code Example:
+function draw() {
+  // BACKGROUND and other game elements...
+  
+  // Jumping Mechanism
+  if (keyDown("up") && player.y >= 250) {
+    player.velocityY = -5;  // Jump up
+  }
+  
+  // Gravity: Make the player fall down after reaching the top of the jump
+  if (player.y <= 150) {
+    player.velocityY = 5;  // Fall down
+  }
+  
+  // Check if the player is on the ground (or near it)
+  if (player.y >= 250) {
+    player.velocityY = 0;  // Stop falling
+  }
+  
+  drawSprites();
+}
+Here, the player.velocityY property is used to control the vertical movement. When the "up" key is pressed, the player moves up. Once the player reaches the top of the jump, gravity (represented by a positive velocityY value) brings the player back down.
+
+4. Looping the Obstacle and Target
+The target and obstacle need to loop back to the right side of the screen once they move off the left. This ensures that the game feels like it's continuously scrolling.
+
+Code Example:
+function draw() {
+  // BACKGROUND and other game elements...
+
+  // Looping the obstacle and target
+  if (target.x < 0) {
+    target.x = 400;  // Reset target position to the right
+  }
+  
+  if (obscale.x < 0) {
+    obscale.x = 400;  // Reset obstacle position to the right
+  }
+
+  drawSprites();
+}
+The condition if (target.x < 0) checks if the target has moved off the left side of the screen. If true, it sets the target's x-position back to 400 (the right edge of the screen). This does the same for the obstacle.
+
+5. Health and Score System
+The game needs to track the player's health and score. When the player touches the obstacle, health decreases. If the player reaches the target, the score increases.
+
+Code Example:
+
+function draw() {
+  // BACKGROUND and other game elements...
+
+  // Health and Score Display
+  fill("black");
+  textSize(20);
+  text("Health:", 280, 30);
+  text(health, 350, 30);
+
+  text("Score:", 20, 30);
+  text(score, 100, 30);
+
+  // Check for collision with the obstacle
+  if (player.isTouching(obscale)) {
+    health -= 10;  // Decrease health when touching the obstacle
+    obscale.x = 400;  // Reset obstacle position
+  }
+
+  // Check for collision with the target
+  if (player.isTouching(target)) {
+    score += 10;  // Increase score when touching the target
+    target.x = 400;  // Reset target position
+  }
+
+  // Check Game Over Condition
+  if (health <= 0) {
+    background("black");
+    fill("green");
+    textSize(50);
+    text("Game Over!", 40, 200);  // Display Game Over
+    return;
+  }
+
+  drawSprites();
+}
+This code checks for collisions between the player and both the target and the obstacle. If the player touches the target, the score increases. If the player touches the obstacle, health decreases. When health reaches 0, the game ends.
