@@ -1,0 +1,100 @@
+//GAME SETUP
+// Create the sprites
+// set velocity for the obstacle and the target
+
+var screen  = createSprite(200,200,400,450);
+screen.scale=1.2;
+var ground  = createSprite(200,325,600,150);
+ground.scale = 1.2;
+
+var cloud =createSprite(50,100,100,100);
+cloud.setAnimation("cloud_1");
+
+var frog = createSprite(200, 250);
+frog.setAnimation("frog");
+
+var mushroom = createSprite(350, 250);
+mushroom.setAnimation("mushroom");
+mushroom.velocityX=-5;
+var fly = createSprite(420, 100);
+fly.setAnimation("fly");
+fly.velocityX=-5;
+
+
+var score = 0;
+var health = 100;
+
+function draw() {
+  
+  
+   screen.setAnimation("background");
+   ground.setAnimation("ground");
+    if(mushroom.y>=250){
+      mushroom.velocityY=0;
+    }
+    
+    if(keyDown("up")&& mushroom.y>150){
+      mushroom.velocityY-=10;
+    }
+    if(mushroom.y<150){
+      mushroom.velocityY+=10;
+    }
+    
+    if(mushroom.x<0){
+      mushroom.x=400;
+    }
+    
+    if(fly.x<0){
+      fly.x=450;
+    }
+
+
+  // SPRITE INTERACTIONS
+  // if the player touches the obstacle
+  // the health goes down, and the obstacle turns
+
+  // if the player touches the target
+  // the score goes up, the target resets
+
+
+  // JUMPING
+  // if the player has reached the ground
+  // stop moving down
+
+  // if the player presses the up arrow
+  // start moving up
+
+  // if the player reaches the top of the jump
+  // start moving down
+
+
+  // LOOPING
+  // if the obstacle has gone off the left hand side of the screen, 
+  // move it to the right hand side of the screen
+
+  // if the target has gone off the left hand side of the screen,
+  // move it to the right hand side of the screen
+
+  // DRAW SPRITES
+  drawSprites();
+  
+  // SCOREBOARD
+  // add scoreboard and health meter
+  fill("black");
+  textSize(20);
+  text("Health:", 280, 30);
+  text (health, 350, 30);
+  
+  text("Score:", 70, 30);
+  text (score, 130, 30);
+  // GAME OVER
+  // if health runs out
+  // show Game over
+  if (health < 0) {
+    background("black");
+    fill("green");
+    textSize(50);
+    text("Game Over!" , 40, 200);
+  }
+}
+
