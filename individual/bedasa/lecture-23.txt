@@ -1,1 +1,173 @@
+Lesson 23: Collisions
+In this lesson, I learn how to use new collision blocks—collide, displace, bounce, and bounceOff—to create more interactive and dynamic behaviors for your sprites. 
+These blocks allow sprites to react to collisions in different ways:
+    Collide detects when two sprites touch.
+    Displace moves a sprite away from another sprite upon collision.
+    Bounce makes a sprite bounce off another object like a ball hitting a wall.
+    BounceOff makes one sprite bounce off another, often used for things like physics-based movement.
+
+******************Skill Building*******************
+
+----------------problem2-------------
+// Create giraffe sprite
+var giraffe = createSprite(30, 200);
+giraffe.setAnimation("giraffe");
+giraffe.velocityX = 1;
+giraffe.scale = 0.3;
+// Create monkey sprite
+var monkey = createSprite(300, 200);
+monkey.setAnimation("monkey");
+monkey.scale = 0.3;
+function draw() {
+  // Draw background
+  background("white");
+  // 1) Program the giraffe to push the monkey off the screen.
+  if (giraffe.isTouching(monkey)) {
+    monkey.x += 2; // Move the monkey to the right when touched
+  }
+
+  drawSprites();
+}
+
+-------------------problem3--------------------
+// Create elephant sprite
+var elephant = createSprite(200, 400);
+elephant.setAnimation("elephant");
+elephant.scale = 0.5;
+elephant.velocityY = randomNumber(-3, -1);
+// Create hippo sprite
+var hippo = createSprite(200, 100);
+hippo.setAnimation("hippo");
+hippo.scale = 0.5;
+function draw() {
+  // Draw background
+  background("white");
+  // 2) Add code to make the elephant push the hippo off the screen.
+  if (elephant.isTouching(hippo)) {
+    hippo.y -= 3; // Move the hippo upward when touched
+  }
+  drawSprites();
+}
+
+---------------------problem4--------------
+// Create elephant sprite
+var elephant = createSprite(200, 350);
+elephant.setAnimation("elephant");
+elephant.scale = 0.5;
+elephant.velocityY = randomNumber(-3, -1);
+// Create hippo sprite
+var hippo = createSprite(200, 50);
+hippo.setAnimation("hippo");
+hippo.scale = 0.5;
+hippo.velocityY = randomNumber(1, 3);
+function draw() {
+  // Draw background
+  background("white");
+  // 2) Take a look at the new block and how it is being used.
+  // 3) Fix the block so that the elephant is pushing the hippo.
+  elephant.displace(hippo);
+  drawSprites();
+}
+------------------------problem5----------------
+var parrot = createSprite(50, 200);
+parrot.setAnimation("parrot");
+parrot.velocityX = 2;
+parrot.scale = 0.3;
+var penguin = createSprite(350, 200);
+penguin.setAnimation("penguin");
+penguin.velocityX = -2;
+penguin.scale = 0.3;
+function draw() {
+  background("white");
+  parrot.displace(penguin); 
+  penguin stop moving upon collision.
+  drawSprites();
+}
+
+**********************Practice*****************
+
+Activities D: Collision Types
+var scenery = createSprite(200, 200);
+scenery.setAnimation("subway");
+var kid = createSprite(350, 250);
+kid.setAnimation("kid");
+kid.velocityX = -2.5;
+kid.scale = 0.6;
+var suitcase = createSprite(150, 280);
+suitcase.setAnimation("suitcase");
+suitcase.scale = 0.8;
+function draw() {
+  background("white"); // Optional: Add a background
+  //1) Use displace to make the child push the suitcase.
+  kid.displace(suitcase);
+  drawSprites();
+}
+
+******************Assessment******************
+
+// Create sprites
+var giraffe = createSprite(50, 50);
+giraffe.setAnimation("giraffe");
+giraffe.velocityX = 3;
+var hippo = createSprite(50, 150);
+hippo.setAnimation("hippo");
+hippo.velocityX = 3;
+var rabbit = createSprite(50, 250);
+rabbit.setAnimation("rabbit");
+rabbit.velocityX = 3;
+var snake = createSprite(50, 350);
+snake.setAnimation("snake");
+snake.velocityX = 3;
+var parrot = createSprite(350, 50);
+parrot.setAnimation("parrot");
+parrot.velocityX = -3;
+var elephant = createSprite(350, 150);
+elephant.setAnimation("elephant");
+elephant.velocityX = -3;
+var monkey = createSprite(350, 250);
+monkey.setAnimation("monkey");
+monkey.velocityX = -3;
+var pig = createSprite(350, 350);
+pig.setAnimation("pig");
+pig.velocityX = -3;
+function draw() {
+  background("lightblue");
+  // 1) Use sprite interaction for each pair of animals
+  giraffe.displace(hippo);  
+  rabbit.displace(snake);  
+  parrot.displace(elephant); 
+  monkey.displace(pig);      
+  drawSprites();
+}
+
+***************Challenges*****************
+
+Activities C: Bounciness
+var basketball = createSprite(100, 0);
+basketball.setAnimation("basketball");
+basketball.bounciness = 0.8;
+var poolball = createSprite(325, 0);
+poolball.setAnimation("poolball");
+poolball.bounciness = 0.4;
+var soccerball = createSprite(225, 0);
+soccerball.setAnimation("soccerball");
+soccerball.bounciness = 0.9; 
+var wood = createSprite(200, 375);
+wood.setAnimation("floor");
+function draw() {
+  background("skyblue");
+  basketball.bounceOff(wood);
+  soccerball.bounceOff(wood);
+  poolball.bounceOff(wood);
+  basketball.velocityY = basketball.velocityY + 0.2;
+  soccerball.velocityY = soccerball.velocityY + 0.2;
+  poolball.velocityY = poolball.velocityY + 0.2;
+  drawSprites();
+}
+
+
+
+
+
+
 
