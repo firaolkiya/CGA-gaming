@@ -1,1 +1,183 @@
+Lesson 20: Collision Detection
+
+**************Skill Building****************
+
+-------------problem2---------------------
+// Create the sprites and start them moving
+var backdrop = createSprite(200,200);
+backdrop.setAnimation("meadow");
+var bunny = createSprite(50, 300);
+bunny.setAnimation("bunny");
+bunny.velocityX = 3;
+var robot = createSprite(400, 320);
+robot.setAnimation("robot");
+robot.scale = 0.2;
+robot.velocityX = -3;
+var dinner = createSprite(370, 350);
+dinner.setAnimation("stew");
+dinner.velocityX = -3;
+
+function draw() {
+  // check if the bunny and dinner are touching
+  if ((((bunny.x > dinner.x) && ((bunny.x - dinner.x) < (bunny.width/2 + dinner.width/2))) || 
+    ((bunny.x < dinner.x) && ((bunny.x - dinner.x) > - (bunny.width/2 + dinner.width/2))))) {
+    // stop everything and change to empty bowl
+    bunny.velocityX = 0;
+    dinner.velocityX = 0;
+    robot.velocityX = 0;
+    dinner.setAnimation("bowl");
+  }
+  drawSprites();
+}
+-------------problem3--------------
+// Create the sprites and start them moving
+var backdrop = createSprite(200,200);
+backdrop.setAnimation("meadow");
+var bunny = createSprite(50, 300);
+bunny.setAnimation("bunny");
+bunny.velocityX = 3;
+var robot = createSprite(400, 320);
+robot.setAnimation("robot");
+robot.scale = 0.2;
+robot.velocityX = -3;
+var dinner = createSprite(370, 350);
+dinner.setAnimation("stew");
+dinner.velocityX = -3;
+
+function draw() {
+  // 1) Check if the bunny is touching the dinner.
+  if (bunny.isTouching(dinner)) {
+    // Stop everything and change to empty bowl
+    bunny.velocityX = 0;
+    dinner.velocityX = 0;
+    robot.velocityX = 0;
+    dinner.setAnimation("bowl");
+  }
+  drawSprites();
+}
+--------------problem4------------
+// Create the sprites and start them moving
+var backdrop = createSprite(200,200);
+backdrop.setAnimation("meadow");
+var bunny = createSprite(50, 300);
+bunny.setAnimation("bunny");
+bunny.velocityX = 3;
+var robot = createSprite(400, 320);
+robot.setAnimation("robot");
+robot.scale = 0.2;
+robot.velocityX = -3;
+var dinner = createSprite(370, 350);
+dinner.setAnimation("stew");
+dinner.velocityX = -3;
+
+function draw() {
+  // 1) Check if the bunny is touching the dinner.
+  if (bunny.isTouching(dinner)) {
+    // Stop everything and change to empty bowl
+    bunny.velocityX = 0;
+    dinner.velocityX = 0;
+    robot.velocityX = 0;
+    dinner.setAnimation("bowl");
+  }
+  drawSprites();
+}
+------------problem5-------------
+var balloon = createSprite(200,200);
+balloon.setAnimation("balloon");
+//2) Change the code on line 4 from false to true.
+balloon.debug = true;
+//3) Debug the tack sprite.
+var tack = createSprite(350, 50);
+tack.setAnimation("tack");
+function draw() {
+  background("gray");
+  // check if tack is touching balloon
+  if (balloon.isTouching(tack)) {
+    // replace balloon image
+    balloon.setAnimation("popped");
+  }
+  // make tack move with arrow keys
+  if (keyDown("up")) {
+    tack.y = tack.y - 1;
+  }
+  if (keyDown("down")) {
+    tack.y = tack.y + 1;
+  }
+  if (keyDown("left")) {
+    tack.x = tack.x - 1;
+  }
+  if (keyDown("right")) {
+    tack.x = tack.x + 1;
+  }
+  
+  drawSprites();
+}
+
+***********Practice**************
+
+Activities C: Scared Mouse
+var kitchen = createSprite(200, 200);
+kitchen.setAnimation("kitchen");
+var cat = createSprite(350, 125);
+cat.setAnimation("cat");
+cat.scale = 0.50;
+var mouse = createSprite(0, 175);
+mouse.setAnimation("mouse_right");
+mouse.velocityX = 8;
+
+function draw() {
+  background("white");
+
+  // 1) Check if the mouse is touching the cat
+  if (mouse.isTouching(cat)) {
+    // Make the mouse run in the other direction
+    mouse.velocityX = -18; // Reverse direction
+    mouse.setAnimation("mouse_left"); // Change the animation for running left
+
+    // Make the cat look down and meow
+    cat.setAnimation("cat"); // Use an appropriate animation for the cat
+    playSound("meow.mp3"); // Play a meow sound effect
+  }
+
+  drawSprites();
+}
+
+*******************Assessment**********************
+
+// Create the sprites
+var horse = createSprite(200, 150);
+horse.setAnimation("horse");
+var rainbow = createSprite(400, 370);
+rainbow.setAnimation("rainbow");
+rainbow.velocityX = -5;
+rainbow.velocityY = -5;
+rainbow.rotateToDirection = true;
+
+function draw() {
+  // Draw the background
+  background("skyblue");
+
+  // 1) Change the horse into a unicorn when the rainbow touches it
+  if (rainbow.isTouching(horse)) {
+    horse.setAnimation("unicorn"); // Change the animation to a unicorn
+  }
+
+  drawSprites();
+}
+
+****************Challenges*******************
+
+var roller = createSprite(200, 200);
+roller.scale = 2;
+roller.setAnimation("roller_1");
+
+// 1) Use .setCollider() with all 6 parameters
+roller.setCollider("rectangle", 0, 0, 100, 50); 
+roller.debug = true;
+
+drawSprites();
+
+
+
+
 
