@@ -1,0 +1,160 @@
+// Variables
+var score = 0; // Initialize score to 0
+
+// Create Sprites
+var platform, platform2;
+var star, star2;
+var player;
+
+function setup() {
+  createCanvas(400, 400);
+  
+  // Create platforms
+  platform = createSprite(200, 400);
+  platform.setAnimation("platform"); // Set platform image (you'll need to upload this image)
+  platform.velocityY = 2;
+  platform.scale=0.5;
+  
+  platform2 = createSprite(300, 350);
+  platform2.setAnimation("platform");
+  platform2.velocityY = 2;
+  platform2.scale=0.5;
+  
+  // Create items (stars)
+  star = createSprite(randomNumber(50, 350), randomNumber(-30, -60));
+  star.setAnimation("star"); // Set item image (you'll need to upload this image)
+  star.velocityY = 3;
+  star.scale=0.2;
+  
+  star2 = createSprite(randomNumber(50, 350), randomNumber(-30, -60));
+  star2.setAnimation("star");
+  star2.velocityY = 3;
+  star2.scale=0.2;
+  
+  // Create player
+  player = createSprite(200, 200);
+  player.setAnimation("alien"); // Set default player animation to face right
+  player.velocityY = 0;
+}
+
+function draw() {
+  // Choose background based on score
+  if (score > 100) {
+    background2();
+  } else {
+    background1();
+  }
+  
+  // Update and draw sprites
+  movePlayer();
+  showScore(); // Display score
+  loopPlatforms();
+  loopItems();
+  playerFall();
+  playerLands();
+  collectItems();
+  
+  drawSprites(); // Draw all sprites
+}
+
+// Functions
+
+// Background 1
+function background1() {
+  background("darkBlue");
+  noStroke();
+  fill("yellow");
+  ellipse(randomNumber(0, 400), randomNumber(0, 400), 3, 3);
+  ellipse(randomNumber(0, 400), randomNumber(0, 400), 3, 3);
+  ellipse(340, 50, 60, 60);
+  fill("darkBlue");
+  ellipse(320, 30, 60, 60);
+}
+
+// Background 2
+function background2() {
+  background("lightBlue");
+  noStroke();
+  fill("white");
+  ellipse(randomNumber(0, 400), randomNumber(0, 400), 3, 3);
+  ellipse(randomNumber(0, 400), randomNumber(0, 400), 3, 3);
+  ellipse(150, 80, 50, 50);
+  fill("lightBlue");
+  ellipse(130, 60, 50, 50);
+}
+
+// Show Score
+function showScore() {
+  fill("white");
+  textSize(20);
+  text("Score: " + score, 10, 10, 80, 20);  // Show actual score on the screen
+}
+
+// Player movement (left, right, jump)
+function movePlayer() {
+  if (keyDown("left")) {
+    player.x -= 3; // Move left
+    player.setAnimation("alien");  // Change animation to "left" when moving left
+  }
+  if (keyDown("right")) {
+    player.x += 3; // Move right
+    player.setAnimation("alien"); // Change animation to "right" when moving right
+  }
+  if (keyDown("up") && player.velocityY === 0) { // Jump only if player is on the ground
+    player.velocityY = -10; // Jump velocity
+  }
+}
+
+// Player fall (simulate gravity)
+function playerFall() {
+  player.velocityY += 0.5; // Simulate gravity
+  if (player.y > height) {
+    player.y = height; // Ensure the player doesn't fall off the screen
+    player.velocityY = 0; // Stop falling when on the ground
+  }
+}
+
+// Platforms looping
+function loopPlatforms() {
+  if (platform.y > height) {
+    platform.y = -20; // Move platform back to the top
+    platform.x = randomNumber(50, 350); // Randomize x-position
+  }
+  if (platform2.y > height) {
+    platform2.y = -20; // Move platform back to the top
+    platform2.x = randomNumber(50, 350); // Randomize x-position
+  }
+}
+
+// Loop items (stars)
+function loopItems() {
+  if (star.y > height) {
+    star.y = randomNumber(-30, -60); // Random y-position above the screen
+    star.x = randomNumber(50, 350); // Random x-position
+  }
+  if (star2.y > height) {
+    star2.y = randomNumber(-30, -60); // Random y-position above the screen
+    star2.x = randomNumber(50, 350); // Random x-position
+  }
+}
+
+// Player landing on platforms
+function playerLands() {
+  if (player.collide(platform) || player.collide(platform2)) {
+    player.velocityY = 0; // Stop falling when landing on a platform
+  }
+}
+
+// Collect items (stars)
+function collectItems() {
+  if (player.isTouching(star)) {
+    star.y = randomNumber(-30, -60); // Move item back to top
+    star.x = randomNumber(50, 350); // Randomize x-position
+    score += 10; // Increase score
+  }
+  if (player.isTouching(star2)) {
+    star2.y = randomNumber(-30, -60);
+    star2.x = randomNumber(50, 350);
+    score += 10;
+  }
+}
