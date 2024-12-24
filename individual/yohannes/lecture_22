@@ -1,1 +1,100 @@
 
+//GAME SETUP
+// Create the sprites
+// set velocity for the obstacle and the target
+var player = createSprite(50, 250);
+player.setAnimation("little_robot_1");
+player.scale=0.5;
+
+var obscale = createSprite(200, 285);  
+obscale.setAnimation("ore_iron_1");
+obscale.scale=1.2;
+
+var target = createSprite(200, 50);
+target.setAnimation("pizza_slice_1");
+target.scale=0.3;
+
+
+//create the variables
+var score = 0;
+var health = 100;
+
+function draw() {
+  // BACKGROUND
+  background("white");
+  noStroke();
+  fill("red");
+  ellipse(50,50,50,50);
+  fill("yellow");
+  
+  ellipse(150,40,60,60);
+  fill("blue");
+  rect(0,300,400,50);
+  
+  // draw the ground and other background
+
+if (player.y>=250) {
+
+  
+  if (keyDown("up")) {
+  player.velocityY=-5;
+} else{
+    player.velocityY=0;
+}
+
+}
+
+
+
+  // SPRITE INTERACTIONS
+  // if the player touches the obstacle
+  
+  
+if (player.y<80) {
+  player.velocityY=5;
+}
+
+    
+  // the health goes down, and the obstacle turns
+
+  // if the player touches the target
+  // the score goes up, the target resets
+
+
+  // JUMPING
+  // if the player has reached the ground
+  // stop moving down
+
+  // if the player presses the up arrow
+  // start moving up
+
+  // if the player reaches the top of the jump
+  // start moving down
+
+
+  // LOOPING
+  // if the obstacle has gone off the left hand side of the screen, 
+  // move it to the right hand side of the screen
+
+  // if the target has gone off the left hand side of the screen,
+  // move it to the right hand side of the screen
+
+  // DRAW SPRITES
+  drawSprites();
+  
+  // SCOREBOARD
+  // add scoreboard and health meter
+  fill("black");
+  textSize(20);
+  text("Health:", 280, 30);
+  text (health, 350, 30);
+  // GAME OVER
+  // if health runs out
+  // show Game over
+  if (health < 0) {
+    background("black");
+    fill("green");
+    textSize(50);
+    text("Game Over!" , 40, 200);
+  }
+}
