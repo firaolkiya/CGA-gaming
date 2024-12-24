@@ -1,1 +1,18 @@
-.
+var basketball = createSprite(200, 0);
+basketball.setAnimation("basketball");
+basketball.setCollider("circle");
+
+var wood = createSprite(200, 375);
+wood.setAnimation("floor");
+
+function draw() {
+  basketball.velocityY = basketball.velocityY + 0.3;
+  basketball.rotationSpeed = 2;
+  
+  //1) Choose the best block to model the basketball's interaction with the floor.
+  
+  background("skyblue");
+  
+  basketball.bounceOff(wood);
+  drawSprites();
+}
