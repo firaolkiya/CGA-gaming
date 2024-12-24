@@ -1,4 +1,5 @@
 
+
 //GAME SETUP
 // Create the sprites
 // set velocity for the obstacle and the target
@@ -98,3 +99,4 @@ if (player.y<80) {
     text("Game Over!" , 40, 200);
   }
 }
+
