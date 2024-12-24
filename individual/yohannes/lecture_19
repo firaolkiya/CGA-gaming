@@ -1,1 +1,72 @@
 
+Summary of Lecture 19 on Velocity
+1. velocityX for Horizontal Movement:
+
+The velocityX property allows sprites to move by a certain number of pixels horizontally each frame, using a simple velocity pattern.
+
+Example:
+var fish = createSprite(50, 150);
+fish.setAnimation("orange_fish");
+fish.velocityX = 1;  // Move the fish to the right
+The velocityX = 1; line makes the fish move 1 pixel to the right every frame of the game.
+
+2. Moving a Sprite Down (Using velocityY):
+
+To move a sprite vertically (e.g., down), you can use the velocityY property.
+Example to move the feather sprite down:
+
+feather.velocityY = 1;  // Moves the feather down the screen
+3. Controlling Rotation Speed:
+
+The rotationSpeed property can be used to make a sprite rotate, and its speed can be controlled.
+Example for rotating a wheel when the spacebar is pressed:
+
+var wheel = createSprite(200, 200);
+wheel.setAnimation("wheel");
+
+function draw() {
+  background("blue");
+
+  if (keyWentDown("space")) {
+    wheel.rotationSpeed = 2;  // Starts rotating when space is pressed
+  }
+
+  drawSprites();
+}
+4. Changing Velocity Based on Sprite's Position:
+
+You can change the sprite's movement by checking its position using if statements.
+
+Example:
+
+var fish = createSprite(200, 200);
+fish.setAnimation("fishR");
+fish.velocityX = 2;
+
+function draw() {
+  background("blue");
+
+  if (fish.x < 0) {
+    fish.setAnimation("fishR");
+    fish.velocityX = 2;  // Moves to the right
+  }
+  if (fish.x > 400) {
+    fish.setAnimation("fishL");
+    fish.velocityX = -2;  // Moves to the left when it goes off-screen
+  }
+
+  drawSprites();
+}
+What the code does:
+
+The fish starts by moving to the right (due to fish.velocityX = 2).
+When the fish reaches the left edge (x < 0), it switches animation and continues moving right.
+When it reaches the right edge (x > 400), it switches animation again and moves left.
+Key Concepts:
+velocityX: Moves a sprite horizontally by the given value.
+velocityY: Moves a sprite vertically by the given value.
+rotationSpeed: Controls the speed of rotation for a sprite.
+Conditionals (if statements): Used to change sprite behavior based on its position or interactions, such as reversing direction when the sprite hits the edge
+=======
+
+
