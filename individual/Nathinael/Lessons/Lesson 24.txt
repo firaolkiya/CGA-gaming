@@ -1,0 +1,4 @@
+
+        Lesson 24 : Mini-Project - Flyer Game
+
+Main idea :  How can the new types of collisions and modeling movement be used to create a game
