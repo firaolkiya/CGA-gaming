@@ -1,0 +1,48 @@
+function draw() {
+  if (mouseY > 200) {
+    drawScene1();  // If the mouse Y position is greater than 200, draw scene 1 (Day)
+  } else {
+    drawScene2();  // If the mouse Y position is less than or equal to 200, draw scene 2 (Night)
+  }
+}
+
+// Scene 1: Day scene with a sun and clouds
+function drawScene1() {
+  background("lightblue");  // Sky color for day
+  
+  // Draw the sun
+  fill("yellow");
+  noStroke();
+  ellipse(350, 100, 100, 100);  // Sun
+  
+  // Draw clouds
+  fill(255, 255, 255, 150);  // Semi-transparent white for clouds
+  ellipse(100, 80, 150, 50);  // Cloud 1
+  ellipse(150, 90, 150, 50);  // Cloud 2
+  ellipse(500, 80, 150, 50);  // Cloud 3
+  ellipse(550, 90, 150, 50);  // Cloud 4
+  
+  // Ground
+  fill("green");
+  rect(0, 380, 400, 20);  // Ground at the bottom
+}
+
+// Scene 2: Night scene with a moon and stars
+function drawScene2() {
+  background("darkblue");  // Sky color for night
+  
+  // Draw the moon
+  fill("lightgray");
+  noStroke();
+  ellipse(350, 100, 100, 100);  // Moon
+  
+  // Draw stars
+  // fill("white");
+  // for (let i = 0; i < 20; i++) {
+  //   ellipse(random(0, 400), random(0, 200), 5, 5);  // Randomly position 20 stars
+  // }
+  
+  // Ground
+  fill("green");
+  rect(0, 380, 400, 20);  // Ground at the bottom
+}
