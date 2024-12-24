@@ -1,1 +1,100 @@
+Summary of Lecture 18 on Interactive Card:
+how to create an interactive card with backgrounds, sprites, and user input interactions. Here's a breakdown of the key concepts and steps:
 
+1. Laying Out the Background:
+Goal: Use the background and shapes to create the layout of your interactive card.
+
+Steps:
+
+First, add the lowest layer (background) using the background() block. This should be placed at the top of the draw loop.
+Then, layer other elements (e.g., ground, objects) in the desired stacking order.
+Add comments to describe each section, especially if the code is complex (e.g., drawing a tree or house).
+Challenge: Use variables or randomNumber() to add subtle animations or changes to the background.
+Example:
+
+var ground = createSprite(200, 400);
+ground.setAnimation("ground_grass_small_1");
+ground.scale = 2;
+var robot = createSprite(100, 300);
+robot.setAnimation("baby_robot_1");
+robot.scale = 0.45;
+var cow = createSprite(330, 270);
+cow.setAnimation("cow_1");
+cow.scale = 0.35;
+
+function draw() {
+  background("skyblue");
+  noStroke();
+  fill("yellow");
+  ellipse(350, 50, 50, randomNumber(40, 52));
+
+  // Robot interaction
+  if (mousePressedOver(robot)) {
+    robot.rotation = robot.rotation + 1;
+  } else {
+    robot.rotation = robot.rotation - 1;
+  }
+
+  // Cow movement
+  if (keyDown("space")) {
+    cow.y = randomNumber(265, 275);
+  }
+
+  // Ground layer interactions
+  if (World.mouseY > 300) {
+    ground.setAnimation("ground_cake_small_broken_1");
+    if (keyDown("down")) {
+      ground.setAnimation("ground_stone_small_1");
+    }
+  } else {
+    ground.setAnimation("ground_grass_small_1");
+  }
+
+  drawSprites();
+}
+2. Adding Sprites:
+Goal: Add sprites to your card and set their animations or properties.
+
+Steps:
+
+Initialize the sprites using createSprite() at the top of your program.
+Set their animations with setAnimation() to give them visual content.
+In the draw() loop, update any sprite properties that need to animate (e.g., movements, rotations).
+Example:
+
+var robot = createSprite(100, 300);
+robot.setAnimation("baby_robot_1");
+robot.scale = 0.45;
+var cow = createSprite(330, 270);
+cow.setAnimation("cow_1");
+cow.scale = 0.35;
+3. User Input (Interactions):
+Goal: Add user input interactions such as key presses or mouse movements to make your card interactive.
+
+Steps:
+
+Check the interactions table in your project guide to see what actions depend on user input (e.g., key presses, mouse clicks).
+Use if() blocks (or if/else blocks) inside the draw() loop to handle these interactions.
+Add corresponding input blocks (keyDown(), mousePressedOver(), etc.) and define the actions within the block.
+Example:
+
+Robot rotation on mouse click:
+
+if (mousePressedOver(robot)) {
+  robot.rotation = robot.rotation + 1;  // Rotate when clicked
+} else {
+  robot.rotation = robot.rotation - 1;  // Reverse rotation
+}
+Cow movement with spacebar:
+javascript
+Copy code
+if (keyDown("space")) {
+  cow.y = randomNumber(265, 275);  // Move the cow up or down
+}
+4. Combining Everything:
+You can combine backgrounds, sprites, and interactions in one program. This allows your card to have animations, sprite movement, and dynamic changes based on user input (such as key presses or mouse clicks).
+Key Concepts:
+Background Setup: Create layers in your interactive card to establish the visual elements.
+Sprites: Add animated sprites that will provide interactive content for your card.
+User Input: Use if() statements to detect mouse clicks or key presses and trigger corresponding actions.
+Animations: Use the setAnimation() method to change sprite appearances and create visual effects.
