@@ -1,0 +1,97 @@
+               flyer game 
+
+// GAME SETUP
+// create player, target, and obstacles
+var player = createSprite(200, 100);
+player.setAnimation("fly_bot");
+player.scale = 0.8;
+
+var rock1 = createSprite(250, 0);
+rock1.setAnimation("rock");
+rock1.velocityY = 5;
+
+var rock2 = createSprite(0, 100);
+rock2.setAnimation("rock");
+rock2.velocityX = 5;
+
+var coin = createSprite(340, 380);
+coin.setAnimation("coin");
+
+// create variables for gravity and player velocity
+var gravity = 0.2; // simulates gravity
+var playerVelocityY = 0; // player's vertical velocity
+var playerVelocityX = 0; // player's horizontal velocity
+var jumpPower = -5; // upward velocity when jumping
+
+function draw() {
+  background("lightblue");
+
+  // FALLING
+  // Apply gravity to the player if no keys are pressed
+  if (player.y < 400) { // prevent falling too far below the ground
+    playerVelocityY += gravity; // gradually increase downward speed
+  } else {
+    playerVelocityY = 0; // stop falling when hitting the ground
+    player.y = 400; // keep player on the ground level
+  }
+
+  player.y += playerVelocityY; // update player's vertical position
+  
+  // LOOPING
+  // Reset the position of the rocks if they move off the screen
+  // For horizontal obstacle (rock2)
+  if (rock2.x > 400) {
+    rock2.x = 0; // reset to the left side
+    rock2.y = random(50, 350); // set a random y position
+  }
+
+  // For vertical obstacle (rock1)
+  if (rock1.y > 400) {
+    rock1.y = 0; // reset to the top of the screen
+    rock1.x = random(50, 350); // set a random x position
+  }
+
+  // PLAYER CONTROLS
+  // Change the y velocity when the user clicks "up"
+  if (keyDown("up")) {
+    if (player.y === 400) { // only allow jump when the player is on the ground
+      playerVelocityY = jumpPower; // make the player jump
+    }
+  }
+
+  // Decrease the x velocity when user clicks "left"
+  if (keyDown("left")) {
+    playerVelocityX = -2; // move left
+  }
+
+  // Increase the x velocity when the user clicks "right"
+  if (keyDown("right")) {
+    playerVelocityX = 2; // move right
+  }
+
+  // Update player's x position
+  player.x += playerVelocityX;
+
+  // SPRITE INTERACTIONS
+  // Reset the coin when the player touches it
+  if (player.isTouching(coin)) {
+    coin.x = random(50, 350); // reset coin to a new position
+    coin.y = random(50, 350); // reset coin to a new position
+  }
+
+  // Make the obstacles push the player
+  if (player.isTouching(rock1) || player.isTouching(rock2)) {
+    player.x -= 5; // simulate a push back
+  }
+
+  // DRAW SPRITES
+  drawSprites();
+
+  // GAME OVER
+  if (player.x < -50 || player.x > 450 || player.y < -50 || player.y > 450) {
+    background("black");
+    textSize(50);
+    fill("green");
+    text("Game Over!", 50, 200);
+  }
+}
