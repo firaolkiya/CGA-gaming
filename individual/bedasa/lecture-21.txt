@@ -1,1 +1,118 @@
+Lesson 22: Complex Sprite Movement
+In this lesson, I learn how to create more dynamic and complex movements for sprites by combining the velocity properties of sprites with the counter pattern.
+Velocity allows sprites to move smoothly across the screen by controlling their speed and direction, while the counter pattern helps manage movement over time. 
+
+***************************Skill Building*************
+
+----------problem 2--------------------
+var car = createSprite(50, 200);
+car.setAnimation("red_car");
+car.velocityX = 0.2;
+function draw() {
+  background("gray");
+  // 1) Add code to make the car speed up
+  car.velocityX += 0.1; // Increment velocityX to make the car speed up gradually
+  drawSprites();
+}
+--------------problem3-------------
+
+var rock = createSprite(200, 50);
+rock.setAnimation("rock");
+rock.velocityY = 0.5;
+function draw() {
+  background("skyblue");
+  // 1) Add code to make the rock speed up as it falls
+  rock.velocityY += 0.02; // Increment velocityY to simulate increasing speed (acceleration)
+
+  drawSprites();
+}
+--------------problem4----------------
+var car = createSprite(50, 200);
+car.setAnimation("blue_car");
+car.velocityX = 10;
+noStroke();
+function draw() {
+  background("burlywood");
+  fill("blue");
+  rect(350, 0, 100, 400); 
+  // 1) Add code to slow the car down before it goes into the water
+  if (car.x > 300 && car.x < 350) { 
+    car.velocityX -= 0.2; 
+  }
+  if (car.velocityX < 0) { 
+    car.velocityX = 0;
+  }
+  drawSprites();
+}
+
+******************Practice****************
+
+Activities C: Floating Balloon
+var balloon = createSprite(200, 40);
+balloon.setAnimation("balloon");
+balloon.scale = 0.15;
+
+// 1) Take a look at the code that makes the balloon move.
+balloon.velocityY = 8;
+
+function draw() {
+  background("skyblue");
+  fill("green");
+  rect(0, 350, 400, 50);
+  // 2) Add code to make the balloon slow down and float away
+  if (balloon.velocityY > 0) {
+    balloon.velocityY -= 0.1; 
+  } else {
+    balloon.velocityY = -1; 
+  }
+
+  drawSprites();
+}
+
+******************Assessment*********************
+
+var rock = createSprite(200, 350);
+rock.setAnimation("rock");
+rock.velocityY = -10;
+rock.rotationSpeed = 2;
+function draw() {
+  background("skyblue");
+  // 1) Add code to make the rock slow down and then fall
+  if (rock.velocityY < 0) {
+    rock.velocityY += 0.5; 
+  } else {
+    rock.velocityY += 0.5; 
+  }
+  if (rock.y > 350) {
+    rock.y = 350; // Stop the rock on the ground
+    rock.velocityY = 0;
+  }
+  drawSprites();
+}
+
+****************** Challenges********************
+
+Activities A: curve
+var plane = createSprite(50, 350);
+plane.setAnimation("plane");
+var rock = createSprite(150, 350);
+rock.setAnimation("rock");
+var rockdown = createSprite(350, 100);
+rockdown.setAnimation("rock_down");
+// You might want to change these 
+plane.velocityY = -9;
+plane.velocityX = 3;
+function draw() {
+  background("lightblue");
+  // 1) Add code that moves the plane down
+  if (plane.y > 0 && plane.y < 400) {
+    plane.velocityY += 0.3;
+  }
+  drawSprites();
+}
+
+
+
+
+
 
