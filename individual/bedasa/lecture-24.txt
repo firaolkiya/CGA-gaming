@@ -1,1 +1,100 @@
+Lesson 24: Mini-Project - Flyer Game
+In this lesson, i combine my knowledge of simulating gravity and different types of collisions to create a simple flyer game.
+The goal is to design a game where the player controls a flying character that must avoid obstacles, manage gravity’s effects, and navigate through different challenges. 
+This mini-project helps reinforce the concepts of physics in game development, such as gravity and collision handling, while giving you hands-on experience in creating interactive gameplay.
 
+****************************my practice project***************************
+
+var player = createSprite(200, 100);
+player.setAnimation("fly_bot");
+player.scale = 0.8;
+player.velocityY = 0; 
+var coin = createSprite(300, 200);
+coin.setAnimation("coin");
+coin.scale = 0.3;
+var rock = createSprite(350, 300);
+rock.setAnimation("rock");
+rock.scale = 0.5;
+rock.velocityX = -2;
+// Add random vertical movement to rock
+rock.velocityY = Math.random() * 2 - 1; 
+var gameOver = false; 
+var lives = 3; 
+var score = 0;
+function draw() {
+  background("lightblue");
+  // Check for game over
+  if (gameOver) {
+    player.velocityX = 0;
+    player.velocityY = 0;
+    rock.velocityX = 0;
+    rock.velocityY = 0;
+    textSize(50);
+    fill("green");
+    text("Game Over!", 50, 200);
+    textSize(30);
+    fill("black");
+    text("Score: " + score, 50, 250);
+    return; 
+  }
+  // FALLING (Gravity effect)
+  player.velocityY += 0.5; 
+  // PLAYER CONTROLS
+  if (keyDown("UP_ARROW")) {
+    player.velocityY = -10; 
+  }
+  // Move left and right
+  if (keyDown("LEFT_ARROW")) {
+    player.velocityX = -3; 
+  }
+  else if (keyDown("RIGHT_ARROW")) {
+    player.velocityX = 3; 
+  }
+  else {
+    player.velocityX = 0; 
+  }
+  // LOOPING: Keep player and objects within screen bounds
+  if (player.x < -50) {
+    player.x = 450; 
+  }
+  if (player.x > 450) {
+    player.x = -50; 
+  }
+  if (coin.x < -50) {
+    coin.x = 450;
+  }
+  if (coin.x > 450) {
+    coin.x = -50; 
+  }
+  if (rock.x < -50) {
+    rock.x = 450; 
+  }
+  // SPRITE INTERACTIONS
+  // Reset the coin when the player touches it
+  if (player.isTouching(coin)) {
+    coin.x = Math.random() * 300 + 50;
+    coin.y = Math.random() * 200 + 50;
+    score += 10; 
+  }
+  // Handle obstacle collision and lives
+  if (player.isTouching(rock)) {
+    player.x -= 5; 
+    player.velocityY = -5; 
+    lives -= 1; 
+    if (lives <= 0) {
+      gameOver = true; 
+    }
+  }
+  // Add random vertical movement to the rock
+  rock.y += rock.velocityY;
+  // If the rock moves out of bounds vertically, reverse its direction
+  if (rock.y < 50 || rock.y > 350) {
+    rock.velocityY = -rock.velocityY; 
+  }
+  // Display lives and score
+  textSize(20);
+  fill("black");
+  text("Lives: " + lives, 20, 30);
+  text("Score: " + score, 350, 30);
+  drawSprites();
+}
