@@ -1,0 +1,49 @@
+in this lesson i have learned about how to change speed of the sprites with time changing
+so simply i can use velocityx and velociity property 
+
+var balloon = createSprite(200, 40);
+balloon.setAnimation("balloon");
+balloon.scale = 0.15;
+//1) Take a look at the code that makes the balloon move.
+balloon.velocityY =  8;
+
+
+function draw() {
+  background("skyblue");
+  fill("green");
+  rect(0, 350, 400, 50);
+
+  //2) Add code to make the balloon slow down and float away.
+  if(balloon.y>400){
+    balloon.velocityY=-1;
+  }
+  if(balloon.velocityY<0){
+    balloon.velocityY-=0.1;
+  }
+  if(balloon.y<0){
+    balloon.velocityY=10;
+  }
+
+  drawSprites();
+}
+
+var rock = createSprite(200, 350);
+rock.setAnimation("rock");
+rock.velocityY =  -10;
+rock.rotationSpeed = 2;
+
+function draw() {
+  background("skyblue");
+  
+  //1) Add code to make the rock slow down and then fall.
+
+  if(rock.y<400){
+    rock.velocityY+=0.14;
+  }
+ 
+  if(rock.y>400){
+    rock.velocityY=-10;
+  }
+  drawSprites();
+}
+

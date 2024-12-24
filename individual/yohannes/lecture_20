@@ -1,4 +1,5 @@
 
+  lecture 20 collision detection
 1. isTouching() Block
 Purpose: The isTouching() block simplifies checking if two sprites are touching. It does the math internally, so you don't have to manually write out the calculations.
 Usage:
@@ -87,3 +88,5 @@ function draw() {
   
   drawSprites();
 }
+=======
+

@@ -1,3 +1,4 @@
+
 Summary of Lecture 18 on Interactive Card:
 how to create an interactive card with backgrounds, sprites, and user input interactions. Here's a breakdown of the key concepts and steps:
 
@@ -98,3 +99,6 @@ Background Setup: Create layers in your interactive card to establish the visual
 Sprites: Add animated sprites that will provide interactive content for your card.
 User Input: Use if() statements to detect mouse clicks or key presses and trigger corresponding actions.
 Animations: Use the setAnimation() method to change sprite appearances and create visual effects.
+=======
+
+

@@ -74,3 +74,4 @@ Tips for Success
 Visualize your design before coding.
 Use comments to explain each line of code.
 If a shape doesn’t appear as expected, check the coordinates, dimensions, and color settings.
+

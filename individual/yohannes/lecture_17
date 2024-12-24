@@ -1,4 +1,5 @@
 
+
 Lecture 17: Mouse Input
 In this lesson,  how to use mouse input to control sprite behavior in your program. You worked with mouseDown(), mouseX, and other conditional checks to interact with elements based on mouse actions. Here's a breakdown of the key tasks and examples from the lecture:
 
@@ -117,3 +118,4 @@ mouseDown(): This function checks if a mouse button (like the left button) is pr
 World.mouseX: This tracks the X-coordinate of the mouse position in the world. It's useful for detecting the mouse's location relative to your scene and making decisions based on that.
 Using if / else Statements: You learned to use if / else blocks to switch between different actions based on mouse input (such as moving or shaking objects).
 randomNumber(): This function generates random numbers within a specified range, which can be used for creating effects like shaking.
+

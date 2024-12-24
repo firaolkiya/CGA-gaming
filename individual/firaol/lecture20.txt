@@ -1,0 +1,67 @@
+in this lesson i learned more about
+- collission detection
+- isTouching function is always check if there is collision between two object
+- 
+sample code
+// Create the sprites and start them moving
+var backdrop = createSprite(200,200);
+backdrop.setAnimation("meadow");
+var bunny = createSprite(50, 300);
+bunny.setAnimation("bunny");
+bunny.velocityX = 3;
+var robot = createSprite(400, 320);
+robot.setAnimation("robot");
+robot.scale = 0.2;
+robot.velocityX = -3;
+var dinner = createSprite(370, 350);
+dinner.setAnimation("stew");
+dinner.velocityX = -3;
+
+function draw() {
+  // check if the bunny and dinner are touching
+  if ((((bunny.x > dinner.x) && ((bunny.x - dinner.x) < (bunny.width/2 + dinner.width/2))) || 
+    ((bunny.x < dinner.x) && ((bunny.x - dinner.x) > - (bunny.width/2 + dinner.width/2))))) {
+    // stop everything and change to empty bowl
+    bunny.velocityX = 0;
+    dinner.velocityX = 0;
+    robot.velocityX = 0;
+    dinner.setAnimation("bowl");
+  }
+  drawSprites();
+}
+
+var balloon = createSprite(200,200);
+balloon.setAnimation("balloon");
+//2) Change the code on line 4 from false to true.
+balloon.debug = true;
+//3) Debug the tack sprite.
+
+
+var tack = createSprite(350, 50);
+tack.setAnimation("tack");
+
+function draw() {
+  background("gray");
+  
+  // check if tack is touching balloon
+  if (balloon.isTouching(tack)) {
+    // replace balloon image
+    balloon.setAnimation("popped");
+  }
+  // make tack move with arrow keys
+  if (keyDown("up")) {
+    tack.y = tack.y - 1;
+  }
+  if (keyDown("down")) {
+    tack.y = tack.y + 1;
+  }
+  if (keyDown("left")) {
+    tack.x = tack.x - 1;
+  }
+  if (keyDown("right")) {
+    tack.x = tack.x + 1;
+  }
+  
+  drawSprites();
+}
+

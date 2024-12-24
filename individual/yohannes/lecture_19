@@ -1,3 +1,4 @@
+
 Summary of Lecture 19 on Velocity
 1. velocityX for Horizontal Movement:
 
@@ -66,3 +67,6 @@ velocityX: Moves a sprite horizontally by the given value.
 velocityY: Moves a sprite vertically by the given value.
 rotationSpeed: Controls the speed of rotation for a sprite.
 Conditionals (if statements): Used to change sprite behavior based on its position or interactions, such as reversing direction when the sprite hits the edge
+=======
+
+

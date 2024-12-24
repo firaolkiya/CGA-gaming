@@ -1,0 +1,51 @@
+// Create giraffe sprite
+var giraffe = createSprite(30,200);
+giraffe.setAnimation("giraffe");
+giraffe.velocityX = 1;
+giraffe.scale = 0.3;
+
+// Create monkey sprite
+var monkey = createSprite(300,200);
+monkey.setAnimation("monkey");
+monkey.scale = 0.3;
+
+function draw(){
+  // Draw background
+  background("white");
+  
+  if(giraffe.isTouching(monkey)){
+    monkey.rotationSpeed=100;
+  }
+  
+  drawSprites();
+}
+
+
+// Create elephant sprite
+var elephant = createSprite(200, 400);
+elephant.setAnimation("elephant");
+elephant.scale = 0.5;
+elephant.velocityY = randomNumber(-3,-1);
+
+// Create hippo sprite
+var hippo = createSprite(200,100);
+hippo.setAnimation("hippo");
+hippo.scale = 0.5;
+
+function draw(){
+  // Draw background
+  background("white");
+  
+  if(elephant.isTouching(hippo)){
+    hippo.velocityY=elephant.velocityY
+  }
+
+  
+  drawSprites();
+}
+
+hen Game Lab checks whether two things are touching, it doesn't know what parts of the image are visible. Instead, it checks whether the colliders are touching each other. The size of the colliders is determined by the size of the animation that you are using, even the parts of it that you can't see. You can see the colliders by setting the sprite's debug property to true.
+
+In the two examples to the right, debug has been set to true, so you can see the green outline of the colliders, and that the animation changes when they touch, even if the pictures of the knife and watermelon aren't touching each other.
+
+In the second example, the colliders are very large, so the watermelon changes long before the knife touches it.
