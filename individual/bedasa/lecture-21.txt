@@ -1,118 +1,61 @@
-Lesson 22: Complex Sprite Movement
-In this lesson, I learn how to create more dynamic and complex movements for sprites by combining the velocity properties of sprites with the counter pattern.
-Velocity allows sprites to move smoothly across the screen by controlling their speed and direction, while the counter pattern helps manage movement over time. 
+Lesson 21: Mini-Project - Side Scroller
+In this lesson, I apply your knowledge of collision detection and velocity to create a simple side-scroller game.
+This mini-project provides hands-on experience with game mechanics and helps reinforce your understanding of key programming principles used in game development.
 
-***************************Skill Building*************
+***************my practice project**************
 
-----------problem 2--------------------
-var car = createSprite(50, 200);
-car.setAnimation("red_car");
-car.velocityX = 0.2;
+var player = createSprite(50, 350);
+player.setAnimation("frog");
+player.scale = 0.5;
+var target = createSprite(400, 300);
+target.setAnimation("fly");
+target.scale = 0.3;
+target.velocityX = -3;
+var obstacle = createSprite(400, 350);
+obstacle.setAnimation("mushroom");
+obstacle.scale = 0.5;
+obstacle.velocityX = -5;
+// Create variables for score and health
+var score = 0;
+var health = 100;
 function draw() {
-  background("gray");
-  // 1) Add code to make the car speed up
-  car.velocityX += 0.1; // Increment velocityX to make the car speed up gradually
-  drawSprites();
-}
---------------problem3-------------
-
-var rock = createSprite(200, 50);
-rock.setAnimation("rock");
-rock.velocityY = 0.5;
-function draw() {
-  background("skyblue");
-  // 1) Add code to make the rock speed up as it falls
-  rock.velocityY += 0.02; // Increment velocityY to simulate increasing speed (acceleration)
-
-  drawSprites();
-}
---------------problem4----------------
-var car = createSprite(50, 200);
-car.setAnimation("blue_car");
-car.velocityX = 10;
-noStroke();
-function draw() {
-  background("burlywood");
-  fill("blue");
-  rect(350, 0, 100, 400); 
-  // 1) Add code to slow the car down before it goes into the water
-  if (car.x > 300 && car.x < 350) { 
-    car.velocityX -= 0.2; 
-  }
-  if (car.velocityX < 0) { 
-    car.velocityX = 0;
-  }
-  drawSprites();
-}
-
-******************Practice****************
-
-Activities C: Floating Balloon
-var balloon = createSprite(200, 40);
-balloon.setAnimation("balloon");
-balloon.scale = 0.15;
-
-// 1) Take a look at the code that makes the balloon move.
-balloon.velocityY = 8;
-
-function draw() {
-  background("skyblue");
-  fill("green");
-  rect(0, 350, 400, 50);
-  // 2) Add code to make the balloon slow down and float away
-  if (balloon.velocityY > 0) {
-    balloon.velocityY -= 0.1; 
-  } else {
-    balloon.velocityY = -1; 
-  }
-
-  drawSprites();
-}
-
-******************Assessment*********************
-
-var rock = createSprite(200, 350);
-rock.setAnimation("rock");
-rock.velocityY = -10;
-rock.rotationSpeed = 2;
-function draw() {
-  background("skyblue");
-  // 1) Add code to make the rock slow down and then fall
-  if (rock.velocityY < 0) {
-    rock.velocityY += 0.5; 
-  } else {
-    rock.velocityY += 0.5; 
-  }
-  if (rock.y > 350) {
-    rock.y = 350; // Stop the rock on the ground
-    rock.velocityY = 0;
-  }
-  drawSprites();
-}
-
-****************** Challenges********************
-
-Activities A: curve
-var plane = createSprite(50, 350);
-plane.setAnimation("plane");
-var rock = createSprite(150, 350);
-rock.setAnimation("rock");
-var rockdown = createSprite(350, 100);
-rockdown.setAnimation("rock_down");
-// You might want to change these 
-plane.velocityY = -9;
-plane.velocityX = 3;
-function draw() {
+  // Draw the background
   background("lightblue");
-  // 1) Add code that moves the plane down
-  if (plane.y > 0 && plane.y < 400) {
-    plane.velocityY += 0.3;
+  // Draw the ground
+  fill("green");
+  rect(0, 370, 400, 30);
+  // SPRITE INTERACTIONS
+  // Check if the player is touching the obstacle
+  if (player.isTouching(obstacle)) {
+    health -= 1; // Decrease health
+    obstacle.scale += 0.1; // Change the obstacle sprite by increasing its size
+    obstacle.x = 400; // Reset the obstacle to the right
   }
+  // Check if the player is touching the target
+  if (player.isTouching(target)) {
+    score += 1; // Increase score by 1 each time the player touches the target
+    target.x = 400; // Reset the target to the right
+  }
+  // LOOPING
+  if (obstacle.x < 0) {
+    obstacle.x = 400;
+  }
+  if (target.x < 0) {
+    target.x = 400;
+  }
+  // SCOREBOARD
+  fill("black");
+  textSize(20);
+  text("Health: " + health, 20, 30); // Display health
+  text("Score: " + score, 20, 50);  // Display score numerically
+  // GAME OVER
+  if (health <= 0) {
+    background("black");
+    fill("red");
+    textSize(50);
+    text("Game Over!", 60, 200);
+    noLoop(); // Stop the game when health reaches 0
+  }
+  // Draw sprites
   drawSprites();
 }
-
-
-
-
-
-
