@@ -1,1 +1,124 @@
+Lesson 26: The Game Design Process
+var score = 0;
+var cake = createSprite(350, 200);
+cake.setAnimation("cake");  
+var player = createSprite(200, 200);
+player.setAnimation("cake"); 
+var enemy1 = createSprite(0, random(150, 250)); 
+enemy1.setAnimation("shell_08_1"); 
+var enemy2 = createSprite(0, random(150, 250));  
+enemy2.setAnimation("shell_08_1"); 
+function draw() {
+  gameBackground();
+  // Update the sprites
+  enemiesTouchCake();
+  movePlayer();
+  displaceEnemies();
+  enemiesTouchWater();
+  showScore();
+  drawSprites();
+}
+function gameBackground() {
+  noStroke();
+  if (score > 10) {
+    background(rgb(255, 223, 0));  
+    fill(rgb(255, 100, 100));  
+    rect(0, 150, 400, 100);
+    fill(rgb(200, 100, 100));  
+    rect(0, 140, 400, 10);  
+    rect(0, 250, 400, 10);  
+  } else {
+    background(rgb(0, 100, 255));  
+    fill(rgb(100, 100, 100));
+    rect(0, 150, 400, 100);  
+    fill(rgb(80, 80, 80));
+    rect(0, 140, 400, 10);  
+    rect(0, 250, 400, 10);  
+  }
+}
 
+// Function to check if the enemies touch the cake
+function enemiesTouchCake() {
+  // Check if enemy1 touches the cake
+  if (enemy1.isTouching(cake)) {
+    setEnemy1();
+    score -= 2;
+  }
+  // Check if enemy2 touches the cake
+  if (enemy2.isTouching(cake)) {
+    setEnemy2();
+    score -= 2;
+  }
+}
+// Function to move the player with arrow keys
+function movePlayer() {
+  if (keyIsDown(RIGHT_ARROW)) {
+    player.x += 3;  x
+    player.setAnimation("cake"); 
+  }
+  // Move player to the left when left arrow is pressed
+  if (keyIsDown(LEFT_ARROW)) {
+    player.x -= 3; 
+    player.setAnimation("cake");  x
+  }
+  if (keyIsDown(UP_ARROW)) {
+    player.y -= 3;  x
+  }
+  if (keyIsDown(DOWN_ARROW)) {
+    player.y += 3;  
+  }
+}
+function displaceEnemies() {
+  if (player.isTouching(enemy1)) {
+    enemy1.x += random(-5, 5);  
+    enemy1.y += random(-5, 5); 
+  }
+  enemy1.x += random(-2, 2);  
+  enemy1.y += random(-2, 2);  
+  if (player.isTouching(enemy2)) {
+    // Displace enemy2 when the player touches it
+    enemy2.x += random(-5, 5);  
+    enemy2.y += random(-5, 5);  
+  }
+  enemy2.x += random(-2, 2);  
+  enemy2.y += random(-2, 2);  
+}
+
+function enemiesTouchWater() {
+  if (enemy1.y < 140) {
+    setEnemy1();
+    score += 1;
+  }
+  if (enemy1.y > 260) {
+    setEnemy1();
+    score += 1;
+  }
+  if (enemy2.y < 140) {
+    // Reset enemy2 to its starting position
+    setEnemy2();
+    // Add 1 to the score
+    score += 1;
+  }
+  if (enemy2.y > 260) {
+    // Reset enemy2 to its starting position
+    setEnemy2();
+    // Add 1 to the score
+    score += 50;
+  }
+}
+function showScore() {
+  fill("white");
+  textSize(20);
+  text("Score", 20, 20, 200, 100);
+  text(score, 20, 40, 200, 100);
+}
+function setEnemy1() {
+  enemy1.x = 0;  
+  enemy1.y = random(150, 250);  
+  enemy1.velocityX = 2;  
+}
+function setEnemy2() {
+  enemy2.x = 0;  
+  enemy2.y = random(150, 250); 
+  enemy2.velocityX = 2;  
+}
