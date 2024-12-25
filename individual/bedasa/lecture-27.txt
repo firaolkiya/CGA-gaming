@@ -1,1 +1,154 @@
+Lesson 27: Using the Game Design Process
+// Variables
+var score = 0;
+var platform;
+var platform2;  
+var item;  
+var player; 
+var isJumping = false;  
+// Create Sprites
+function setup() {
+  // Create the first platform sprite
+  platform = createSprite(200, 100, 100, 20); 
+  platform.setAnimation("platform"); 
+  platform.velocityY = 2;
+  // Create the second platform sprite
+  platform2 = createSprite(300, 50, 100, 20); 
+  platform2.setAnimation("platform"); 
+  platform2.velocityY = 2; 
+  // Create the new item sprite with a random starting position
+  item = createSprite(randomNumber(0, 400), randomNumber(0, 200), 20, 20); 
+  item.setAnimation("coin_bronze_1");
+  item.velocityY = 3; 
+  // Create the player sprite
+  player = createSprite(200, 50, 30, 30); 
+  player.setAnimation("alien"); 
+  player.velocityY = 0;
+}
 
+function draw() {
+  // Check if score is above a threshold (e.g., 10) to switch backgrounds
+  if (score > 10) {
+    background2();  
+  } else {
+    background1();  
+  }
+  // Call showScore to display the score after drawing the background
+  showScore();
+  // Update the platforms and items
+  loopPlatforms();  
+  loopItems();      
+  // Call the playerFall function to make the player fall
+  playerFall();
+  // Call the controlPlayer function to make the player move and jump
+  controlPlayer();
+  // Call the playerLands function to handle player collision with platforms
+  playerLands();
+  // Call the collectItems function to handle item collection
+  collectItems();
+  // update the sprites
+  drawSprites();
+}
+
+// Functions
+function background1() {
+  background("darkBlue");
+  noStroke();
+  fill("yellow");
+  ellipse(randomNumber(0, 400), randomNumber(0, 400), 3, 3);
+  ellipse(randomNumber(0, 400), randomNumber(0, 400), 3, 3);
+  ellipse(340, 50, 70, 70);
+  fill("darkBlue");
+  ellipse(320, 30, 70, 70);
+}
+function background2() {
+  // Creating a new background with a sunset theme
+  background("orange");
+  noStroke();
+  fill("darkRed");
+  ellipse(200, 300, 120, 120); 
+  fill("lightBlue");
+  rect(0, 200, 400, 200);  
+  fill("darkGreen");
+  rect(0, 0, 400, 100);  
+  fill("black");
+  ellipse(50, 50, 10, 10);  
+  ellipse(100, 80, 10, 10); 
+  ellipse(200, 40, 10, 10); 
+}
+function showScore() {
+  fill("white");
+  textSize(20);
+  text("Score: ", 10, 10, 80, 20);
+  text(score, 70, 10, 80, 20);  
+}
+// Function to loop the platforms when they go off the screen
+function loopPlatforms() {
+  // Reset platform1 if it goes off the screen
+  if (platform.position.y > height) {
+    platform.position.y = 0;
+    platform.position.x = randomNumber(0, 400); 
+  }
+  // Reset platform2 if it goes off the screen
+  if (platform2.position.y > height) {
+    platform2.position.y = 0;
+    platform2.position.x = randomNumber(0, 400); 
+}
+// Function to loop the item when it goes off the screen
+function loopItems() {
+  // Reset the item if it goes off the bottom of the screen
+  if (item.position.y > height) {
+    item.position.y = randomNumber(0, 200); 
+    item.position.x = randomNumber(0, 400); 
+  }
+}
+// Function to make the player fall
+function playerFall() {
+  // Make the player fall by adding velocityY (gravity effect)
+  player.velocityY = 2;l
+  
+  // Optional: Prevent the player from falling off the screen
+  if (player.position.y > height) {
+    player.position.y = height;
+    player.velocityY = 0; 
+  }
+}
+// Function to control the player's movement and jumping
+function controlPlayer() {
+  // Move the player left or right with arrow keys
+  if (keyDown("left")) {
+    player.x -= 5;
+  }
+  if (keyDown("right")) {
+    player.x += 5; 
+  }
+  // Make the player jump with the up arrow key
+  if (keyDown("up") && !isJumping) {
+    player.velocityY = -10; 
+    isJumping = true;
+  }
+  // Reset jumping flag when the player lands on the ground or platform
+  if (player.position.y >= height) {
+    isJumping = false; 
+  }
+}
+// Function to handle player collision with platforms
+function playerLands() {
+  // Check if the player is colliding with either platform
+  if (player.collide(platform) || player.collide(platform2)) {
+    // If the player is colliding with a platform, stop their downward velocity and set isJumping to false
+    player.velocityY = 0;
+    isJumping = false; 
+  }
+}
+// Function to handle item collection
+function collectItems() {
+  // Check if the player is touching the item
+  if (player.isTouching(item)) {
+    // Reset the item's position to a random location
+    item.position.y = randomNumber(0, 200); 
+    item.position.x = randomNumber(0, 400);
+    // Increase the score
+    score += 1;
+  }
+}
