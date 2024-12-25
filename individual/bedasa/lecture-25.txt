@@ -1,0 +1,261 @@
+Lesson 25: Functions
+In this lesson, I learn how to organize your code more effectively using functions. 
+Functions allow you to group blocks of code together, making your program more readable, reusable, and easier to debug.
+By defining and calling functions, you can remove repeated code, simplify complex programs, and focus on the logic of your application. 
+
+**************Skill Building*******************
+
+--------------------problem2----------------------
+function setup() {
+  createCanvas(400, 500); 
+  drawSky(); 
+  drawBalloons(); 
+}
+function drawSky(){
+  noStroke();
+  background(rgb(0,200,255)); 
+  fill("yellow"); 
+  ellipse(350, 50, 50, 50); 
+}
+function drawBalloons(){
+  // First balloon
+  stroke("black");
+  line(100, 100, 140, 450); 
+  noStroke();
+  fill("red");
+  ellipse(100, 100, 50, 50); 
+  // Second balloon
+  stroke("black");
+  line(120, 120, 140, 450);
+  noStroke();
+  fill("orange");
+  ellipse(120, 120, 50, 50);
+  // Third balloon
+  stroke("black");
+  line(140, 80, 140, 450);
+  noStroke();
+  fill("yellow");
+  ellipse(140, 80, 50, 50);
+  // Fourth balloon
+  stroke("black");
+  line(160, 90, 140, 450);
+  noStroke();
+  fill("red");
+  ellipse(160, 90, 50, 50);
+}
+--------------------problem3-----------------
+function setup() {
+  createCanvas(400, 400);
+}
+function draw() {
+  // Call functions in the correct order
+  drawBackground();  
+  drawClouds();      
+  drawTrees();      
+  drawFence();       
+}
+// Function definitions
+function drawBackground(){
+  noStroke();
+  background(rgb(0,200,255)); 
+  fill("green");
+  rect(0, 380, 400, 20); 
+}
+function drawTrees(){
+  noStroke();
+  // Draw All Trunks
+  fill(rgb(150,100,0)); 
+  rect(210, 330, 30, 50); 
+  rect(290, 330, 30, 50); 
+  rect(360, 330, 30, 50); 
+  // Draw All Branches
+  fill("green");
+  regularPolygon(225, 280, 3, 100); 
+  regularPolygon(305, 280, 3, 110); 
+  regularPolygon(375, 290, 3, 95);  
+}
+function drawClouds(){
+  noStroke();
+  fill(rgb(255, 255, 255, 100)); 
+  ellipse(300, 200, 200, 50); 
+  ellipse(320, 200, 200, 70); 
+  ellipse(340, 200, 200, 50);
+  ellipse(100, 100, 200, 50);
+  ellipse(120, 100, 200, 70); 
+  ellipse(140, 100, 200, 50);
+}
+function drawFence(){
+  stroke("white");
+  strokeWeight(5);
+  line(0, 360, 400, 360); 
+  line(20, 350, 20, 380);  
+  line(50, 350, 50, 380);  
+  line(80, 350, 80, 380);  
+  line(110, 350, 110, 380); 
+  line(140, 350, 140, 380); 
+  line(170, 350, 170, 380); 
+  line(200, 350, 200, 380); 
+  line(230, 350, 230, 380); 
+  line(260, 350, 260, 380);
+  line(290, 350, 290, 380);
+  line(320, 350, 320, 380); 
+  line(350, 350, 350, 380); 
+  line(380, 350, 380, 380); 
+}
+
+*******************Practice**************
+
+var flyer = createSprite();
+flyer.setAnimation("flyer");
+setFlyer();
+function draw() {
+  treesBackground();
+  // If the flyer goes off the left side of the screen, reset its position
+  if (flyer.x < -50) {
+    setFlyer(); 
+  }
+  drawSprites();
+}
+function setFlyer() {
+  flyer.x = 450; 
+  flyer.y = 200; 
+  flyer.velocityX = -8; 
+}
+function treesBackground() {
+  noStroke();
+  background(rgb(0,200,255));
+  // Draw ground
+  fill("green");
+  rect(0, 380, 400, 20);
+  // Draw sun
+  fill("yellow");
+  ellipse(350, 50, 20, 20);
+  // Draw tree trunks
+  strokeWeight(20);
+  stroke(rgb(150, 100, 0));
+  line(20, 300, 20, 380);
+  line(80, 300, 80, 380);
+  line(120, 300, 120, 380);
+  line(160, 300, 160, 380);
+  line(200, 300, 200, 380);
+  line(250, 300, 250, 380);
+  // Draw tree tops (branches)
+  fill("green");
+  noStroke();
+  ellipse(20, 300, 100, 100);
+  ellipse(80, 300, 110, 110);
+  ellipse(120, 300, 95, 95);
+  ellipse(160, 300, 110, 110);
+  ellipse(200, 300, 100, 100);
+  ellipse(250, 300, 100, 100);
+}
+
+****************Collector Game**************************
+
+var coin = createSprite(200, 10);
+coin.setAnimation("coin_gold_1");
+setCoin();
+var bunny = createSprite(200, 350);
+bunny.setAnimation("bunny1_ready_1");
+var score = 0;
+function draw() {
+  background("white");
+  // Move the bunny
+  if(keyDown("left")) {
+    bunny.x = bunny.x - 2;
+  }
+  if(keyDown("right")) {
+    bunny.x = bunny.x + 2;
+  }
+  // Check if bunny catches the coin
+  if(bunny.isTouching(coin)) {
+    score += 1;  // Increase score
+    setCoin();    // Reset the coin
+  }
+  // Reset coin if it reaches the bottom of the screen
+  if(coin.y > 400) {
+    setCoin();
+  }
+  // Display the score
+  textSize(20);
+  text("Score: " + score, 10, 10, 100, 100);
+  // Draw the sprites
+  drawSprites();
+}
+function setCoin() {
+  coin.velocityY = Math.random() * 2 + 1; 
+  coin.y = 10;                            
+  coin.x = Math.random() * 400;           
+}
+
+**********************Challenges****************************
+
+Activities C: Paddle Game 2
+var ball = createSprite(200, 200);
+ball.setAnimation("ball");
+ball.scale = 0.10;
+ball.velocityY = 5;
+ball.velocityX = 10;
+var paddle = createSprite(200, 380);
+paddle.setAnimation("paddle");
+paddle.width = 200;
+var brick1 = createSprite(100, 150);
+brick1.setAnimation("brick");
+var brick2 = createSprite(300, 75);
+brick2.setAnimation("brick");
+var star = createSprite(54, 95);
+star.setAnimation("redstar");
+var star2 = createSprite(302, 25);
+star2.setAnimation("redstar");
+createEdgeSprites();
+var score = 0;
+function draw() {
+  gameBackground(); 
+  movePaddle();  
+  ballBounce(); 
+  collectStar();  
+  setScore();  
+  drawSprites();  
+}
+function gameBackground() {
+  background("skyblue");  
+}
+function movePaddle() {
+  if (keyIsDown(LEFT_ARROW)) {
+    paddle.x -= 10;  
+  }
+  if (keyIsDown(RIGHT_ARROW)) {
+    paddle.x += 10;  
+  }
+}
+function ballBounce() {
+  ball.bounceOff(edges); 
+  ball.bounceOff(paddle);  
+  // Ball bounces off the bricks
+  if (ball.isTouching(brick1)) {
+    brick1.destroy();
+    ball.velocityY *= -1;
+  }
+  if (ball.isTouching(brick2)) {
+    brick2.destroy();
+    ball.velocityY *= -1;
+  }
+}
+function collectStar() {
+  if (ball.isTouching(star)) {
+    star.destroy();
+    score += 1;
+  }
+  if (ball.isTouching(star2)) {
+    star2.destroy();
+    score += 1;
+  }
+}
+function setScore() {
+  textSize(32);
+  fill("black");
+  text("Score: " + score, 10, 30);
+}
+
+
+
