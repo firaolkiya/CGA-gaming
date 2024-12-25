@@ -1,1 +1,92 @@
+Lesson 28: Project - Design a Game
+// Create your variables here
+var player; 
+var platform; 
+var item; 
+var score = 0; 
+var isJumping = false; 
+var moveSpeed = 5; 
+var jumpStrength = -10; 
+var bgColor = 200; 
+// Create your sprites here
+function setup() {
+  // Create canvas
+  createCanvas(400, 400);
+  // Create player sprite
+  player = createSprite(200, 300, 30, 30); 
+  player.shapeColor = "blue";
+  // Create platform sprite
+  platform = createSprite(200, 340, 100, 20); 
+  platform.shapeColor = "green";
+  // Create item sprite (e.g., a coin)
+  item = createSprite(random(20, 380), random(50, 200), 20, 20); // Random x and y positions
+  item.shapeColor = "yellow";
+}
+// Create your functions here
+function draw() {
+  // Background animation
+  background(bgColor); 
+  bgColor = (bgColor + 0.2) % 255; 
+  // Flashing effect for the item
+  item.shapeColor = color(random(100, 255), random(100, 255), 0);
+  // Call movement functions
+  handleControls(); 
+  // Apply gravity
+  playerFall(); 
+  // Make the player jump if needed
+  jumpPlayer(); 
+  // Handle item collection
+  collectItem();
+  // Handle platform interactions
+  playerLands(); 
+  // Draw the score on screen
+  textSize(20);
+  fill(0);
+  text("Score: " + score, 10, 30); 
+  // Update sprites
+  drawSprites();
+}
+
+// Function to handle user controls for the player sprite
+function handleControls() {
+  if (keyDown("left")) {
+    player.x -= moveSpeed;
+  }
+  if (keyDown("right")) {
+    player.x += moveSpeed; 
+  }
+}
+// Function to simulate gravity and prevent player from falling off the screen
+function playerFall() {
+  player.velocityY += 0.5; 
+  if (player.y > height) {
+    player.y = height - 15; 
+    player.velocityY = 0;
+  }
+}
+// Function to make the player jump
+function jumpPlayer() {
+  if (keyDown("up") && !isJumping) {
+    player.velocityY = jumpStrength;
+    isJumping = true; // Set the jump flag to true
+  }
+}
+// Function to check if the player is touching the platform and land on it
+function playerLands() {
+  if (player.collide(platform)) {
+    player.velocityY = 0; 
+    isJumping = false; 
+  }
+}
+// Function to handle item collection
+function collectItem() {
+  if (player.overlap(item)) { 
+    score += 1; // Increment score
+    item.position.x = random(20, 380); 
+    item.position.y = random(50, 200); 
+
+    // Add visual feedback on collection
+    background(255, 200, 0); 
+  }
+}
 
