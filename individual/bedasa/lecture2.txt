@@ -17,5 +17,8 @@ Key Concepts to Explore:
 
     # Challenges You May Encounter:
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> 90a6fca13ecb0e7a11a47b5de637ac7cda8642ba
 understanding how the tool interprets your instructions, including sequence and syntax.

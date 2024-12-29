@@ -1,0 +1,57 @@
+The Add new frame button adds a blank frame to your animation, which you can draw in. If you'd like to make a copy of your current frame to make slight edits, use (3)
+The Trash Can icon will delete the current frame
+The Copy icon will create a copy of the current frame, which you can then edit.
+The Move icon lets you rearrange the order of your frames
+The Onion icon shows a transparent overlay of the previous frame and the following frame. This is useful if you would like to make small changes to a frame to create a smoother animation, and make sure it aligns with the surrounding frames.
+The Slider changes the speed of the animation. Moving to the right speeds-up the animation; moving to the left slows-down the animation. You can see a preview of your animation when you hover over it in this column.
+
+Most games will involve sprites colliding with each other. There are four types of collisions available in Game Lab: displace, collide, bounce, and bounceOff. These blocks will cause a certain type of interaction between the sprite and its target and must be used within the draw function.
+
+Displace
+
+displace makes a sprite push another sprite (the target) as long as they are touching each other.
+
+function draw() {
+
+  background("skyblue");
+  bunny.displace(carrot);
+  drawSprites();
+
+}
+
+Collide
+
+collide makes a sprite stop when it runs into things. You can use it when you want your sprite to be blocked by obstacles.
+
+function draw() {
+
+  background("black");
+  alien.collide(monster);
+  drawSprites();
+ 
+}
+
+Bounce
+
+bounce makes the sprite and the target bounce when they touch each other. Both the sprite and the target change how they are moving.
+
+function draw() {
+
+  background("lightgreen");
+  giraffe.bounce(hippo);
+  elephant.bounce(pig);
+  snake.bounce(monkey);
+  drawSprites();
+}
+
+BounceOff
+
+bounceOff makes the sprite bounce off the target when they touch each other. The target keeps moving as before.
+
+function draw() {
+
+  background("pink");
+  note.bounceOff(guitar);
+  drawSprites();
+ 
+}
