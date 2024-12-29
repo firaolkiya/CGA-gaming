@@ -1,0 +1,62 @@
+A function is a group of commands (blocks) that you give a name so that you can use it over and over again.
+
+Creating (Naming) a Function
+To create a function, you need to put all of the commands inside a function block and type your function's name into the space at the top of the function block. This code is making a new function called "resetDrawing" that contains 4 commands.
+
+
+
+Calling (Using) a Function
+Whenever you want to use your function you need to call it by its name. To do this you just write the name of your function followed by parentheses. This will run all the commands you put inside your function when you made it.
+
+
+
+Why Use Functions?
+Keeping Your Code Organized Functions can be created anywhere in your program. If you have large blocks of code you won't be using often, you can create a function at the bottom of your code and just call it in a single line higher up.
+
+Keeping Your Code Readable By giving a group of commands a name you're helping explain how your code works. Picking good names helps you and other people reading your code understand what it is doing.
+
+Removing Repetition Once you've created a function you can call it as many times as you like in your program. If you're using the same code in many places in your program you can create a function with that code that you can call instead. This makes it easy to change code in multiple places too.
+
+
+// GAME SETUP
+// create player, target, and obstacles
+var player = createSprite(200, 100);
+player.setAnimation("fly_bot");
+player.scale = 0.8;
+
+
+function draw() {
+  background("lightblue");
+   background("lightblue");
+  
+  // FALLING
+ background("lightblue");
+  // LOOPING
+  
+  
+  // PLAYER CONTROLS
+  // change the y velocity when the user clicks "up"
+  
+  // decrease the x velocity when user clicks "left"
+  
+  // increase the x velocity when the user clicks "right"
+  
+  // SPRITE INTERACTIONS
+  // reset the coin when the player touches it
+  
+  // make the obstacles push the player
+  
+  
+  // DRAW SPRITES
+  drawSprites();
+  
+  // GAME OVER
+  if (player.x < -50 || player.x > 450 || player.y < -50 || player.y > 450) {
+    background("black");
+    textSize(50);
+    fill("green");
+    text("Game Over!", 50, 200);
+  }
+  
+}
+
