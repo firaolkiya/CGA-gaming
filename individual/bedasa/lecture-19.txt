@@ -1,0 +1,259 @@
+Lesson 19: Velocity
+In this lesson, I learn how to set a sprite's velocity to control its movement using the counter pattern. 
+The velocity determines how fast and in which direction a sprite moves.
+By adjusting the sprite's velocity, you can create smooth, continuous movement. 
+This concept is crucial for animating objects in games or interactive applications, allowing for precise control over their speed and direction.
+
+****************Skill  Building ********************
+
+---------------problem2--------------------
+var fish;
+
+function setup() {
+  createCanvas(400, 400);
+  
+  // Create the fish sprite
+  fish = createSprite(50, 150);
+  fish.setAnimation("orange_fish");
+
+  // Set the fish's velocity
+  fish.velocity.x = 4; // Assign a horizontal velocity of 4
+}
+
+function draw() {
+  // Draw the background
+  background(rgb(0, 50, 250));
+
+  // Create some abstract shapes (like bubbles or other elements)
+  fill(rgb(250, 250, 250, 80));
+  noStroke();
+  ellipse(60, 20, 50, 50);
+  ellipse(150, 100, 50, 50);
+  ellipse(300, 130, 50, 50);
+  ellipse(250, 200, 50, 50);
+  ellipse(20, 250, 50, 50);
+  ellipse(370, 330, 50, 50);
+
+  // Create the "sand" in the background
+  fill(rgb(219, 208, 125));
+  noStroke();
+  ellipse(100, 400, 300, 100);
+  ellipse(300, 400, 300, 75);
+
+  // Draw all sprites (including the fish)
+  drawSprites();
+}
+------------------------problem3-------------
+// Create the feather sprite
+var feather = createSprite(200, 50);
+feather.setAnimation("feather");
+
+// 2) Use that block outside of the draw loop.
+feather.velocity.y = 2;  // Move the feather down the screen
+
+function draw() {
+  // Draw the background
+  background("skyblue");
+
+  // Draw all sprites (including the feather)
+  drawSprites();
+}
+--------------------problem4--------------
+// Create the sun sprite
+var sun = createSprite(200, 200);
+sun.setAnimation("sun");
+
+// 1) Drag the rotationSpeed block outside of the draw loop.
+var rotationSpeed = 3;  // Set the rotation speed to 3 degrees
+
+function draw() {
+  // Draw the background
+  background("skyblue");
+
+  // 2) Rotate the sun by 3 degrees each time it is drawn
+  sun.rotation += rotationSpeed;  // Increase the rotation by the rotationSpeed value
+
+  // Draw all sprites (including the sun)
+  drawSprites();
+}
+
+------------------problem5----------------
+// Create the wheel sprite
+var wheel = createSprite(200, 200);
+wheel.setAnimation("wheel");
+
+// Rotation speed for the wheel
+var rotationSpeed = 5;  // Adjust the speed of rotation
+
+function draw() {
+  background("blue");
+
+  // Check if the space bar is pressed
+  if (keyWentDown("space")) {
+    // 2) Make the color wheel start spinning when the user presses the space bar.
+    wheel.rotationSpeed = rotationSpeed;  // Set the rotation speed
+  }
+
+  // Draw all sprites (including the wheel)
+  drawSprites();
+}
+---------------problem6-----------------
+var fish = createSprite(200, 200);
+fish.setAnimation("fishR");
+fish.velocityX = 2;
+
+function draw() {
+  background("blue");
+
+  if (fish.x < 0) {
+    fish.setAnimation("fishR");
+    fish.velocityX = 2;
+  }
+  if (fish.x > 400) {
+    fish.setAnimation("fishL");
+    fish.velocityX = -2;
+  }
+  drawSprites();
+}
+-----------------problem7--------------------
+// Create the field and ball sprites
+var field = createSprite(200, 200);
+field.setAnimation("field");
+var ball = createSprite(200, 50);
+ball.setAnimation("ball");
+ball.scale = 0.2;
+ball.velocityY = 5;
+
+function draw() {
+  // Check if the ball hits the bottom of the screen and make it bounce
+  if (ball.y > 380) {
+    ball.velocityY = -5;  // Bounce upwards
+  }
+
+  // Check if the ball hits the top of the screen and make it bounce
+  if (ball.y < 20) {
+    ball.velocityY = 5;  // Bounce downwards
+  }
+
+  // Draw all sprites (including the field and ball)
+  drawSprites();
+}
+
+*********************Practice*******************
+
+Activities C: Magic stars
+
+// Create the wizard and star sprites
+var wizard = createSprite(50, 200);
+wizard.setAnimation("wizard");
+
+var star = createSprite(150, 175);
+star.setAnimation("magicstar");
+
+function draw() {
+  background("lightblue");
+  
+  // 1) Check if the space bar is pressed
+  if (keyWentDown("space")) {
+    // 2) Reset the position of the star and make it move to the right
+    star.x = 150;       // Reset the star's position to the starting point
+    star.y = 175;       // You can adjust the y-coordinate if needed
+    star.velocity.x = 5;  // Make the star move to the right (positive x direction)
+  }
+  
+  drawSprites();
+}
+
+*****************Assessment*****************
+
+// Create the fish sprite
+var fish = createSprite(200, 200);
+fish.setAnimation("fishR");  // Set initial animation (facing right)
+
+function draw() {
+  background("blue");
+
+  // 1) If the user presses the right arrow key, move the fish to the right
+  if (keyWentDown("right")) {
+    fish.velocity.x = 5;  // Move to the right
+    fish.setAnimation("fishR");  // Make sure the fish is facing right
+  }
+
+  // 2) If the fish gets to the right-hand side of the screen, move the fish to the left
+  if (fish.x > 400) {
+    fish.velocity.x = -5;  // Move to the left
+    fish.setAnimation("fishL");  // Make sure the fish is facing left
+  }
+
+  // 3) If the fish gets to the left-hand side of the screen, move the fish to the right
+  if (fish.x < 0) {
+    fish.velocity.x = 5;  // Move to the right
+    fish.setAnimation("fishR");  // Make sure the fish is facing right
+  }
+
+  // Draw the fish sprite
+  drawSprites();
+}
+
+*************Challenges********************
+
+// Create alien and set its initial properties
+var alien = createSprite(50, 200);
+alien.setAnimation("alien");
+alien.velocityX = 3;  // Start by moving the alien to the right
+alien.velocityY = 0;  // No vertical movement initially
+
+function draw() {
+  background("black");  // Optional: add a background color to make it look like space
+
+  // 2) Add the appropriate velocity blocks to each conditional to make the alien complete the full circuit
+
+  // If alien reaches the right side (x > 350), move it down
+  if (alien.x > 350) {
+    alien.velocityX = 0;  // Stop horizontal movement
+    alien.velocityY = 3;  // Move down
+  }
+
+  // If alien reaches the bottom (y > 350), move it left
+  if (alien.y > 350) {
+    alien.velocityY = 0;  // Stop vertical movement
+    alien.velocityX = -3;  // Move left
+  }
+
+  // If alien reaches the left side (x < 50), move it up
+  if (alien.x < 50) {
+    alien.velocityX = 0;  // Stop horizontal movement
+    alien.velocityY = -3;  // Move up
+  }
+
+  // If alien reaches the top (y < 50), move it right
+  if (alien.y < 50) {
+    alien.velocityY = 0;  // Stop vertical movement
+    alien.velocityX = 3;  // Move right
+  }
+
+  // Draw all the sprites (including the alien and the flags)
+  drawSprites();
+}
+
+// Create the space and flag sprites
+var space = createSprite(200, 200);
+space.setAnimation("space");
+
+var flag1 = createSprite(50, 50);
+flag1.setAnimation("yellow_flag");
+
+var flag2 = createSprite(350, 50);
+flag2.setAnimation("yellow_flag");
+
+var flag3 = createSprite(350, 350);
+flag3.setAnimation("yellow_flag");
+
+var flag4 = createSprite(50, 350);
+flag4.setAnimation("yellow_flag");
+
+// Set depth for alien to appear above other sprites
+alien.depth = 7;
+
+
+

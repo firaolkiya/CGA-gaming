@@ -1,0 +1,29 @@
+text()
+Category:Drawing
+Draws text onto the display positioned at x and y.
+
+You are not limited to just drawing shapes and lines in the display, you can also write text. Use textFont() and textSize() to change the default font, Arial, and the default size, 12 pixels. Use textAlign() to change where the text is displayed relative to the (x,y) position specified. When no width or height are provided, (x,y) is the top middle of the text. When width and height are provided, (x,y) is the top left corner of the text.
+
+Text that does not fit completely within the display area will not be drawn or seen. Use the fourth and fifth parameters to create a text box to display the text in with automatic line wrapping.
+
+Examples
+Changing color and size
+
+
+//1) Run the code to see how it works.
+background("lightblue");
+textSize(18);
+text("small", 170, 100);
+textSize(40);
+text("medium", 130, 200);
+//2) Add code to make the word "large" the biggest.
+text("large", 120, 300);
+Use additional text blocks to change the appearance of text on the screen. You can change: size, color, alignment, and other properties.
+
+textSize(60);
+textAlign(CENTER, TOP);
+textFont("Impact");
+fill("yellow");
+stroke("red");
+strokeWeight(5);
+text("Ada Lovelace was one of the first computer programmers!", 0, 0, 400, 400);

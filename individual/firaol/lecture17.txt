@@ -1,0 +1,40 @@
+Mouse controlling
+
+uses mousePressed("LEFTBUTTOM") function
+
+uses World.mouseX
+     World.mouseY
+to detect x and y position of the cursor
+
+var blender = createSprite(100, 300);
+blender.setAnimation("blender");
+var mixer = createSprite(300, 300);
+mixer.setAnimation("mixer");
+
+function draw() {
+  background("lightyellow");
+  fill("burlywood");
+  rect(0, 350, 400, 50);
+  if (World.mouseX < 200) {
+    blender.x = randomNumber(95, 105);
+    blender.y = randomNumber(295, 305);
+  }
+  //2) Add to the conditional so that when the mouse is on the other side of the screen, the mixer shakes instead.
+
+  drawSprites();
+}
+
+//Create a bee sprite
+
+var sprite = createSprite(200, 200);
+sprite.setAnimation("bee");
+
+
+function draw(){
+  background("blue");
+  //Update the position of the bee to the position of the mouse
+  sprite.x=World.mouseX;
+  sprite.y=World.mouseY;
+drawSprites();
+
+}

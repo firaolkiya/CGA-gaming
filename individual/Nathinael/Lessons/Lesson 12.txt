@@ -27,3 +27,5 @@ function draw(){
   brush.x = randomNumber(290, 300);
   drawSprites();
 }
+=======
+# in general its a loop function that enables us to animate objects.

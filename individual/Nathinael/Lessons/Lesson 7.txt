@@ -4,7 +4,6 @@
 Main idea :To review contents covered and make a Robot face
 
 # Reviewed the contents covered earlier
-# Built a Robot Face and also used the randomNumber block.
 
     PROJECT CODE FFROM THE GAME LAB
 
@@ -22,3 +21,5 @@ ellipse(200, 220, y);
 var u = randomNumber(60, 70);
 fill("red");
 rect(170, 240, u, 20);
+=======
+# Built a Robot Face and also used the randomNumber block.

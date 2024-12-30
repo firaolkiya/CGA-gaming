@@ -17,3 +17,5 @@ fill("deeppink");
 ellipse(x, 50);
 ellipse(300, y);
 rect(x, y);
+=======
+# Using variables to store the x and y size.

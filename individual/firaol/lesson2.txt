@@ -1,0 +1,8 @@
+
+I learned how to draw shapes using a tool that allows me to create shapes in different colors. I explored how to:
+
+Change the color of the shapes by selecting a color before drawing.
+Click on a shape icon every time I want to draw a new shape.
+Turn on a grid for better alignment by checking the grid box below the "Run" button.
+Start the program by clicking the "Run" button to activate the drawing tool.
+This practice helped me understand the basics of creating and customizing shapes efficiently.

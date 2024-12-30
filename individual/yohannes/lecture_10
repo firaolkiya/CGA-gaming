@@ -1,0 +1,28 @@
+                Adding Text in Game Lab
+Key Concepts
+Text in Game Lab:
+
+Text can be displayed on the canvas using commands like text().
+You can customize the position, size, and font of the text.
+Key Text Commands:
+
+text(content, x, y): Displays the content string at position (x, y) on the canvas.
+textSize(size): Sets the size of the text.
+textFont(font): Sets the font of the text (optional).
+fill(color): Sets the text color.
+Example 1: Predicting Text Behavior
+Code:
+
+javascript
+background("white");
+fill("black");
+textSize(30);
+text("Hello, everyone", 100, 200);
+Prediction:
+
+What will show on the screen?
+The text "Hello, everyone" will appear in black.
+Where will it be displayed?
+The text will be positioned at (100, 200) on the canvas. This means:
+The text's left edge will start at x = 100.
+The text's baseline (not top edge) will align with y = 200.

@@ -1,0 +1,92 @@
+
+  lecture 20 collision detection
+1. isTouching() Block
+Purpose: The isTouching() block simplifies checking if two sprites are touching. It does the math internally, so you don't have to manually write out the calculations.
+Usage:
+You can use it to check if one sprite (e.g., bunny) is touching another sprite (e.g., dinner).
+Example code to check if the bunny is touching the dinner:
+
+if (bunny.isTouching(dinner)) {
+  // Actions to take if they are touching
+}
+2. Collision Detection Example - Bunny and Dinner
+Goal: Stop all movement and change the dinner sprite when the bunny touches the dinner.
+Code Example:
+
+
+if (bunny.isTouching(dinner)) {
+  bunny.velocityX = 0;
+  dinner.velocityX = 0;
+  robot.velocityX = 0;
+  dinner.setAnimation("bowl");
+}
+3. Collision Detection Example - Apple and Blender
+Goal: The blender shakes only when the apple touches it.
+Code Example:
+
+
+if (apple.isTouching(blender)) {
+  blender.x = 200 + randomNumber(-5,5);
+}
+Optional: Hide the apple when it touches the blender.
+4. Debugging Collisions
+Problem: The balloon is popping before the tack touches it.
+Solution: Use the debug block to understand the collision detection issue.
+Set balloon.debug = true; to see the hitbox of the balloon.
+Set tack.debug = true; to debug the tack sprite.
+Fix: Resize the balloon image using the crop tool to ensure the collision happens only when the tack touches the balloon.
+Code Example:
+
+balloon.debug = true;
+tack.debug = true;
+5. Code Structure for Movement
+Movement: Use the arrow keys to move the tack sprite.
+javascript
+Copy code
+if (keyDown("up")) { tack.y -= 1; }
+if (keyDown("down")) { tack.y += 1; }
+if (keyDown("left")) { tack.x -= 1; }
+if (keyDown("right")) { tack.x += 1; }
+Important Concepts:
+Collision Detection: Checking if one sprite is touching another using isTouching().
+Debugging: Using the debug property to visualize hitboxes and fix collision issues.
+Sprite Movement: Using keyboard inputs to control sprite positions.
+
+
+var balloon = createSprite(200,200);
+balloon.setAnimation("balloon");
+//2) Change the code on line 4 from false to true.
+balloon.debug = false;
+//3) Debug the tack sprite.
+
+ballon.scale=0.3;
+
+var tack = createSprite(350, 50);
+tack.setAnimation("tack");
+
+function draw() {
+  background("gray");
+  
+  // check if tack is touching balloon
+  if (balloon.isTouching(tack)) {
+    // replace balloon image
+    balloon.setAnimation("popped");
+  }
+  // make tack move with arrow keys
+  if (keyDown("up")) {
+    tack.y = tack.y - 1;
+  }
+  if (keyDown("down")) {
+    tack.y = tack.y + 1;
+  }
+  if (keyDown("left")) {
+    tack.x = tack.x - 1;
+  }
+  if (keyDown("right")) {
+    tack.x = tack.x + 1;
+  }
+  
+  drawSprites();
+}
+=======
+

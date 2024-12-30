@@ -1,0 +1,129 @@
+Speeding Up
+To speed up a sprite that has a positive velocity, you need to add to the velocity inside the counter pattern. To speed up a sprite with a negative velocity, you need to subtract from the velocity inside the counter pattern.
+
+Going Up
+
+
+flybot.velocityY = -1;
+
+function draw() {
+  background("black");
+  flybot.velocityY = flybot.velocityY - 1;
+  drawSprites(); 
+}
+
+Going Down
+
+
+bone.velocityY = 1;
+
+function draw() {
+  background("black");
+  bone.velocityY = bone.velocityY + 1;
+  drawSprites();
+}
+
+Going Left
+
+
+cart.velocityX = -1;
+
+function draw() {
+  background("black");
+  cart.velocityX = cart.velocityX - 1;
+  drawSprites();
+}
+
+Going Right
+
+
+robot.velocityX = 1;
+
+function draw() {
+  background("black");
+  robot.velocityX = robot.velocityX + 1;
+  drawSprites();
+}
+
+Slowing Down
+To slow down a sprite that has a positive velocity, you need to subtract from the velocity inside the counter pattern. To slow down a sprite with a negative velocity, you need to add to the velocity inside the counter pattern. Once a sprite has slowed down to a stop, it will start speeding in the other direction. This can make it look like your sprite is jumping or has been thrown in the air.
+
+Going Up
+
+
+bone.velocityY = -25;
+
+function draw() {
+  background("black");
+  bone.velocityY = bone.velocityY + 1;
+  drawSprites();
+}
+
+Going Right
+
+
+cart.velocityX = 25;
+
+function draw() {
+  background("black");
+  cart.velocityX = cart.velocityX - 1;
+  drawSprites();
+}
+
+Stopping Your Sprite
+If you want your sprite to stop, rather than start to move in the other direction, you'll need to use a conditional to check that the sprite is moving in the correct direction before you use the counter pattern, and stop the sprite if it isn't.
+
+
+
+plane.velocityY = 25;
+
+function draw() {
+  background("black");
+  if (plane.velocityY > 0) {
+    plane.velocityY = plane.velocityY - 1;
+  }
+  drawSprites();
+}
+
+// GAME SETUP
+// create player, target, and obstacles
+var player = createSprite(200, 100);
+player.setAnimation("fly_bot");
+player.scale = 0.8;
+
+
+function draw() {
+  background("lightblue");
+   background("lightblue");
+  
+  // FALLING
+ background("lightblue");
+  // LOOPING
+  
+  
+  // PLAYER CONTROLS
+  // change the y velocity when the user clicks "up"
+  
+  // decrease the x velocity when user clicks "left"
+  
+  // increase the x velocity when the user clicks "right"
+  
+  // SPRITE INTERACTIONS
+  // reset the coin when the player touches it
+  
+  // make the obstacles push the player
+  
+  
+  // DRAW SPRITES
+  drawSprites();
+  
+  // GAME OVER
+  if (player.x < -50 || player.x > 450 || player.y < -50 || player.y > 450) {
+    background("black");
+    textSize(50);
+    fill("green");
+    text("Game Over!", 50, 200);
+  }
+  
+}
+

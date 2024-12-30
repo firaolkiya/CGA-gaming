@@ -1,0 +1,7 @@
+In this lesson, I learned how to draw basic shapes using JavaScript in Game Lab, a tool that provides various options for creating and customizing graphics. 
+For example, the rect block is used to draw a square by specifying x and y coordinates, which define the position of the square's top-left corner on the display area, 
+while the ellipse block is used to draw a circle, with its x and y coordinates determining the center. Understanding how x and y coordinates work was essential, 
+as the x coordinate indicates the distance from the left side of the display, and the y coordinate represents the distance from the top. Additionally, 
+I explored how to customize the appearance of shapes using the fill block, which allows you to set a specific color for shapes; all subsequent shapes take on 
+that color until the fill block is used again to change it. This practice gave me a deeper understanding of plotting shapes, working with coordinates, 
+and using colors effectively, laying the groundwork for more advanced design and programming tasks.

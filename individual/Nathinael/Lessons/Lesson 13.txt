@@ -32,3 +32,5 @@ function draw() {
   
   drawSprites();
 }
+=======
+# so it controls and makes animation smooth and look more apealing.

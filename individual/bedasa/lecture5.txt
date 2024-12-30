@@ -1,0 +1,110 @@
+Lesson 5: Variables
+In this lesson, i introduced to variables - an important concept in programming used to store values for your programs!
+
+    #Key Concepts for Using Variables in this lesson:
+
+Declaring Variables: To create a variable, you first declare it with the var keyword and give it a name.
+Storing Information: Once a variable is declared, you can assign a value to it. The value can change throughout the program (this is known as updating the variable).
+Using Variables in Functions: You can use variables in functions to control behavior, positions, or states.
+sing Variables for Game Logic: Variables help to track game elements like the score, level, or lives. You can use them to determine if the player has won or lost the game.
+
+       ******** skill building*********
+
+//1) Change the values of the variables to update the position of the ellipse 
+var xPosition = 200;
+var whatsTheY = 360;
+ellipse(xPosition, whatsTheY);
+This program has multiple errors caused by bad variable labels. The errors prevent the program from being viewed in block mode, so the code is in text. 
+*Below are a few rules for naming variables.
+    Labels can't have spaces.
+    Labels can't start with a number.
+    Capitalization and spelling must be exactly the same.
+//2)Corrected the errors by picking new names that follow the rules above.
+var sizeOfCircle = 150;
+var dimension = 100;
+var yLocation = 200;
+fill("OrangeRed");
+ellipse(dimension, yLocation,  sizeOfCircle ,  sizeOfCircle );
+//3) Update the code so the red petals touch each other
+var petalSize = 50;
+//Set Up
+noStroke();
+background("ForestGreen");
+// Petals
+fill("red");
+ellipse(200 - petalSize / 2, 200, petalSize, petalSize); // Left petal
+ellipse(200 + petalSize / 2, 200, petalSize, petalSize); // Right petal
+ellipse(200, 200 - petalSize / 2, petalSize, petalSize); // Top petal
+ellipse(200, 200 + petalSize / 2, petalSize, petalSize); // Bottom petal
+// Flower Center
+fill("black");
+ellipse(200,200,50,50);
+
+       ********practice****
+
+activities C: Unused variables 
+var earSize = 100;
+var eyeSize = 15;
+var center = 200;
+// Drawing the bear face
+fill("saddlebrown");
+// Ears
+ellipse(center - 70, center - 85, earSize, earSize); // Left ear
+ellipse(center + 70, center - 85, earSize, earSize); // Right ear
+// Face
+ellipse(center, center - 5, 205, 205); // Face shape
+ellipse(center, center + 45, 100, 100); // Mouth area
+// Eyes and nose
+fill("black");
+ellipse(center, center + 25, 20, 20); // Nose
+ellipse(center - 35, center - 25, eyeSize, eyeSize); // Left eye
+ellipse(center + 35, center - 25, eyeSize, eyeSize); // Right eye
+// Mouth
+line(center, center + 35, center, center + 65); // Mouth line
+noFill();
+arc(center, center + 15, 100, 100, 35, 145); // Smile arc
+
+********Assessment*********
+
+//2) Change the program to use the eyeSize variable.
+var eyeSize = 27;
+noStroke();
+background("green");
+// Face
+fill("yellow");
+ellipse(200,200,200,200);
+// Eyes
+fill("black");
+ellipse(160,170,eyeSize,eyeSize);
+ellipse(240,170,eyeSize,eyeSize);
+ellipse(240,170,10,10);
+// Mouth
+fill("white");
+rect(160,240,80,20);
+
+**************challenges*****
+
+// Variables for the scene
+var treeTrunkWidth = 20;
+var treeTrunkHeight = 100;
+var treeCrownSize = 70;
+background("white");
+// Grass
+fill("green");
+rect(0, 300, 400, 100);
+// Tree 1
+fill("saddlebrown");
+rect(100, 300 - treeTrunkHeight, treeTrunkWidth, treeTrunkHeight); // Trunk
+fill("forestgreen");
+ellipse(100 + treeTrunkWidth / 2, 300 - treeTrunkHeight, treeCrownSize, treeCrownSize); // Crown
+// Tree 2
+rect(150, 300 - treeTrunkHeight, treeTrunkWidth, treeTrunkHeight); // Trunk
+ellipse(150 + treeTrunkWidth / 2, 300 - treeTrunkHeight, treeCrownSize, treeCrownSize); // Crown
+// Tree 3
+fill("saddlebrown");
+rect(200, 300 - treeTrunkHeight, treeTrunkWidth, treeTrunkHeight); // Trunk
+fill("forestgreen");
+ellipse(200 + treeTrunkWidth / 2, 300 - treeTrunkHeight, treeCrownSize, treeCrownSize); // Crown
+// Tree 4
+rect(250, 300 - treeTrunkHeight, treeTrunkWidth, treeTrunkHeight); // Trunk
+ellipse(250 + treeTrunkWidth / 2, 300 - treeTrunkHeight, treeCrownSize, treeCrownSize); // Crown

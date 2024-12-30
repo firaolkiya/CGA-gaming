@@ -27,3 +27,5 @@ function draw() {
   sprite2.y = sprite.y - 1;
   drawSprites();
 }
+=======
+# Displaying Shapes text and sprites and animating them.

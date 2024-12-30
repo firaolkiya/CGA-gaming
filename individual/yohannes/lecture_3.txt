@@ -1,1 +1,77 @@
 
+Lesson 3 - Drawing in Game Lab
+Key Concepts
+Communicating with Computers:
+
+Computers follow instructions precisely, so it's essential to give clear and correct instructions for drawing shapes.
+Sequencing:
+
+The order of commands in your code matters because shapes are drawn on the screen sequentially.
+Shapes added later will appear on top of those drawn earlier.
+Debugging:
+
+A bug is an error in the program that causes it to behave unexpectedly.
+Debugging involves identifying and correcting these errors to ensure the program works as intended.
+Techniques include:
+Checking the syntax of commands.
+Ensuring coordinates and dimensions are logical.
+Running the program step-by-step to find errors.
+Program:
+
+A program is a set of instructions written in a language that the computer can execute.
+Introduced Code
+Commands for Drawing:
+
+ellipse(x, y, w, h)
+
+Draws a circle or oval.
+x and y are the coordinates of the center.
+w (width) and h (height) determine the size.
+Example: ellipse(100, 100, 50, 50); draws a circle with a radius of 25 at (100, 100).
+rect(x, y, w, h)
+
+Draws a rectangle.
+x and y are the top-left corner coordinates.
+w (width) and h (height) determine the size.
+Example: rect(50, 50, 100, 50); draws a rectangle starting at (50, 50) with a width of 100 and height of 50.
+fill(color)
+
+Sets the fill color for shapes.
+Example: fill("blue"); makes the next shape blue.
+Shape Order and Overlap:
+
+Shapes drawn later can overlap earlier ones.
+To create layered visuals, carefully plan the order of commands.
+Resources Overview
+Videos:
+
+Part 1 and Part 2 introduce Game Lab's drawing tools, commands, and the grid system.
+Levels:
+
+Predict (Level 1): Understand what code will do before running it.
+Skill Building (Levels 2-6): Practice drawing shapes, setting colors, and working with the grid.
+Practice (Level 7): Apply skills to draw more complex patterns.
+Assessment (Level 8): Test understanding of commands and sequences.
+Challenges (Level 9): Solve creative tasks to improve debugging and drawing skills.
+Practical Example
+Draw a simple face:
+
+javascript
+Copy code
+// Face
+fill("yellow");
+ellipse(200, 200, 150, 150);
+
+// Eyes
+fill("white");
+ellipse(175, 175, 30, 30);
+ellipse(225, 175, 30, 30);
+
+// Mouth
+fill("red");
+rect(170, 225, 60, 10);
+Tips for Success
+Visualize your design before coding.
+Use comments to explain each line of code.
+If a shape doesn’t appear as expected, check the coordinates, dimensions, and color settings.
+
