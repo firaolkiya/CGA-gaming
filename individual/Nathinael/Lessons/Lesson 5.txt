@@ -6,3 +6,16 @@ Main idea : How can we use variables to store information in our programs
 # Using variables as we would on the Programming laguages to store data
 # The syntax of declaring and assigning a Variable
 # Using variables to store the x and y size.
+
+        THIS ARE SOME OF THE CODES FFROM THE GAME LAB
+
+  // Update the code to match the image
+var x = 50;
+var y = 200;
+
+fill("deeppink");
+ellipse(x, 50);
+ellipse(300, y);
+rect(x, y);
+=======
+# Using variables to store the x and y size.

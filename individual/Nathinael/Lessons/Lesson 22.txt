@@ -1,0 +1,25 @@
+
+        Lesson 22 : Complex Sprite Movement
+
+Main idea :  How can previous blocks be combined in new patterns to make interesting movements.
+
+# On this part using Verlocity x and y to increase or decrease the speed of different 
+  sprites 
+# activities like speeding cars up, slowing rockes and others...
+
+
+    SOME CODE FROM THE GAME LAB
+
+var car = createSprite(50, 200);
+car.setAnimation("red_car");
+car.velocityX = 0.2;
+
+function draw() {
+  background("gray");
+  car.velocityX = car.velocityX + 0.1;
+
+
+  
+  drawSprites();
+}
+

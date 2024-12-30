@@ -7,4 +7,22 @@ Main idea : How can we use sprites to help us keep track of lots of information 
 # there are biult in images in the game lab and used them with the use of sprites.
 # First declare a var to initialize the sprite 
 # then get the name of the animations
+
+        CODE FROM GAME LAB
+
+var fruit = createSprite(200, 100);
+
+// Update the fruit animation
+
+fruit.setAnimation("strawberry");
+drawSprites();
+
+var vegetable = createSprite(200, 300);
+
+// Update the vegetable animation
+
+vegetable.setAnimation("carrot");
+
+drawSprites();
+=======
 # finally display on the screen block

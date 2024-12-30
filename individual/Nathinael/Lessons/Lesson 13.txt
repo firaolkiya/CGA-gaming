@@ -8,3 +8,29 @@ Main idea :  How can we control sprite movement in Game Lab.
 # making objects to move on a specific direction
 # Making the animation of the objects and makes it more smooth.
 # so it controls and makes animation smooth and look more apealing.
+
+
+        CODE FROM GAME LAB
+
+var blueGear = createSprite(100, 220);
+blueGear.setAnimation("blue_gear");
+
+var greenGear = createSprite(183, 298);
+greenGear.setAnimation("green_gear");
+
+var redGear = createSprite(185, 145);
+redGear.setAnimation("red_gear");
+
+function draw() {
+  background("white");
+    
+    // 1 Make the gears rotate so they look like they are working as one system
+  
+  blueGear.rotation = blueGear.rotation - 3;
+  greenGear.rotation = greenGear.rotation + 3;
+  redGear.rotation = redGear.rotation + 3;
+  
+  drawSprites();
+}
+=======
+# so it controls and makes animation smooth and look more apealing.

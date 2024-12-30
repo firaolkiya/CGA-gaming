@@ -1,0 +1,26 @@
+
+        Lesson 17 : Mouse Input
+
+Main idea : What are more ways that the computer can react to user input
+
+# using if-else statments for more interactive code.
+# specifically using the mouse click(Leftbutton) to perform funtions. 
+
+        CODE FROM GAME LAB
+
+// LIFT BALLOON ON LEFTBUTTON CLICK
+
+var balloon = createSprite(200, 50);
+balloon.setAnimation("balloon");
+balloon.scale = 0.1;
+
+function draw() {
+  background("white");
+  if (mouseDown("leftButton")) {
+    balloon.y = balloon.y - 1;
+  } else {
+    balloon.y = balloon.y + 1;
+  }
+
+  drawSprites();
+}

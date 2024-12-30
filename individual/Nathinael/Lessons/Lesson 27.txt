@@ -1,0 +1,4 @@
+
+        Lesson 27 : Using the Game Design Process
+
+Main idea :  How can the problem-solving process help programmers to manage large projects

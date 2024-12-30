@@ -1,0 +1,44 @@
+
+        Lesson 19 : Collision Detection
+
+Main idea : How can programming help make complicated problems more simple
+
+# Introduction to the Collision concept between objects.
+# The sprite isTouching ( target ) fuctionality allows us to apply the collision 
+  insteade of writing the Super nested if statement.
+# Also seen the sprite.debug = true/false and  sprite.set.collider( type )
+  to put a boundary on the sprites and decide on the shapes.
+
+    
+    THIS ARE SOME OF THE CODES FFROM THE GAME LAB
+
+// CODE BEFORE THE ISTOUCHING FUNCTION 
+
+function draw() {
+  // check if the bunny and dinner are touching
+  if ((((bunny.x > dinner.x) && ((bunny.x - dinner.x) < (bunny.width/2 + dinner.width/2))) || 
+    ((bunny.x < dinner.x) && ((bunny.x - dinner.x) > - (bunny.width/2 + dinner.width/2))))) {
+    // stop everything and change to empty bowl
+    bunny.velocityX = 0;
+    dinner.velocityX = 0;
+    robot.velocityX = 0;
+    dinner.setAnimation("bowl");
+  }
+  drawSprites();
+}
+
+ // CODE AFTER THE ISTOUCHING FUNCTION
+
+function draw() {
+
+  if (bunny.isTouching(dinner)) {
+    // stop everything and change to empty bowl
+    bunny.velocityX = 0;
+    dinner.velocityX = 0;
+    robot.velocityX = 0;
+    dinner.setAnimation("bowl");
+  }
+  drawSprites();
+}
+
+Huge difference right ? :)

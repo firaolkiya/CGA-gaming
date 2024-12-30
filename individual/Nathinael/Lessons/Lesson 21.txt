@@ -1,0 +1,109 @@
+
+        Lesson 21 : Mini-Project - Side Scroller
+
+Main idea : How can the new types of sprite movement and collision detection be used to create a game
+
+# the main thing was to build a game 
+# a frog jumping when an obstacle comes and when it hits the target the score to 
+  increase and when obstaccle is hit to reduce from the health.
+# it involved many things integrated.
+
+
+        PROJECTS CODE 
+
+//GAME SETUP
+// Create the sprites
+var frog = createSprite(150,350,50,50);
+frog.setAnimation("frog");
+var mush = createSprite(400,350,40,40);
+mush.setAnimation("mushroom");
+var fly = createSprite(400,randomNumber(50,350),50,50);
+fly.setAnimation("fly");
+
+// set velocity for the obstacle and the target
+fly.velocityX = -5;
+mush.velocityX = -4;
+
+//create the variables
+var score = 0;
+var health = 100;
+
+function draw() {
+  // BACKGROUND
+  background("lightblue");
+  // draw the ground and other background
+  fill("brown");
+  rect(0,350,400,50);
+ 
+  // SPRITE INTERACTIONS
+  // if the player touches the obstacle
+  // the health goes down, and the obstacle turns
+  if (frog.isTouching(mush)) {
+    health = health - 1;
+    mush.rotation=20;
+  } else {
+    mush.rotation = 0;
+  }
+  
+  
+  // if the player touches the target
+  // the score goes up, the target resets
+  if (frog.isTouching(fly)) {
+    score = score + 1;
+    fly.x=400;
+  }
+  
+  // JUMPING
+  // if the player has reached the ground
+  // stop moving down
+  if (frog.y==350) {
+    frog.velocityY=0;
+  }
+ 
+  // if the player presses the up arrow
+  // start moving up
+  if (keyWentDown("up") && frog.y>150) {
+    frog.velocityY=-3;
+  }
+ 
+  // if the player reaches the top of the jump
+  // start moving down
+  if (frog.y<150) {
+    frog.velocityY=3;
+  }
+  
+  // LOOPING
+  // if the obstacle has gone off the left hand side of the screen, 
+  // move it to the right hand side of the screen
+  if (mush.x<0) {
+    mush.x=400;
+  }
+  // if the target has gone off the left hand side of the screen,
+  // move it to the right hand side of the screen
+  if (fly.x<0) {
+    fly.x=400;
+    fly.y=randomNumber(150,350);
+  }
+ 
+  // DRAW SPRITES
+  drawSprites();
+  
+  // SCOREBOARD
+  // add scoreboard and health meter
+  fill("black");
+  textSize(20);
+  text("Score:", 50, 30);
+  text (score, 120, 30);
+ 
+  text("Health:", 280, 30);
+  text (health, 350, 30);
+  // GAME OVER
+  // if health runs out
+  // show Game over
+  if (health < 0) {
+    background("black");
+    fill("green");
+    textSize(50);
+    text("Game Over!" , 40, 200);
+  }
+}

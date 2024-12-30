@@ -3,6 +3,31 @@
 
 Main idea :How can we use sprite properties to change their appearance on the screen.
 
-# Saw sprite properties such as 
-# sprite.x and sprite.y to change the x andy position of the image,
 # sprite.scale and sprite.rotation to control the scale and the rotation of the image.
+
+        CODE FROM GAME LAB
+
+  // 1 Run the program to see how what is different about the first two notes.
+
+background("skyblue");
+var drums = createSprite(200,290);
+drums.setAnimation("drum_set");
+var note1 = createSprite(50,50);
+note1.setAnimation("eighth_note");
+note1.scale = 0.3;
+note1.rotation = 20;
+var note2 = createSprite(150,50);
+note2.setAnimation("eighth_note");
+note2.scale = 0.7;
+note2.rotation = -30;
+var note3 = createSprite(250,50);
+note3.setAnimation("eighth_note");
+note3.scale = 0.5;
+note3.rotation = 10;
+var note4 = createSprite(350,50);
+note4.setAnimation("eighth_note");
+note4.scale = 0.4;
+note4.rotation = -20;
+drawSprites();
+
+

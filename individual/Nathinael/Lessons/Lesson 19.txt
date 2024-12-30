@@ -1,0 +1,75 @@
+
+        Lesson 19 : Velocity
+
+Main idea : How can programming languages hide complicated patterns so that it is easier to program
+
+# Earlier we used sprite.x = sprite.x + 1 in order to move objects on the x and y direction
+  but now we caealily do it using sprite.velocityX or Y
+# Sprites can be moved easily through out the space. To the right, left, up and down.
+# Also we can use it to prevent collusion such as :
+# if a certain point is reached on the coordinate for it to go back or reverse direction.
+
+    THIS ARE SOME OF THE CODES FFROM THE GAME LAB
+
+  // 1 BALL BOUNCING OF THE TOP AND BOTTOM WALLS
+
+var field = createSprite(200,200);
+field.setAnimation("field");
+var ball = createSprite(200, 50);
+ball.setAnimation("ball");
+ball.scale = 0.2;
+ball.velocityY = 5;
+
+function draw() {
+
+  if (ball.y > 380) {
+    ball.velocityY = -5;
+  }
+  if (ball.y < 20) {
+    ball.velocityY = 5;
+  }
+
+  drawSprites();
+}
+
+  // 2 AN ALIEN CHANGES DIRECTION WHEN IT REACHES THE EDGES.
+
+var alien = createSprite(50,200);
+alien.setAnimation("alien");
+alien.velocityX = 0;
+alien.velocityY = -3;
+
+function draw() {
+
+
+  if (alien.y < 50) {
+  alien.velocityY = 0;
+alien.velocityX = 3;
+  }
+  if (alien.x > 350) {
+alien.velocityX = 0;
+  alien.velocityY = 3;
+  }
+  if (alien.y > 350) {
+alien.velocityY = 0;
+  alien.velocityX = -3;
+  }
+  if (alien.x < 50) {
+alien.velocityX = 0;
+  alien.velocityY = -3;
+  }
+  
+  drawSprites();
+}
+
+var space = createSprite(200, 200);
+space.setAnimation("space");
+var flag1 = createSprite(50, 50);
+flag1.setAnimation("yellow_flag");
+var flag2 = createSprite(350, 50);
+flag2.setAnimation("yellow_flag");
+var flag3 = createSprite(350, 350);
+flag3.setAnimation("yellow_flag");
+var flag4 = createSprite(50, 350);
+flag4.setAnimation("yellow_flag");
+alien.depth=7;

@@ -1,0 +1,4 @@
+
+        Lesson 23 : Collisions
+
+Main idea :  How can programmers build on abstractions to create further abstractions
